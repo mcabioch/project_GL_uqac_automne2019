@@ -1,0 +1,14 @@
+*.o
+*/*.o
+*.pro
+moc_*
+
+Makefile
+
+planning_generator
+projet_GL_uqac_automne2019
+
+inc/Widgets/doc/*
+
+res/test.profile
+res/planning.csv

@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+    build:
+        name: Continuous Integration
+
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-16.04, ubuntu-18.04]
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Install tools
+              run: |
+                ./install_dependencies
+            - name: Build program
+              run: |
+                make qtInstall
