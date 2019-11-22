@@ -297,8 +297,6 @@ clean: cleanConfigure
 	$(RM) $(RMFLAGS) $(OBJDIR)/*
 #
 	$(RM) $(RMFLAGS) configure
-#
-	$(RM) $(RMFLAGS) $(ARCHNAME)
 
 mrproper: clean
 	$(RM) $(RMFLAGS) ./$(BINDIR)/*
