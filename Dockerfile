@@ -8,3 +8,11 @@ RUN apt update -yq \
 &&  apt-get update -y \
 &&  apt-get install -y mongodb-org
 &&  apt clean -y
+
+ADD . /app/
+
+WORKDIR /app
+
+EXPOSE 27017
+
+CMD systemctl start mongodb
