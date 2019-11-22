@@ -1,0 +1,16 @@
+#!/bin/bash
+
+dir=./collections
+jsons=`ls ${dir}/`
+
+for file in ${jsons}
+do
+	collec=`echo ${file} | cut -d'.' -f1`
+
+	mongoimport --db gl --collection ${collec} \
+				--authenticationDatabase admin -u admin \
+				--host 34.95.48.165 --port 27017 \
+				--drop --file ${dir}/${file}
+done
+
+exit 0
