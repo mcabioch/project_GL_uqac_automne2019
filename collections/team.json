@@ -1,1 +1,1 @@
-{ "id": 1, "default_heures": 35, "chef_id": 1 }
+{ "id": 1, "default_heures": 35, "non_travail": "dimanche", "creneau_jour": { "debut": "08:00", "fin": "21:00" }, "chef_id": 1 }
