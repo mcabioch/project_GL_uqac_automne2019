@@ -18,4 +18,4 @@ RUN curl https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add - \
 
 EXPOSE 27017
 
-CMD bash
+CMD mongo
