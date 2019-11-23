@@ -1,0 +1,7 @@
+component_depth: 2
+exclude:
+- res/*
+- lib/*
+- doc/*
+languages:
+- cpp
