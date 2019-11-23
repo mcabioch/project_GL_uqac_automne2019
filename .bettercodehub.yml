@@ -5,4 +5,4 @@ exclude:
 - res/*
 - lib/*
 - doc/*
-- inc/C++/*
+- inc/C++/*.hpp
