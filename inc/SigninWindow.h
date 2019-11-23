@@ -73,7 +73,7 @@ class SigninWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			QMainWindow*& _connectWindow
+			QMainWindow*& _connectWindow;
 };
 
 #endif //HEADER_SIGNINWINDOW

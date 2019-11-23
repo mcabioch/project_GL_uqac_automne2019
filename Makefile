@@ -535,11 +535,6 @@ moc_SigninWindow.cpp: inc/PAL.h \
 		inc/MCD.h \
 		inc/Globals.h \
 		inc/Planning.h \
-		inc/MainWindow.h \
-		inc/C++/C++.hpp \
-		inc/MainWindow_TabGeneral.h \
-		inc/MainWindow_TabTeam.h \
-		inc/MainWindow_TabPlanning.h \
 		inc/SigninWindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
