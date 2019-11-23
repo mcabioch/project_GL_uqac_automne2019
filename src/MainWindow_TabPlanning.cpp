@@ -24,7 +24,7 @@ void MainWindow::initPlanningTab(QTabWidget* tabWidget){
 		mcd::logs(mcd::Logger::Debug, teamMember);
 	}
 
-	_planning.calculate(_p_globals, _p_teamMembers, _weekdays, {{12, 13.25}});
+	//_planning.calculate(_p_globals, _p_teamMembers, _weekdays, {{12, 13.25}});
 	mcd::logs(mcd::Logger::Warn, "Add API connection here");
 	mcd::logs(mcd::Logger::Debug, "-------------------------------------\n");
 }
