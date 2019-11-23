@@ -99,7 +99,7 @@ ConnectWindow::~ConnectWindow(){
 }
 
 void ConnectWindow::connection(){
-	if(_username->text() != "" && _password.text() != ""){
+	if(_username->text() != "" && _password->text() != ""){
 		mcd::logs(mcd::Logger::Debug, "clicked !");
 	}
 }
