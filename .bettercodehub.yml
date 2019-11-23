@@ -3,5 +3,8 @@ exclude:
 - res/*
 - lib/*
 - doc/*
+- *.pro
+- *.md
+- .*/*
 languages:
 - cpp
