@@ -4,8 +4,6 @@
 #include "PAL.h"
 #include "MCD.h"
 
-#include "MainWindow.h"
-
 /*!
 * \class	SigninWindow
 * \brief	The main window of the software
@@ -19,7 +17,7 @@ class SigninWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of SigninWindow */
 			/*! \brief	The constructor of the class */
-			SigninWindow(QWidget* parent = nullptr);
+			SigninWindow(QMainWindow*& connectWindow, QWidget* parent = nullptr);
 			virtual ~SigninWindow();
 		/* Getters of SigninWindow */
 			
@@ -75,7 +73,7 @@ class SigninWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			MainWindow* _mainWindow;
+			QMainWindow*& _connectWindow
 };
 
 #endif //HEADER_SIGNINWINDOW

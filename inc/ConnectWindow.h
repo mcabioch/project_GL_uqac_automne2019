@@ -20,7 +20,7 @@ class ConnectWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of ConnectWindow */
 			/*! \brief	The constructor of the class */
-			ConnectWindow(MainWindow& mainWind, QWidget* parent = nullptr);
+			ConnectWindow(MainWindow& mainWind, SigninWindow& signinWind, QWidget* parent = nullptr);
 			virtual ~ConnectWindow();
 		/* Getters of ConnectWindow */
 			

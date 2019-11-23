@@ -1,17 +1,17 @@
 #include "SigninWindow.h"
 
-SigninWindow::SigninWindow(QWidget* parent) :
+SigninWindow::SigninWindow(QMainWindow*& connectWindow, QWidget* parent) :
 	QMainWindow(parent),
 	centerLayout(nullptr),
 	center(nullptr),
 
-	_mainWindow(nullptr)
+	_connectWindow(connectWindow)
 {
 	/* Base */
 		center = new QWidget;
 		centerLayout = new QVBoxLayout;
 
-		this->setWindowTitle("Planning Generator");
+		this->setWindowTitle("Signin - Planning Generator");
 		this->setCentralWidget(center);
 
 		center->setLayout(centerLayout);

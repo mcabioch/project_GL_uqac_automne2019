@@ -1,6 +1,6 @@
 #include "ConnectWindow.h"
 
-ConnectWindow::ConnectWindow(MainWindow& mainWind, QWidget* parent) :
+ConnectWindow::ConnectWindow(MainWindow& mainWind, SigninWindow& signinWind, QWidget* parent) :
 	QMainWindow(parent),
 	centerLayout(nullptr),
 	center(nullptr),

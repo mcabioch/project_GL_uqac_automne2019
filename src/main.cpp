@@ -9,8 +9,22 @@ int main(int argc, char** argv) {
 	MainWindow w;
 	w.hide();
 
-	ConnectWindow cw(w);
+	/*ConnectWindow cw(w);
 	cw.show();
 
-	return app.exec();
+	SigninWindow sw(&cw);
+	sw.hide();*/
+	ConnectWindow* cw;
+
+	SigninWindow sw(cw);
+	sw.hide();
+
+	cw = new ConnectWindow(w);
+	cw->show();
+
+	auto out = app.exec();
+
+	deletePtr(cw);
+
+	return out;
 }
