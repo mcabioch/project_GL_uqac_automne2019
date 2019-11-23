@@ -7,5 +7,4 @@ languages:
   - doc/*
   - *.pro
   - *.md
-  - inc/C++/*
   - inc/C++/Widgets/*
