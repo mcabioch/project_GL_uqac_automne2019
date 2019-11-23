@@ -1,11 +1,11 @@
 #include "ConnectWindow.h"
 
-ConnectWindow::ConnectWindow(/*MainWindow& mainWind, */QWidget* parent) :
+ConnectWindow::ConnectWindow(MainWindow& mainWind, QWidget* parent) :
 	QMainWindow(parent),
 	centerLayout(nullptr),
 	center(nullptr),
 
-	/*_mainWindow(mainWind),*/
+	_mainWindow(mainWind),
 	_signinWindow(nullptr),
 	_username(nullptr),
 	_password(nullptr),
@@ -20,7 +20,7 @@ ConnectWindow::ConnectWindow(const ConnectWindow& other) :
 	centerLayout(nullptr),
 	center(nullptr),
 
-	/*_mainWindow(mainWind),*/
+	_mainWindow(other._mainWindow),
 	_signinWindow(nullptr),
 	_username(nullptr),
 	_password(nullptr),
@@ -113,9 +113,9 @@ void ConnectWindow::connection(){
 	if(_username->text() != "" && _password->text() != ""){
 		mcd::logs(mcd::Logger::Debug, "Add API connection here");
 
-		/*_mainWindow.init();
+		_mainWindow.initWindow();
 		_mainWindow.show();
-		this->hide();*/
+		this->hide();
 	}
 }
 

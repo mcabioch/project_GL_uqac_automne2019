@@ -8,10 +8,10 @@ int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	mcd::logger.init("res/log.conf");
 
-	/*MainWindow w;
-	w.hide();*/
+	MainWindow w;
+	w.hide();
 
-	ConnectWindow cw/*(w)*/;
+	ConnectWindow cw(w);
 	cw.show();
 
 	SigninWindow sw(&cw);

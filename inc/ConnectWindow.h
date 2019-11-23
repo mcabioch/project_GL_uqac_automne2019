@@ -1,9 +1,7 @@
 #ifndef HEADER_CONNECTWINDOW
 #define HEADER_CONNECTWINDOW
 
-#include "includes.h"
-
-//#include "MainWindow.h"
+#include "MainWindow.h"
 #include "SigninWindow.h"
 
 /*!
@@ -19,7 +17,7 @@ class ConnectWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of ConnectWindow */
 			/*! \brief	The constructor of the class */
-			ConnectWindow(/*MainWindow& mainWind, */QWidget* parent = nullptr);
+			ConnectWindow(MainWindow& mainWind, QWidget* parent = nullptr);
 			virtual ~ConnectWindow();
 		/* Getters of ConnectWindow */
 			
@@ -80,7 +78,7 @@ class ConnectWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			/*MainWindow& _mainWindow;*/
+			MainWindow& _mainWindow;
 			SigninWindow* _signinWindow;
 
 			QLineEdit* _username;
