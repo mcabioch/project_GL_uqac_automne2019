@@ -3,28 +3,21 @@
 #include "ConnectWindow.h"
 
 int main(int argc, char** argv) {
+	mcd::arguments.addProg(argc, argv);
+
 	QApplication app(argc, argv);
 	mcd::logger.init("res/log.conf");
 
-	MainWindow w;
-	w.hide();
+	/*MainWindow w;
+	w.hide();*/
 
-	/*ConnectWindow cw(w);
+	ConnectWindow cw/*(w)*/;
 	cw.show();
 
 	SigninWindow sw(&cw);
-	sw.hide();*/
-	ConnectWindow* cw;
-
-	SigninWindow sw(cw);
 	sw.hide();
 
-	cw = new ConnectWindow(w);
-	cw->show();
+	cw.link(&sw);
 
-	auto out = app.exec();
-
-	deletePtr(cw);
-
-	return out;
+	return app.exec();
 }

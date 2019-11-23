@@ -97,7 +97,7 @@ CXXWARNINGS += -Wwrite-strings -Wredundant-decls -Wdouble-promotion -Winit-self 
 CCXXFLAGS = -I$(INCDIR) $(CCXXWARNINGS)
 
 ifeq ($(DEBUG), yes)
-	CCXXFLAGS += -g -ggdb -Werror -Wfatal-errors -Og
+	CCXXFLAGS += -g -ggdb -Og -Werror -DDEBUG
 else
 	CCXXFLAGS += -O2 -s
 endif
@@ -251,7 +251,7 @@ all:
 	echo "\nQT += gui core widgets" >> $(PROJECTFILE)
 #
 	qmake
-	echo "\nCXXFLAGS +=  -std=c++14 -Iinc" >> Makefile
+	echo "\nCXXFLAGS +=  $(CXXFLAGS)" >> Makefile
 #
 	$(MAKE) -f $(QTMAKEFILE) all SUBLIBS="$(QTLIBS)"
 

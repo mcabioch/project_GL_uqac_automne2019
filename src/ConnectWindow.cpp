@@ -1,109 +1,127 @@
 #include "ConnectWindow.h"
 
-ConnectWindow::ConnectWindow(MainWindow& mainWind, SigninWindow& signinWind, QWidget* parent) :
+ConnectWindow::ConnectWindow(/*MainWindow& mainWind, */QWidget* parent) :
 	QMainWindow(parent),
 	centerLayout(nullptr),
 	center(nullptr),
 
-	_mainWindow(mainWind),
-	_vspacer(nullptr),
-	_hspacer(nullptr),
-	_hlayouts(),
+	/*_mainWindow(mainWind),*/
+	_signinWindow(nullptr),
 	_username(nullptr),
 	_password(nullptr),
 	_connect(nullptr),
 	_signin(nullptr)
 {
+	this->init();
+}
+
+ConnectWindow::ConnectWindow(const ConnectWindow& other) :
+	QMainWindow(other.parentWidget()),
+	centerLayout(nullptr),
+	center(nullptr),
+
+	/*_mainWindow(mainWind),*/
+	_signinWindow(nullptr),
+	_username(nullptr),
+	_password(nullptr),
+	_connect(nullptr),
+	_signin(nullptr)
+{
+	*this = other;
+}
+
+ConnectWindow& ConnectWindow::operator=(const ConnectWindow& other){
+	this->init(&other);
+	return *this;
+}
+
+ConnectWindow::~ConnectWindow(){
+	mcd::logs(mcd::Logger::Debug, "ConnectWindow destroyed");
+}
+
+void ConnectWindow::init(const ConnectWindow*){
 	/* Base */
 		center = new QWidget;
 		centerLayout = new QVBoxLayout;
 
-		size_t w = 640;
-		size_t h = 480;
 		this->setWindowTitle("Login - Planning Generator");
-		this->resize(w, h);
-		this->move(getDesktopWidth()/2 - w/2, getDesktopHeight()/2 - h/2);
 		this->setCentralWidget(center);
 
 		center->setLayout(centerLayout);
 	/********/
 
 	this->setStyleSheet(QString(cssReader("res/connect.css").c_str()));
-
-	_vspacer = new QVSpacerItem();
-	_hspacer = new QHSpacerItem();
+	size_t w = 640;
+	size_t h = 480;
+	this->resize(static_cast<int>(w), static_cast<int>(h));
+	this->move(static_cast<int>(getDesktopWidth()/2 - w/2), static_cast<int>(getDesktopHeight()/2 - h/2));
 
 	_username = new QLineEdit();
 	_password = new QLineEdit();
 	_connect = new QPushButton("Connect");
-	_signin = new QLabel("Create account");
+	_signin = new QCommandLinkButton("Create account");
 
 	_password->setEchoMode(QLineEdit::Password);
 	_connect->setCursor(QCursor(Qt::PointingHandCursor));
 	_signin->setCursor(QCursor(Qt::PointingHandCursor));
 
-	_hlayouts["username"] = new QHBoxLayout();
-	_hlayouts["password"] = new QHBoxLayout();
-	_hlayouts["connect"] = new QHBoxLayout();
-	_hlayouts["signin"] = new QHBoxLayout();
+	auto hl_username = new QHBoxLayout();
+	auto hl_password = new QHBoxLayout();
+	auto hl_connect = new QHBoxLayout();
+	auto hl_signin = new QHBoxLayout();
 
-	_hlayouts["username"]->addItem(_hspacer);
-	_hlayouts["username"]->addWidget(new QLabel("Username : "));
-	_hlayouts["username"]->addWidget(_username);
-	_hlayouts["username"]->addItem(_hspacer);
+	hl_username->addItem(new QHSpacerItem());
+	hl_username->addWidget(new QLabel("Username : "));
+	hl_username->addWidget(_username);
+	hl_username->addItem(new QHSpacerItem());
 
-	_hlayouts["password"]->addItem(_hspacer);
-	_hlayouts["password"]->addWidget(new QLabel("Password : "));
-	_hlayouts["password"]->addWidget(_password);
-	_hlayouts["password"]->addItem(_hspacer);
+	hl_password->addItem(new QHSpacerItem());
+	hl_password->addWidget(new QLabel("Password : "));
+	hl_password->addWidget(_password);
+	hl_password->addItem(new QHSpacerItem());
 
-	_hlayouts["connect"]->addItem(_hspacer);
-	_hlayouts["connect"]->addWidget(_connect);
-	_hlayouts["connect"]->addItem(_hspacer);
+	hl_connect->addItem(new QHSpacerItem());
+	hl_connect->addWidget(_connect);
+	hl_connect->addItem(new QHSpacerItem());
 
-	_hlayouts["signin"]->addItem(_hspacer);
-	_hlayouts["signin"]->addWidget(_signin);
-	_hlayouts["signin"]->addItem(_hspacer);
+	hl_signin->addItem(new QHSpacerItem());
+	hl_signin->addWidget(_signin);
+	hl_signin->addItem(new QHSpacerItem());
 
-	centerLayout->addItem(_vspacer);
-	centerLayout->addLayout(_hlayouts["username"]);
-	centerLayout->addLayout(_hlayouts["password"]);
-	centerLayout->addLayout(_hlayouts["connect"]);
-	centerLayout->addLayout(_hlayouts["signin"]);
-	centerLayout->addItem(_vspacer);
+	centerLayout->addItem(new QVSpacerItem());
+	centerLayout->addLayout(hl_username);
+	centerLayout->addLayout(hl_password);
+	centerLayout->addLayout(hl_connect);
+	centerLayout->addLayout(hl_signin);
+	centerLayout->addItem(new QVSpacerItem());
 
 	connect(_connect, SIGNAL(released()), this, SLOT(connection()));
+	connect(_signin, SIGNAL(released()), this, SLOT(signingin()));
+	mcd::logs(mcd::Logger::Debug, "ConnectWindow created");
 }
 
-ConnectWindow::~ConnectWindow(){
-	for(auto& item : _hlayouts){
-		clearLayout(item.second);
-	}
+void ConnectWindow::showEvent(QShowEvent* event){
+	size_t w = 640;
+	size_t h = 480;
+	this->resize(static_cast<int>(w), static_cast<int>(h));
+	this->move(static_cast<int>(getDesktopWidth()/2 - w/2), static_cast<int>(getDesktopHeight()/2 - h/2));
 
-	clearLayout(centerLayout);
-
-	deletePtr(_hspacer);
-	deletePtr(_username);
-	deletePtr(_password);
-	deletePtr(_connect);
-	deletePtr(_signin);
-
-	for(auto& item : _hlayouts){
-		deletePtr(item.second);
-	}
-
-	deletePtr(_vspacer);
-
-	deletePtr(centerLayout);
-	deletePtr(center);
+	event->accept();
 }
 
 void ConnectWindow::connection(){
 	if(_username->text() != "" && _password->text() != ""){
 		mcd::logs(mcd::Logger::Debug, "Add API connection here");
 
-		_mainWindow.init();
+		/*_mainWindow.init();
 		_mainWindow.show();
+		this->hide();*/
+	}
+}
+
+void ConnectWindow::signingin(){
+	if(_signinWindow != nullptr){
+		_signinWindow->show();
 		this->hide();
 	}
 }

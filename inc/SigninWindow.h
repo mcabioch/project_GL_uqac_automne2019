@@ -1,8 +1,7 @@
 #ifndef HEADER_SIGNINWINDOW
 #define HEADER_SIGNINWINDOW
 
-#include "PAL.h"
-#include "MCD.h"
+#include "includes.h"
 
 /*!
 * \class	SigninWindow
@@ -17,8 +16,10 @@ class SigninWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of SigninWindow */
 			/*! \brief	The constructor of the class */
-			SigninWindow(QMainWindow*& connectWindow, QWidget* parent = nullptr);
+			SigninWindow(QMainWindow* connectWindow, QWidget* parent = nullptr);
 			virtual ~SigninWindow();
+
+			
 		/* Getters of SigninWindow */
 			
 		/* Setters of SigninWindow */
@@ -33,7 +34,8 @@ class SigninWindow : public QMainWindow {
 			
 
 	public slots:
-		
+		void signingin();
+		void connection();
 
 	signals:
 		
@@ -48,10 +50,14 @@ class SigninWindow : public QMainWindow {
 		/* Friends of SigninWindow */
 			
 		/* Others members of SigninWindow */
-			
+			void showEvent(QShowEvent* event);
 
 	private:
-		
+		SigninWindow(const SigninWindow& other);
+		SigninWindow& operator=(const SigninWindow& other);
+		void init(const SigninWindow* other = nullptr);
+
+		void backConnect();
 
 	/* Atttributes of SigninWindow */
 	public:
@@ -73,7 +79,13 @@ class SigninWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			QMainWindow*& _connectWindow;
+			QMainWindow* _connectWindow;
+
+			QLineEdit* _username;
+			QLineEdit* _password;
+			QLineEdit* _passwordConf;
+			QPushButton* _signin;
+			QCommandLinkButton* _connect;
 };
 
 #endif //HEADER_SIGNINWINDOW

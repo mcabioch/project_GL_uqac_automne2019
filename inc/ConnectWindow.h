@@ -1,10 +1,9 @@
 #ifndef HEADER_CONNECTWINDOW
 #define HEADER_CONNECTWINDOW
 
-#include "PAL.h"
-#include "MCD.h"
+#include "includes.h"
 
-#include "MainWindow.h"
+//#include "MainWindow.h"
 #include "SigninWindow.h"
 
 /*!
@@ -20,7 +19,7 @@ class ConnectWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of ConnectWindow */
 			/*! \brief	The constructor of the class */
-			ConnectWindow(MainWindow& mainWind, SigninWindow& signinWind, QWidget* parent = nullptr);
+			ConnectWindow(/*MainWindow& mainWind, */QWidget* parent = nullptr);
 			virtual ~ConnectWindow();
 		/* Getters of ConnectWindow */
 			
@@ -33,10 +32,13 @@ class ConnectWindow : public QMainWindow {
 		/* Friends of ConnectWindow */
 			
 		/* Others members of ConnectWindow */
-			
+			inline void link(SigninWindow* wind){
+				_signinWindow = wind;
+			}
 
 	public slots:
 		void connection();
+		void signingin();
 
 	signals:
 		
@@ -51,10 +53,12 @@ class ConnectWindow : public QMainWindow {
 		/* Friends of ConnectWindow */
 			
 		/* Others members of ConnectWindow */
-			
+			void showEvent(QShowEvent* event);
 
 	private:
-		
+		ConnectWindow(const ConnectWindow& other);
+		ConnectWindow& operator=(const ConnectWindow& other);
+		void init(const ConnectWindow* other = nullptr);
 
 	/* Atttributes of ConnectWindow */
 	public:
@@ -76,16 +80,13 @@ class ConnectWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			MainWindow& _mainWindow;
+			/*MainWindow& _mainWindow;*/
+			SigninWindow* _signinWindow;
 
-			QVSpacerItem* _vspacer;
-			QHSpacerItem* _hspacer;
-
-			std::map<std::string, QHBoxLayout*> _hlayouts;
 			QLineEdit* _username;
 			QLineEdit* _password;
 			QPushButton* _connect;
-			QLabel* _signin;
+			QCommandLinkButton* _signin;
 };
 
 #endif //HEADER_CONNECTWINDOW
