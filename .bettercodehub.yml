@@ -6,3 +6,5 @@ exclude:
 - lib/*
 - doc/*
 - inc/C++/*.hpp
+- inc/Widgets/*.hpp
+- inc/Widgets/*.cpp
