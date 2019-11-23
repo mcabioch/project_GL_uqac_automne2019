@@ -8,3 +8,6 @@ exclude:
 - inc/C++/*.hpp
 - inc/Widgets/*.hpp
 - inc/Widgets/*.cpp
+include:
+- inc/*.h
+- inc/*.hpp
