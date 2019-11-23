@@ -19,7 +19,9 @@ MainWindow::MainWindow(QWidget* parent) :
 
 		this->showMaximized();
 	/********/
+}
 
+void MainWindow::init(){
 	_weekdays.push_back("Monday");
 	_weekdays.push_back("Tuesday");
 	_weekdays.push_back("Wednesday");

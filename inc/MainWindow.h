@@ -34,7 +34,7 @@ class MainWindow : public QMainWindow {
 		/* Friends of MainWindow */
 			
 		/* Others members of MainWindow */
-			
+			void init();
 
 	public slots:
 		

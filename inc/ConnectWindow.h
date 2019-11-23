@@ -20,7 +20,7 @@ class ConnectWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of ConnectWindow */
 			/*! \brief	The constructor of the class */
-			ConnectWindow(QWidget* parent = nullptr);
+			ConnectWindow(MainWindow& mainWind, QWidget* parent = nullptr);
 			virtual ~ConnectWindow();
 		/* Getters of ConnectWindow */
 			
@@ -75,6 +75,8 @@ class ConnectWindow : public QMainWindow {
 		/* Local */
 			QVBoxLayout* centerLayout;
 			QWidget* center;
+
+			MainWindow& _mainWindow;
 
 			QVSpacerItem* _vspacer;
 			QHSpacerItem* _hspacer;
