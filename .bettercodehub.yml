@@ -6,5 +6,6 @@ exclude:
 - *.pro
 - *.md
 - .*/*
+- inc/C++/*
 languages:
 - cpp
