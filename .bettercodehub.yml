@@ -5,7 +5,6 @@ exclude:
 - doc/*
 - *.pro
 - *.md
-- .*/*
 - inc/C++/*
 - inc/C++/Widgets/*
 languages:
