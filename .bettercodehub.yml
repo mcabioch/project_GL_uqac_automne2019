@@ -1,11 +1,11 @@
 component_depth: 2
-exclude:
-- res/*
-- lib/*
-- doc/*
-- *.pro
-- *.md
-- inc/C++/*
-- inc/C++/Widgets/*
 languages:
-- cpp
+- name: cpp
+  exclude:
+  - res/*
+  - lib/*
+  - doc/*
+  - *.pro
+  - *.md
+  - inc/C++/*
+  - inc/C++/Widgets/*
