@@ -5,7 +5,6 @@ ConnectWindow::ConnectWindow(QWidget* parent) :
 	centerLayout(nullptr),
 	center(nullptr),
 
-	_mainWindow(nullptr),
 	_vspacer(nullptr),
 	_hspacer(nullptr),
 	_hlayouts(),
@@ -100,6 +99,11 @@ ConnectWindow::~ConnectWindow(){
 
 void ConnectWindow::connection(){
 	if(_username->text() != "" && _password->text() != ""){
-		mcd::logs(mcd::Logger::Debug, "clicked !");
+		mcd::logs(mcd::Logger::Debug, "Add API connection here");
+
+		MainWindow mainWindow();
+		this->close();
+
+		mainWindow.show();
 	}
 }

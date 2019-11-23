@@ -76,8 +76,6 @@ class ConnectWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			MainWindow* _mainWindow;
-
 			QVSpacerItem* _vspacer;
 			QHSpacerItem* _hspacer;
 
