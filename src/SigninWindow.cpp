@@ -135,7 +135,7 @@ void SigninWindow::signingin(){
 		std::string grey("170");
 		_passwordConf->setStyleSheet((border + "border: 1px solid rgb(" + grey + ", " + grey + ", " + grey + ");").c_str());
 
-		mcd::logs(mcd::Logger::Debug, "Add API connection here");
+		mcd::logs(mcd::Logger::Warn, "Add API connection here");
 		this->backConnect();
 	}
 }

@@ -1,7 +1,28 @@
-2019-11-23 15:05:04 [ DEBUG ] src/MainWindow.cpp:51 : MainWindow created
-2019-11-23 15:05:05 [ DEBUG ] src/ConnectWindow.cpp:100 : ConnectWindow created
-2019-11-23 15:05:05 [ DEBUG ] src/SigninWindow.cpp:104 : SigninWindow created
-2019-11-23 15:05:17 [ DEBUG ] src/ConnectWindow.cpp:114 : Add API connection here
-2019-11-23 15:05:41 [ DEBUG ] src/SigninWindow.cpp:40 : SigninWindow destroyed
-2019-11-23 15:05:41 [ DEBUG ] src/ConnectWindow.cpp:39 : ConnectWindow destroyed
-2019-11-23 15:05:41 [ DEBUG ] src/MainWindow.cpp:31 : MainWindow destroyed
+2019-11-23 16:52:04 [ DEBUG ] src/MainWindow.cpp:83 : MainWindow created
+2019-11-23 16:52:04 [ DEBUG ] src/ConnectWindow.cpp:100 : ConnectWindow created
+2019-11-23 16:52:04 [ DEBUG ] src/SigninWindow.cpp:104 : SigninWindow created
+2019-11-23 16:52:15 [ WARNING ] src/ConnectWindow.cpp:114 : Add API connection here
+2019-11-23 16:52:15 [ WARNING ] src/MainWindow.cpp:97 : Add API connection here
+2019-11-23 16:52:15 [ WARNING ] src/MainWindow_TabTeam.cpp:47 : Add API connection here
+2019-11-23 16:52:15 [ DEBUG ] src/MainWindow_TabPlanning.cpp:21 : ----------- Planning test -----------
+
+2019-11-23 16:52:15 [ DEBUG ] src/MainWindow_TabPlanning.cpp:22 : ### Dataset
+ Minimum start hour : 6
+Maximum stop hour  : 16.5
+Nb hours worked per week : 35
+Worked days ;
+	- Monday
+	- Tuesday
+	- Wednesday
+	- Thursday
+	- Friday
+	- Saturday
+ 
+ 3 
+
+2019-11-23 16:52:15 [ WARNING ] src/MainWindow_TabPlanning.cpp:28 : Add API connection here
+2019-11-23 16:52:15 [ DEBUG ] src/MainWindow_TabPlanning.cpp:29 : -------------------------------------
+
+2019-11-23 16:52:21 [ DEBUG ] src/SigninWindow.cpp:40 : SigninWindow destroyed
+2019-11-23 16:52:21 [ DEBUG ] src/ConnectWindow.cpp:39 : ConnectWindow destroyed
+2019-11-23 16:52:21 [ DEBUG ] src/MainWindow.cpp:63 : MainWindow destroyed

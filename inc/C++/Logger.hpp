@@ -99,6 +99,7 @@ namespace mcd {
 
 					DateTime date;
 					std::stringstream sstr;
+					_actLevel = level;
 
 					sstr << date.get() << " [ ";
 
@@ -183,7 +184,27 @@ namespace mcd {
 				write.close();
 
 				#ifdef DEBUG
-					std::cout << sstr.str();
+					std::stringstream output;
+
+					switch(_actLevel){
+						case Debug:
+						case Info:
+							output << Color(Colors::BLUE_F);
+							break;
+						case Warn:
+							output << Color(Colors::LIGHT_YELLOW_F);
+							break;
+						case Error:
+						case Fatal:
+							output << Color(Colors::RED_F);
+							break;
+						default:
+							break;
+					}
+
+					output << sstr.str();
+					output << Color(Colors::NORMAL);
+					std::cout << output.str();
 				#endif
 
 				return;
@@ -216,6 +237,7 @@ namespace mcd {
 
 				std::string _logFile;
 				Level _printedLevel;
+				Level _actLevel;
 	};
 
 	extern Logger logger;

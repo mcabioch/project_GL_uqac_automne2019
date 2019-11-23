@@ -1,7 +1,12 @@
 #ifndef HEADER_MAINWINDOW
 #define HEADER_MAINWINDOW
 
-#include "GeneralTab.hpp"
+#include "includes.h"
+
+#include "Globals.h"
+#include "TeamMember.h"
+#include "Planning.h"
+#include "AddMemberModal.h"
 
 /*!
 * \class	MainWindow
@@ -78,9 +83,9 @@ class MainWindow : public QMainWindow {
 
 			std::vector<QString> _weekdays;
 
-	//#include "MainWindow_TabGeneral.h"
-	//#include "MainWindow_TabTeam.h"
-	//#include "MainWindow_TabPlanning.h"
+	#include "MainWindow_TabGeneral.h"
+	#include "MainWindow_TabTeam.h"
+	#include "MainWindow_TabPlanning.h"
 };
 
 #endif //HEADER_MAINWINDOW

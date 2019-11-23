@@ -111,7 +111,7 @@ void ConnectWindow::showEvent(QShowEvent* event){
 
 void ConnectWindow::connection(){
 	if(_username->text() != "" && _password->text() != ""){
-		mcd::logs(mcd::Logger::Debug, "Add API connection here");
+		mcd::logs(mcd::Logger::Warn, "Add API connection here");
 
 		_mainWindow.initWindow();
 		_mainWindow.show();

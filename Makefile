@@ -55,6 +55,9 @@ SOURCES       = src/AddMemberModal.cpp \
 		src/Globals.cpp \
 		src/main.cpp \
 		src/MainWindow.cpp \
+		src/MainWindow_TabGeneral.cpp \
+		src/MainWindow_TabPlanning.cpp \
+		src/MainWindow_TabTeam.cpp \
 		src/Planning.cpp \
 		src/SigninWindow.cpp \
 		src/TeamMember.cpp \
@@ -67,6 +70,9 @@ OBJECTS       = AddMemberModal.o \
 		Globals.o \
 		main.o \
 		MainWindow.o \
+		MainWindow_TabGeneral.o \
+		MainWindow_TabPlanning.o \
+		MainWindow_TabTeam.o \
 		Planning.o \
 		SigninWindow.o \
 		TeamMember.o \
@@ -153,6 +159,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/Globals.h \
 		inc/includes.h \
 		inc/MainWindow.h \
+		inc/MainWindow_TabGeneral.h \
+		inc/MainWindow_TabPlanning.h \
+		inc/MainWindow_TabTeam.h \
 		inc/Planning.h \
 		inc/SigninWindow.h \
 		inc/TeamMember.h \
@@ -241,6 +250,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Globals.cpp \
 		src/main.cpp \
 		src/MainWindow.cpp \
+		src/MainWindow_TabGeneral.cpp \
+		src/MainWindow_TabPlanning.cpp \
+		src/MainWindow_TabTeam.cpp \
 		src/Planning.cpp \
 		src/SigninWindow.cpp \
 		src/TeamMember.cpp \
@@ -426,8 +438,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/AddMemberModal.h inc/ConnectWindow.h inc/Globals.h inc/includes.h inc/MainWindow.h inc/Planning.h inc/SigninWindow.h inc/TeamMember.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/AddMemberModal.cpp src/ConnectWindow.cpp src/Globals.cpp src/main.cpp src/MainWindow.cpp src/Planning.cpp src/SigninWindow.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/AddMemberModal.h inc/ConnectWindow.h inc/Globals.h inc/includes.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/Planning.h inc/SigninWindow.h inc/TeamMember.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/AddMemberModal.cpp src/ConnectWindow.cpp src/Globals.cpp src/main.cpp src/MainWindow.cpp src/MainWindow_TabGeneral.cpp src/MainWindow_TabPlanning.cpp src/MainWindow_TabTeam.cpp src/Planning.cpp src/SigninWindow.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -482,6 +494,10 @@ moc_ConnectWindow.cpp: inc/MainWindow.h \
 		inc/Globals.h \
 		inc/TeamMember.h \
 		inc/Planning.h \
+		inc/AddMemberModal.h \
+		inc/MainWindow_TabGeneral.h \
+		inc/MainWindow_TabTeam.h \
+		inc/MainWindow_TabPlanning.h \
 		inc/SigninWindow.h \
 		inc/ConnectWindow.h \
 		moc_predefs.h \
@@ -496,6 +512,10 @@ moc_MainWindow.cpp: inc/includes.h \
 		inc/Globals.h \
 		inc/TeamMember.h \
 		inc/Planning.h \
+		inc/AddMemberModal.h \
+		inc/MainWindow_TabGeneral.h \
+		inc/MainWindow_TabTeam.h \
+		inc/MainWindow_TabPlanning.h \
 		inc/MainWindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -539,6 +559,15 @@ main.o: src/main.cpp
 
 MainWindow.o: src/MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o src/MainWindow.cpp
+
+MainWindow_TabGeneral.o: src/MainWindow_TabGeneral.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow_TabGeneral.o src/MainWindow_TabGeneral.cpp
+
+MainWindow_TabPlanning.o: src/MainWindow_TabPlanning.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow_TabPlanning.o src/MainWindow_TabPlanning.cpp
+
+MainWindow_TabTeam.o: src/MainWindow_TabTeam.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow_TabTeam.o src/MainWindow_TabTeam.cpp
 
 Planning.o: src/Planning.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Planning.o src/Planning.cpp
