@@ -1,11 +1,7 @@
 #ifndef HEADER_MAINWINDOW
 #define HEADER_MAINWINDOW
 
-#include "includes.h"
-
-#include "Globals.h"
-#include "TeamMember.h"
-#include "Planning.h"
+#include "GeneralTab.hpp"
 
 /*!
 * \class	MainWindow

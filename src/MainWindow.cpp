@@ -28,6 +28,8 @@ MainWindow& MainWindow::operator=(const MainWindow& other){
 }
 
 MainWindow::~MainWindow(){
+	mcd::logs(mcd::Logger::Debug, "MainWindow destroyed");
+
 	if(_tab == nullptr){
 		return;
 	}
@@ -46,7 +48,7 @@ void MainWindow::init(const MainWindow*){
 		this->showMaximized();
 	/********/
 
-	mcd::logs(mcd::Logger::Debug, "MainWindow created.");
+	mcd::logs(mcd::Logger::Debug, "MainWindow created");
 }
 
 void MainWindow::initWindow(){
