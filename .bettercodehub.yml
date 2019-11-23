@@ -7,5 +7,6 @@ exclude:
 - *.md
 - .*/*
 - inc/C++/*
+- inc/C++/Widgets/*
 languages:
 - cpp
