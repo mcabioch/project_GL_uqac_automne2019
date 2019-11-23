@@ -51,6 +51,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = src/AddMemberModal.cpp \
+		src/ConnectWindow.cpp \
 		src/Globals.cpp \
 		src/main.cpp \
 		src/MainWindow.cpp \
@@ -58,10 +59,14 @@ SOURCES       = src/AddMemberModal.cpp \
 		src/MainWindow_TabPlanning.cpp \
 		src/MainWindow_TabTeam.cpp \
 		src/Planning.cpp \
+		src/SigninWindow.cpp \
 		src/TeamMember.cpp \
 		inc/Widgets/QtFunctions.cpp moc_AddMemberModal.cpp \
-		moc_MainWindow.cpp
+		moc_ConnectWindow.cpp \
+		moc_MainWindow.cpp \
+		moc_SigninWindow.cpp
 OBJECTS       = AddMemberModal.o \
+		ConnectWindow.o \
 		Globals.o \
 		main.o \
 		MainWindow.o \
@@ -69,10 +74,13 @@ OBJECTS       = AddMemberModal.o \
 		MainWindow_TabPlanning.o \
 		MainWindow_TabTeam.o \
 		Planning.o \
+		SigninWindow.o \
 		TeamMember.o \
 		QtFunctions.o \
 		moc_AddMemberModal.o \
-		moc_MainWindow.o
+		moc_ConnectWindow.o \
+		moc_MainWindow.o \
+		moc_SigninWindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -147,6 +155,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		project_GL_uqac_automne2019.pro inc/AddMemberModal.h \
+		inc/ConnectWindow.h \
 		inc/Globals.h \
 		inc/MainWindow.h \
 		inc/MainWindow_TabGeneral.h \
@@ -155,11 +164,90 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/MCD.h \
 		inc/PAL.h \
 		inc/Planning.h \
+		inc/SigninWindow.h \
 		inc/TeamMember.h \
+		inc/C++/Animal.hpp \
+		inc/C++/Ant.hpp \
+		inc/C++/Args.hpp \
+		inc/C++/array.hpp \
+		inc/C++/arraysIncludes.hpp \
+		inc/C++/Assert.hpp \
+		inc/C++/AssertionException.hpp \
+		inc/C++/Big.hpp \
+		inc/C++/Big_Comparison.hpp \
+		inc/C++/Big_Constructor.hpp \
+		inc/C++/Big_Maths.hpp \
+		inc/C++/Big_Operator.hpp \
+		inc/C++/Binary.hpp \
+		inc/C++/C++.hpp \
+		inc/C++/C++Entities.hpp \
+		inc/C++/check.hpp \
+		inc/C++/Clock.hpp \
+		inc/C++/collides.hpp \
+		inc/C++/console.hpp \
+		inc/C++/ConsoleTable.hpp \
+		inc/C++/Contraption.hpp \
+		inc/C++/convert.hpp \
+		inc/C++/cryptage.hpp \
+		inc/C++/Date.hpp \
+		inc/C++/DateTime.hpp \
+		inc/C++/defines.hpp \
+		inc/C++/Entities.hpp \
+		inc/C++/Entity.hpp \
+		inc/C++/errors.hpp \
+		inc/C++/files.hpp \
+		inc/C++/Fraction.hpp \
+		inc/C++/Hostile.hpp \
+		inc/C++/Identifier.hpp \
+		inc/C++/includes.hpp \
+		inc/C++/IOConfig.hpp \
+		inc/C++/Logger.hpp \
+		inc/C++/lowIncludes.hpp \
+		inc/C++/macro.hpp \
+		inc/C++/Map.hpp \
+		inc/C++/maths.hpp \
+		inc/C++/Matrix.hpp \
+		inc/C++/Matrix_constructs.hpp \
+		inc/C++/Matrix_core.hpp \
+		inc/C++/Matrix_functions.hpp \
+		inc/C++/Matrix_maths.hpp \
+		inc/C++/Mushroom.hpp \
+		inc/C++/NotCopyable.hpp \
+		inc/C++/NotInstantiable.hpp \
+		inc/C++/Object.hpp \
+		inc/C++/OsDetection.hpp \
+		inc/C++/Path.hpp \
+		inc/C++/Pathfinding.hpp \
+		inc/C++/PathfindingAlgorithms.hpp \
+		inc/C++/PathfindingDijkstra.hpp \
+		inc/C++/PathfindingException.hpp \
+		inc/C++/PathfindingProblem.hpp \
+		inc/C++/Plant.hpp \
+		inc/C++/Player.hpp \
+		inc/C++/PlayerAbstraction.hpp \
+		inc/C++/pointers.hpp \
+		inc/C++/PureVirtual.hpp \
+		inc/C++/Referenced.hpp \
+		inc/C++/RNG.hpp \
+		inc/C++/sorting.hpp \
+		inc/C++/Stone.hpp \
+		inc/C++/string.hpp \
+		inc/C++/strptime.h \
+		inc/C++/system.hpp \
+		inc/C++/Threadable.hpp \
+		inc/C++/Time.hpp \
+		inc/C++/timeFunctions.hpp \
+		inc/C++/Timer.hpp \
+		inc/C++/Tree.hpp \
+		inc/C++/types.hpp \
+		inc/C++/UsefullDefines.hpp \
+		inc/C++/vector.hpp \
+		inc/C++/Vegetal.hpp \
 		inc/Widgets/Qt.hpp \
 		inc/Widgets/QtDefines.hpp \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Widgets/Spacers.hpp src/AddMemberModal.cpp \
+		src/ConnectWindow.cpp \
 		src/Globals.cpp \
 		src/main.cpp \
 		src/MainWindow.cpp \
@@ -167,6 +255,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/MainWindow_TabPlanning.cpp \
 		src/MainWindow_TabTeam.cpp \
 		src/Planning.cpp \
+		src/SigninWindow.cpp \
 		src/TeamMember.cpp \
 		inc/Widgets/QtFunctions.cpp
 QMAKE_TARGET  = project_GL_uqac_automne2019
@@ -350,8 +439,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/AddMemberModal.h inc/Globals.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/MCD.h inc/PAL.h inc/Planning.h inc/TeamMember.h inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/AddMemberModal.cpp src/Globals.cpp src/main.cpp src/MainWindow.cpp src/MainWindow_TabGeneral.cpp src/MainWindow_TabPlanning.cpp src/MainWindow_TabTeam.cpp src/Planning.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/AddMemberModal.h inc/ConnectWindow.h inc/Globals.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/MCD.h inc/PAL.h inc/Planning.h inc/SigninWindow.h inc/TeamMember.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/AddMemberModal.cpp src/ConnectWindow.cpp src/Globals.cpp src/main.cpp src/MainWindow.cpp src/MainWindow_TabGeneral.cpp src/MainWindow_TabPlanning.cpp src/MainWindow_TabTeam.cpp src/Planning.cpp src/SigninWindow.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -383,9 +472,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_AddMemberModal.cpp moc_MainWindow.cpp
+compiler_moc_header_make_all: moc_AddMemberModal.cpp moc_ConnectWindow.cpp moc_MainWindow.cpp moc_SigninWindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_AddMemberModal.cpp moc_MainWindow.cpp
+	-$(DEL_FILE) moc_AddMemberModal.cpp moc_ConnectWindow.cpp moc_MainWindow.cpp moc_SigninWindow.cpp
 moc_AddMemberModal.cpp: inc/Widgets/Qt.hpp \
 		inc/Widgets/QtDefines.hpp \
 		inc/Widgets/Spacers.hpp \
@@ -395,6 +484,27 @@ moc_AddMemberModal.cpp: inc/Widgets/Qt.hpp \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/AddMemberModal.h -o moc_AddMemberModal.cpp
+
+moc_ConnectWindow.cpp: inc/PAL.h \
+		inc/TeamMember.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
+		inc/AddMemberModal.h \
+		inc/MCD.h \
+		inc/Globals.h \
+		inc/Planning.h \
+		inc/MainWindow.h \
+		inc/C++/C++.hpp \
+		inc/MainWindow_TabGeneral.h \
+		inc/MainWindow_TabTeam.h \
+		inc/MainWindow_TabPlanning.h \
+		inc/SigninWindow.h \
+		inc/ConnectWindow.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/ConnectWindow.h -o moc_ConnectWindow.cpp
 
 moc_MainWindow.cpp: inc/PAL.h \
 		inc/TeamMember.h \
@@ -406,6 +516,7 @@ moc_MainWindow.cpp: inc/PAL.h \
 		inc/MCD.h \
 		inc/Globals.h \
 		inc/Planning.h \
+		inc/C++/C++.hpp \
 		inc/MainWindow_TabGeneral.h \
 		inc/MainWindow_TabTeam.h \
 		inc/MainWindow_TabPlanning.h \
@@ -413,6 +524,26 @@ moc_MainWindow.cpp: inc/PAL.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/MainWindow.h -o moc_MainWindow.cpp
+
+moc_SigninWindow.cpp: inc/PAL.h \
+		inc/TeamMember.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
+		inc/AddMemberModal.h \
+		inc/MCD.h \
+		inc/Globals.h \
+		inc/Planning.h \
+		inc/MainWindow.h \
+		inc/C++/C++.hpp \
+		inc/MainWindow_TabGeneral.h \
+		inc/MainWindow_TabTeam.h \
+		inc/MainWindow_TabPlanning.h \
+		inc/SigninWindow.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/SigninWindow.h -o moc_SigninWindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -430,6 +561,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 AddMemberModal.o: src/AddMemberModal.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o AddMemberModal.o src/AddMemberModal.cpp
+
+ConnectWindow.o: src/ConnectWindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ConnectWindow.o src/ConnectWindow.cpp
 
 Globals.o: src/Globals.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Globals.o src/Globals.cpp
@@ -452,6 +586,9 @@ MainWindow_TabTeam.o: src/MainWindow_TabTeam.cpp
 Planning.o: src/Planning.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Planning.o src/Planning.cpp
 
+SigninWindow.o: src/SigninWindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SigninWindow.o src/SigninWindow.cpp
+
 TeamMember.o: src/TeamMember.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TeamMember.o src/TeamMember.cpp
 
@@ -461,8 +598,14 @@ QtFunctions.o: inc/Widgets/QtFunctions.cpp inc/Widgets/QtFunctions.hpp
 moc_AddMemberModal.o: moc_AddMemberModal.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_AddMemberModal.o moc_AddMemberModal.cpp
 
+moc_ConnectWindow.o: moc_ConnectWindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ConnectWindow.o moc_ConnectWindow.cpp
+
 moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp
+
+moc_SigninWindow.o: moc_SigninWindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_SigninWindow.o moc_SigninWindow.cpp
 
 ####### Install
 

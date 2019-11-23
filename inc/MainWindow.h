@@ -1,8 +1,12 @@
 #ifndef HEADER_MAINWINDOW
 #define HEADER_MAINWINDOW
 
+#define DEBUG
+
 #include "PAL.h"
 #include "MCD.h"
+
+#include "C++/C++.hpp"
 
 /*!
 * \class	MainWindow

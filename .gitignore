@@ -6,3 +6,4 @@ inc/Widgets/doc/*
 
 res/test.profile
 res/planning.csv
+res/logs/*.log

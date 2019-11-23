@@ -1,12 +1,14 @@
 #include <QApplication>
 
-#include "MainWindow.h"
+#include "ConnectWindow.h"
 
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
-	MainWindow w;
+	mcd::logger.init("res/log.conf");
 
-	w.show();
+	ConnectWindow cw;
+
+	cw.show();
 
 	return app.exec();
 }

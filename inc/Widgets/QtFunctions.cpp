@@ -126,3 +126,13 @@ std::string cssReader(std::string path){
 
 	return implode(getlines(reader), "\n");
 }
+/******/
+
+void clearLayout(QLayout* layout){
+	if(layout){
+		while(layout->count()){
+			auto item = layout->takeAt(0);
+			layout->removeItem(item);
+		}
+	}
+}

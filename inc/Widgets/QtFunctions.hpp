@@ -143,4 +143,6 @@ std::string replace(const std::string& str, const std::string& from, const std::
 */
 std::string cssReader(std::string path);
 
+void clearLayout(QLayout* layout);
+
 #endif //HEADER_QT_FUNCTIONS
