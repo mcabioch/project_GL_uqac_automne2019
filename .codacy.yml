@@ -1,0 +1,7 @@
+exclude_paths:
+  - inc/C++/**
+  - inc/Widgets/**
+  - doc/**
+  - lib/**
+  - res/**
+  - README.md
