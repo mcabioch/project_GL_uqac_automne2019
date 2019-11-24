@@ -39,16 +39,18 @@ _planningTab(nullptr),\
 _planningLay(nullptr),\
 _planning()
 
-MainWindow::MainWindow(QWidget* parent) :
+MainWindow::MainWindow(Api& api, QWidget* parent) :
 	QMainWindow(parent),
-	MainWindow_INIT_LIST
+	MainWindow_INIT_LIST,
+	_api(api)
 {
 	this->init();
 }
 
 MainWindow::MainWindow(const MainWindow& other) :
 	QMainWindow(other.parentWidget()),
-	MainWindow_INIT_LIST
+	MainWindow_INIT_LIST,
+	_api(other._api)
 {
 	*this = other;
 }

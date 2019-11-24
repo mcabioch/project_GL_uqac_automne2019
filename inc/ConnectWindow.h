@@ -17,7 +17,7 @@ class ConnectWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of ConnectWindow */
 			/*! \brief	The constructor of the class */
-			ConnectWindow(MainWindow& mainWind, QWidget* parent = nullptr);
+			ConnectWindow(MainWindow& mainWind, Api& api, QWidget* parent = nullptr);
 			virtual ~ConnectWindow();
 		/* Getters of ConnectWindow */
 			
@@ -33,10 +33,12 @@ class ConnectWindow : public QMainWindow {
 			inline void link(SigninWindow* wind){
 				_signinWindow = wind;
 			}
+			void test(const std::string& user, const std::string& pass);
 
 	public slots:
 		void connection();
 		void signingin();
+		void goThrough();
 
 	signals:
 		
@@ -78,13 +80,15 @@ class ConnectWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			MainWindow& _mainWindow;
 			SigninWindow* _signinWindow;
 
 			QLineEdit* _username;
 			QLineEdit* _password;
 			QPushButton* _connect;
 			QCommandLinkButton* _signin;
+
+			MainWindow& _mainWindow;
+			Api& _api;
 };
 
 #endif //HEADER_CONNECTWINDOW

@@ -1,9 +1,7 @@
 #ifndef HEADER_TEAMMEMBER
 #define HEADER_TEAMMEMBER
 
-#include <string>
-#include <vector>
-#include "Widgets/Qt.hpp"
+#include "includes.h"
 
 class TeamMember {
     public:

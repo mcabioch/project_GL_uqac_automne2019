@@ -8,16 +8,25 @@ int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	mcd::logger.init("res/log.conf");
 
-	MainWindow w;
+	Api api;
+	if(!api.connection("192.168.0.169")){
+		mcd::logs(mcd::Logger::Fatal, "Impossible to connect to the apis, check your network connection.");
+	}
+
+	MainWindow w(api);
 	w.hide();
 
-	ConnectWindow cw(w);
+	ConnectWindow cw(w, api);
 	cw.show();
 
-	SigninWindow sw(&cw);
+	SigninWindow sw(&cw, api);
 	sw.hide();
 
 	cw.link(&sw);
+
+#if AUTH_DEBUG
+	cw.test("chef", "welcome1");
+#endif
 
 	return app.exec();
 }

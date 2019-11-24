@@ -16,7 +16,7 @@ class SigninWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of SigninWindow */
 			/*! \brief	The constructor of the class */
-			SigninWindow(QMainWindow* connectWindow, QWidget* parent = nullptr);
+			SigninWindow(QMainWindow* connectWindow, Api& api, QWidget* parent = nullptr);
 			virtual ~SigninWindow();
 
 			
@@ -79,13 +79,14 @@ class SigninWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			QMainWindow* _connectWindow;
-
 			QLineEdit* _username;
 			QLineEdit* _password;
 			QLineEdit* _passwordConf;
 			QPushButton* _signin;
 			QCommandLinkButton* _connect;
+
+			QMainWindow* _connectWindow;
+			Api& _api;
 };
 
 #endif //HEADER_SIGNINWINDOW

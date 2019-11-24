@@ -1,12 +1,7 @@
 #ifndef HEADER_PLANNING
 #define HEADER_PLANNING
 
-#include <iostream>
-#include <map>
-#include <vector>
-
-#include "Globals.h"
-#include "TeamMember.h"
+#include "Widgets/Qt.hpp"
 
 class Pause {
 	public:
@@ -26,15 +21,11 @@ class Planning {
 
 		friend std::ostream& operator<<(std::ostream& os, const Planning& p);
 
-		std::string toCSV(const Globals& globals, const std::vector<TeamMember>& teamMembers, std::string separator = ",");
-
 	private:
 		
 
 	private:
-		float _freq;
-		std::map<int, std::map<std::string, std::vector<bool>>> _planning;
-		std::vector<std::string> _weekdays;
+		
 };
 
 #endif //HEADER_PLANNING

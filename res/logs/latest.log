@@ -1,12 +1,13 @@
-2019-11-23 16:52:04 [ DEBUG ] src/MainWindow.cpp:83 : MainWindow created
-2019-11-23 16:52:04 [ DEBUG ] src/ConnectWindow.cpp:100 : ConnectWindow created
-2019-11-23 16:52:04 [ DEBUG ] src/SigninWindow.cpp:104 : SigninWindow created
-2019-11-23 16:52:15 [ WARNING ] src/ConnectWindow.cpp:114 : Add API connection here
-2019-11-23 16:52:15 [ WARNING ] src/MainWindow.cpp:97 : Add API connection here
-2019-11-23 16:52:15 [ WARNING ] src/MainWindow_TabTeam.cpp:47 : Add API connection here
-2019-11-23 16:52:15 [ DEBUG ] src/MainWindow_TabPlanning.cpp:21 : ----------- Planning test -----------
+2019-11-23 21:20:08 [ DEBUG ] src/Api.cpp:9 : Api created
+2019-11-23 21:20:08 [ DEBUG ] src/MainWindow.cpp:85 : MainWindow created
+2019-11-23 21:20:09 [ DEBUG ] src/ConnectWindow.cpp:99 : ConnectWindow created
+2019-11-23 21:20:09 [ DEBUG ] src/SigninWindow.cpp:102 : SigninWindow created
+2019-11-23 21:20:09 [ DEBUG ] src/Api.cpp:37 : url: http://192.168.0.169:8080/auth
+2019-11-23 21:20:09 [ WARNING ] src/MainWindow.cpp:99 : Add API connection here
+2019-11-23 21:20:09 [ WARNING ] src/MainWindow_TabTeam.cpp:47 : Add API connection here
+2019-11-23 21:20:09 [ DEBUG ] src/MainWindow_TabPlanning.cpp:21 : ----------- Planning test -----------
 
-2019-11-23 16:52:15 [ DEBUG ] src/MainWindow_TabPlanning.cpp:22 : ### Dataset
+2019-11-23 21:20:09 [ DEBUG ] src/MainWindow_TabPlanning.cpp:22 : ### Dataset
  Minimum start hour : 6
 Maximum stop hour  : 16.5
 Nb hours worked per week : 35
@@ -20,9 +21,25 @@ Worked days ;
  
  3 
 
-2019-11-23 16:52:15 [ WARNING ] src/MainWindow_TabPlanning.cpp:28 : Add API connection here
-2019-11-23 16:52:15 [ DEBUG ] src/MainWindow_TabPlanning.cpp:29 : -------------------------------------
+2019-11-23 21:20:09 [ DEBUG ] src/MainWindow_TabPlanning.cpp:24 : Id : 0
+Nb hours : 40
+a A
+Days off ;
+	- Monday
+2019-11-23 21:20:09 [ DEBUG ] src/MainWindow_TabPlanning.cpp:24 : Id : 1
+Nb hours : 0
+b B
+Days off ;
+	- Wednesday
+2019-11-23 21:20:09 [ DEBUG ] src/MainWindow_TabPlanning.cpp:24 : Id : 2
+Nb hours : 0
+c C
+Days off ;
+	- Saturday
+2019-11-23 21:20:09 [ WARNING ] src/MainWindow_TabPlanning.cpp:28 : Add API connection here
+2019-11-23 21:20:09 [ DEBUG ] src/MainWindow_TabPlanning.cpp:29 : -------------------------------------
 
-2019-11-23 16:52:21 [ DEBUG ] src/SigninWindow.cpp:40 : SigninWindow destroyed
-2019-11-23 16:52:21 [ DEBUG ] src/ConnectWindow.cpp:39 : ConnectWindow destroyed
-2019-11-23 16:52:21 [ DEBUG ] src/MainWindow.cpp:63 : MainWindow destroyed
+2019-11-23 21:20:39 [ DEBUG ] src/SigninWindow.cpp:38 : SigninWindow destroyed
+2019-11-23 21:20:39 [ DEBUG ] src/ConnectWindow.cpp:37 : ConnectWindow destroyed
+2019-11-23 21:20:39 [ DEBUG ] src/MainWindow.cpp:65 : MainWindow destroyed
+2019-11-23 21:20:39 [ DEBUG ] src/Api.cpp:15 : Api destroyed

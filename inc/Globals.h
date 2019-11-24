@@ -1,9 +1,7 @@
 #ifndef HEADER_GLOBALS
 #define HEADER_GLOBALS
 
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include "Widgets/Qt.hpp"
 
 struct Globals {
 	Globals() :

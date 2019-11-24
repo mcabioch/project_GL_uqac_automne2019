@@ -1,31 +1,29 @@
 #include "ConnectWindow.h"
 
-ConnectWindow::ConnectWindow(MainWindow& mainWind, QWidget* parent) :
-	QMainWindow(parent),
-	centerLayout(nullptr),
-	center(nullptr),
+#define ConnectWindow_INIT_LIST \
+centerLayout(nullptr),\
+center(nullptr),\
+\
+_signinWindow(nullptr),\
+_username(nullptr),\
+_password(nullptr),\
+_connect(nullptr),\
+_signin(nullptr)\
 
+ConnectWindow::ConnectWindow(MainWindow& mainWind, Api& api, QWidget* parent) :
+	QMainWindow(parent),
+	ConnectWindow_INIT_LIST,
 	_mainWindow(mainWind),
-	_signinWindow(nullptr),
-	_username(nullptr),
-	_password(nullptr),
-	_connect(nullptr),
-	_signin(nullptr)
+	_api(api)
 {
 	this->init();
 }
 
 ConnectWindow::ConnectWindow(const ConnectWindow& other) :
 	QMainWindow(other.parentWidget()),
-	centerLayout(nullptr),
-	center(nullptr),
-
+	ConnectWindow_INIT_LIST,
 	_mainWindow(other._mainWindow),
-	_signinWindow(nullptr),
-	_username(nullptr),
-	_password(nullptr),
-	_connect(nullptr),
-	_signin(nullptr)
+	_api(other._api)
 {
 	*this = other;
 }
@@ -97,7 +95,15 @@ void ConnectWindow::init(const ConnectWindow*){
 
 	connect(_connect, SIGNAL(released()), this, SLOT(connection()));
 	connect(_signin, SIGNAL(released()), this, SLOT(signingin()));
+	connect(&_api, SIGNAL(auth_ended()), this, SLOT(goThrough()));
 	mcd::logs(mcd::Logger::Debug, "ConnectWindow created");
+}
+
+void ConnectWindow::test(const std::string& user, const std::string& pass){
+	_username->setText(user.c_str());
+	_password->setText(pass.c_str());
+
+	_connect->click();
 }
 
 void ConnectWindow::showEvent(QShowEvent* event){
@@ -111,12 +117,14 @@ void ConnectWindow::showEvent(QShowEvent* event){
 
 void ConnectWindow::connection(){
 	if(_username->text() != "" && _password->text() != ""){
-		mcd::logs(mcd::Logger::Warn, "Add API connection here");
-
-		_mainWindow.initWindow();
-		_mainWindow.show();
-		this->hide();
+		_api.auth(_username->text().toStdString(), _password->text().toStdString());
 	}
+}
+
+void ConnectWindow::goThrough(){
+	_mainWindow.initWindow();
+	_mainWindow.show();
+	this->hide();
 }
 
 void ConnectWindow::signingin(){

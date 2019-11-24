@@ -248,7 +248,7 @@ QTMAKEFILE = Makefile QMAKE=qmake
 all:
 	qmake -project
 	if [ ! -f $(PROJECTFILE) ]; then qmake -project; fi
-	echo "\nQT += gui core widgets" >> $(PROJECTFILE)
+	echo "\nQT += network gui core widgets" >> $(PROJECTFILE)
 #
 	qmake
 	echo "\nCXXFLAGS +=  $(CXXFLAGS)" >> Makefile

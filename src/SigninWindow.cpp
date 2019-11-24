@@ -1,31 +1,29 @@
 #include "SigninWindow.h"
 
-SigninWindow::SigninWindow(QMainWindow* connectWindow, QWidget* parent) :
-	QMainWindow(parent),
-	centerLayout(nullptr),
-	center(nullptr),
+#define SigninWindow_INIT_LIST \
+centerLayout(nullptr),\
+center(nullptr),\
+\
+_username(nullptr),\
+_password(nullptr),\
+_passwordConf(nullptr),\
+_signin(nullptr),\
+_connect(nullptr)\
 
+SigninWindow::SigninWindow(QMainWindow* connectWindow, Api& api, QWidget* parent) :
+	QMainWindow(parent),
+	SigninWindow_INIT_LIST,
 	_connectWindow(connectWindow),
-	_username(nullptr),
-	_password(nullptr),
-	_passwordConf(nullptr),
-	_signin(nullptr),
-	_connect(nullptr)
+	_api(api)
 {
 	this->init();
 }
 
 SigninWindow::SigninWindow(const SigninWindow& other) :
 	QMainWindow(other.parentWidget()),
-	centerLayout(nullptr),
-	center(nullptr),
-
+	SigninWindow_INIT_LIST,
 	_connectWindow(other._connectWindow),
-	_username(nullptr),
-	_password(nullptr),
-	_passwordConf(nullptr),
-	_signin(nullptr),
-	_connect(nullptr)
+	_api(other._api)
 {
 	*this = other;
 }
@@ -135,7 +133,7 @@ void SigninWindow::signingin(){
 		std::string grey("170");
 		_passwordConf->setStyleSheet((border + "border: 1px solid rgb(" + grey + ", " + grey + ", " + grey + ");").c_str());
 
-		mcd::logs(mcd::Logger::Warn, "Add API connection here");
+		_api.signin();
 		this->backConnect();
 	}
 }

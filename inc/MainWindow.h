@@ -3,8 +3,6 @@
 
 #include "includes.h"
 
-#include "Globals.h"
-#include "TeamMember.h"
 #include "Planning.h"
 #include "AddMemberModal.h"
 
@@ -21,7 +19,7 @@ class MainWindow : public QMainWindow {
 			
 		/* Constructors & Destructor of MainWindow */
 			/*! \brief	The constructor of the class */
-			MainWindow(QWidget* parent = nullptr);
+			MainWindow(Api& api, QWidget* parent = nullptr);
 			virtual ~MainWindow();
 		/* Getters of MainWindow */
 			
@@ -79,6 +77,7 @@ class MainWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
+
 			QTabWidget* _tab;
 
 			std::vector<QString> _weekdays;
@@ -86,6 +85,8 @@ class MainWindow : public QMainWindow {
 	#include "MainWindow_TabGeneral.h"
 	#include "MainWindow_TabTeam.h"
 	#include "MainWindow_TabPlanning.h"
+
+			Api& _api;
 };
 
 #endif //HEADER_MAINWINDOW
