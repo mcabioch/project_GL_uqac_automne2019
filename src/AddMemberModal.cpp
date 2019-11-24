@@ -67,31 +67,14 @@ void AddMemberModal::addNewMember() {
 	_api.signin(AuthUser(_register->_username->text().toStdString(), _register->_password->text().toStdString()),
 				AuthMember(_register->_firstName->text().toStdString(), _register->_lastName->text().toStdString(),
 							_register->getDaysOff(), _register->_hoursPerWeek->value()));
-	mcd::logs(mcd::Logger::Warn, "Add API connection here");
 }
 
 void AddMemberModal::addingNewMember(const std::string& id){
-	//int memberId = static_cast<int>(_teamMembers.size())+1;
-	int pos = _teamTable.rowCount();
 	double hpw = _register->_hoursPerWeek->value();
 	QString fn = _register->_firstName->text();
 	QString ln = _register->_lastName->text();
 
-	//_teamMembers.push_back(TeamMember(memberId, hpw, fn, ln, _daysOff));
 	_teamMembers.push_back(TeamMember(id, hpw, fn, ln, _daysOff));
-
-	QString doff = _teamMembers.back().daysOffToQString();
-	_teamTable.insertRow(pos);
-
-	//QTableWidgetItem *idItem = new QTableWidgetItem(QString::number(memberId));
-	QTableWidgetItem *idItem = new QTableWidgetItem(id.c_str());
-	idItem->setFlags(idItem->flags() ^ Qt::ItemIsEditable);
-
-	_teamTable.setItem(pos, Columns::ID, idItem);
-	_teamTable.setItem(pos, Columns::FIRSTNAME, new QTableWidgetItem(fn));
-	_teamTable.setItem(pos, Columns::LASTNAME, new QTableWidgetItem(ln));
-	_teamTable.setItem(pos, Columns::NBHOURS, new QTableWidgetItem(QString::number(hpw)));
-	_teamTable.setItem(pos, Columns::DAYSOFF, new QTableWidgetItem(doff));
 
 	this->close();
 }

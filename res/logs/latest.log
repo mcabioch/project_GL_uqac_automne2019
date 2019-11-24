@@ -1,0 +1,12 @@
+2019-11-24 12:45:03 [ DEBUG ] src/Api.cpp:10 : Api created
+2019-11-24 12:45:03 [ DEBUG ] src/MainWindow.cpp:95 : MainWindow created
+2019-11-24 12:45:03 [ DEBUG ] src/ConnectWindow.cpp:103 : ConnectWindow created
+2019-11-24 12:45:03 [ DEBUG ] src/RegisterWidget.cpp:96 : RegisterWidget created
+2019-11-24 12:45:03 [ DEBUG ] src/SigninWindow.cpp:88 : SigninWindow created
+2019-11-24 12:45:03 [ DEBUG ] src/Api.cpp:221 : url: http://34.95.48.165:8080/auth
+2019-11-24 12:45:04 [ WARNING ] src/Api.cpp:83 : Get all
+2019-11-24 12:45:26 [ DEBUG ] src/SigninWindow.cpp:37 : SigninWindow destroyed
+2019-11-24 12:45:26 [ DEBUG ] src/RegisterWidget.cpp:38 : RegisterWidget destroyed
+2019-11-24 12:45:26 [ DEBUG ] src/ConnectWindow.cpp:37 : ConnectWindow destroyed
+2019-11-24 12:45:26 [ DEBUG ] src/MainWindow.cpp:68 : MainWindow destroyed
+2019-11-24 12:45:26 [ DEBUG ] src/Api.cpp:16 : Api destroyed

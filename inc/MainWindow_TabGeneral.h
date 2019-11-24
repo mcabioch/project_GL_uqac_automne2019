@@ -49,6 +49,7 @@ private:
 	void initGeneralTab(QTabWidget* tabWidget, Globals initGlob);
 	void resetGeneralTab(QTabWidget* tabWidget);
 	void deleteGeneralTab(QTabWidget* tabWidget);
+	void setValues(Globals initGlob);
 
 	Globals translate();
 	QTime getQTimeFromFloat(float time);
@@ -95,5 +96,6 @@ private:
 
 		QAction* _saveAct;
 		QAction* _genAct;
+		QAction* _syncAct;
 
 #endif //HEADER_MAINWINDOW_TAB_GENERAL

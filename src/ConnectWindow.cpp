@@ -95,6 +95,10 @@ void ConnectWindow::init(const ConnectWindow*){
 
 	connect(_connect, SIGNAL(released()), this, SLOT(connection()));
 	connect(_signin, SIGNAL(released()), this, SLOT(signingin()));
+
+	connect(&_api, SIGNAL(auth_ended()), this, SLOT(reenableLinks()));
+	connect(&_api, SIGNAL(auth_error()), this, SLOT(reenableLinks()));
+
 	connect(&_api, SIGNAL(auth_ended()), this, SLOT(goThrough()));
 	mcd::logs(mcd::Logger::Debug, "ConnectWindow created");
 }
@@ -121,6 +125,8 @@ void ConnectWindow::showEvent(QShowEvent* event){
 
 void ConnectWindow::connection(){
 	if(_username->text() != "" && _password->text() != ""){
+		_connect->setEnabled(false);
+		_signin->setEnabled(false);
 		_api.auth(_username->text().toStdString(), _password->text().toStdString());
 	}
 }
@@ -129,6 +135,11 @@ void ConnectWindow::goThrough(){
 	_mainWindow.initWindow();
 	_mainWindow.show();
 	this->hide();
+}
+
+void ConnectWindow::reenableLinks(){
+	_connect->setEnabled(true);
+	_signin->setEnabled(true);
 }
 
 void ConnectWindow::signingin(){

@@ -80,6 +80,11 @@ void SigninWindow::init(const SigninWindow*){
 
 	connect(_signin, SIGNAL(released()), this, SLOT(signingin()));
 	connect(_connect, SIGNAL(released()), this, SLOT(connection()));
+
+	connect(&_api, SIGNAL(signin_ended()), this, SLOT(reenableLinks()));
+	connect(&_api, SIGNAL(signin_error()), this, SLOT(reenableLinks()));
+
+	connect(&_api, SIGNAL(signin_ended()), this, SLOT(goThrough()));
 	mcd::logs(mcd::Logger::Debug, "SigninWindow created");
 }
 
@@ -119,9 +124,20 @@ void SigninWindow::signingin(){
 					AuthMember(_registerer->_firstName->text().toStdString(), _registerer->_lastName->text().toStdString(),
 								_registerer->getDaysOff(), _registerer->_hoursPerWeek->value()),
 					_teamName->text().toStdString());
-		mcd::logs(mcd::Logger::Warn, "Add API connection here");
-		this->backConnect();
+
+		_signin->setEnabled(false);
+		_connect->setEnabled(false);
 	}
+}
+
+void SigninWindow::goThrough(){
+	mcd::logs(mcd::Logger::Warn, "Add API connection here");
+	this->backConnect();
+}
+
+void SigninWindow::reenableLinks(){
+	_signin->setEnabled(true);
+	_connect->setEnabled(true);
 }
 
 void SigninWindow::connection(){

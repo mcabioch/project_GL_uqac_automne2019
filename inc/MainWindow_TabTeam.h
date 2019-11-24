@@ -73,5 +73,6 @@ private:
 
 		std::vector<TeamMember> teamMembers;
 		std::vector<TeamMember> selectedTeamMembers;
+		bool _autoChange;
 
 #endif //HEADER_MAINWINDOW_TAB_TEAM

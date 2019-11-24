@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
 	mcd::logger.init("res/log.conf");
 
 	Api api;
-	if(!api.connection("34.95.48.165")){
+	if(!api.connection("http://34.95.48.165")){
 		mcd::logs(mcd::Logger::Fatal, "Impossible to connect to the apis, check your network connection.");
 	}
 
@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
 
 	cw.link(&sw);
 
-	//cw.testConnect("chef", "welcome1");
+	cw.testConnect("chef", "welcome1");
 	//cw.testRegister();
 
 	return app.exec();

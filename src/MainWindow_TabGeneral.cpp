@@ -71,8 +71,13 @@ void MainWindow::initGeneralTab(QTabWidget* tabWidget){
 	_genAct = new QAction(generateIcon, tr("&Generate the planning"), this);
 	_genAct->setStatusTip(tr("Generate the planning"));
 
+	const QIcon synchronizeIcon = QIcon("./res/icons/sync-icon.png");
+	_syncAct = new QAction(synchronizeIcon, tr("&Synchronize datas"), this);
+	_syncAct->setStatusTip(tr("Synchronize datas"));
+
 	_g_toolBar->addAction(_saveAct);
 	_g_toolBar->addAction(_genAct);
+	_g_toolBar->addAction(_syncAct);
 
 	_g_toolBar->setMovable(false);
 	_g_toolBar->setFloatable(false);
@@ -84,30 +89,42 @@ void MainWindow::initGeneralTab(QTabWidget* tabWidget){
 
 	connect(_saveAct, SIGNAL(triggered()), this, SLOT(generalSaveDatas()));
 	connect(_genAct, SIGNAL(triggered()), this, SLOT(generalCalculate()));
+	connect(_syncAct, SIGNAL(triggered()), &_api, SLOT(getAll()));
 
 	connect(&_api, SIGNAL(save_ended()), this, SLOT(reenableSave()));
+	connect(&_api, SIGNAL(save_error()), this, SLOT(reenableSave()));
+
 	connect(&_api, SIGNAL(compute_ended()), this, SLOT(reenableGen()));
+	connect(&_api, SIGNAL(compute_error()), this, SLOT(reenableGen()));
+
 	connect(&_api, SIGNAL(save_ended()), this, SLOT(computeIfNeeded()));
 }
 
 void MainWindow::initGeneralTab(QTabWidget* tabWidget, Globals initGlob){
 	initGeneralTab(tabWidget);
+	setValues(initGlob);
+}
 
+void MainWindow::setValues(Globals initGlob){
 /* Init values with initGlob */
 	_g_minTimeEdit->setTime(getQTimeFromFloat(initGlob.startMin));
 	_g_maxTimeEdit->setTime(getQTimeFromFloat(initGlob.endMax));
 	_g_defaultHoursEdit->setValue(initGlob.nbHours);
 
+	if(initGlob.workedDays.size() == 7){
+		_g_allCheckbox->setCheckState(Qt::Checked);
+		return;
+	}
+
+	_g_allCheckbox->setCheckState(Qt::Unchecked);
+
+	for(auto& checkbox : _g_daysCheckboxes){
+		checkbox.second->setCheckState(Qt::Unchecked);
+	}
 	for(auto& day : initGlob.workedDays){
 		_g_daysCheckboxes[day.c_str()]->setCheckState(Qt::Checked);
 	}
-	if(initGlob.workedDays.size() == 7){
-		_g_allCheckbox->setCheckState(Qt::Checked);
-	}
 /*****************************/
-
-	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
-			this, SLOT(g_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
 }
 
 void MainWindow::deleteGeneralTab(QTabWidget*/* tabWidget*/){
@@ -138,7 +155,6 @@ void MainWindow::generalSaveDatas(){
 
 	_saveAct->setEnabled(false);
 	_api.save(globals, Planning());
-	mcd::logs(mcd::Logger::Warn, "Add API connection here");
 }
 
 void MainWindow::reenableSave(){
@@ -147,17 +163,13 @@ void MainWindow::reenableSave(){
 
 void MainWindow::reenableGen(){
 	_genAct->setEnabled(true);
+	_api.getAll();
 }
 
 void MainWindow::computeIfNeeded(){
 	if(_genAct->isEnabled()){
 		return;
 	}
-
-	auto globals = translate();
-	//_planning.calculate(globals, teamMembers, _weekdays);
-
-	mcd::logs(mcd::Logger::Warn, "Add API connection here");
 	_api.compute();
 }
 
@@ -203,6 +215,5 @@ void MainWindow::resetGeneralTab(QTabWidget* tabWidget){
 }
 
 void MainWindow::g_setAll(const Globals& gl, const std::vector<TeamMember>&, const Planning&){
-	deleteGeneralTab(_tab);
-	initGeneralTab(_tab, gl);
+	setValues(gl);
 }

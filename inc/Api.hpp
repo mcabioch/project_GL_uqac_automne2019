@@ -75,12 +75,21 @@ class Api : public QObject {
 			void signin(const AuthUser& user, const AuthMember& member);
 
 			void save(const Globals& team, const Planning& planning);
-			void getAll();
+			void saveMembers(const std::vector<TeamMember>& team);
+			void deleteMember(const std::string& id);
 
 			void compute();
 
 	public slots:
+		void getAll();
+
 		void auth_end(QNetworkReply* reply);
+		void register_end(QNetworkReply* reply);
+		void signin_end(QNetworkReply* reply);
+		void save_end(QNetworkReply* reply);
+		void saveMembers_end(QNetworkReply* reply);
+		void getAll_end(QNetworkReply* reply);
+		void compute_end(QNetworkReply* reply);
 
 	signals:
 		void auth_ended();
@@ -95,8 +104,11 @@ class Api : public QObject {
 		void save_ended();
 		void save_error();
 
+		void saveMembers_ended();
+		void saveMembers_error();
+
 		void getAll_ended(const Globals& globals, const std::vector<TeamMember>& teamMembers, const Planning& planning);
-		void getAll_error(const Globals& globals, const std::vector<TeamMember>& teamMembers, const Planning& planning);
+		void getAll_error();
 
 		void compute_ended();
 		void compute_error();
@@ -114,7 +126,7 @@ class Api : public QObject {
 			std::string base64_encode(const std::string& str);
 
 	private:
-		
+		std::string createUrl(const std::string& str);
 
 	/* Atttributes of Api */
 	public:

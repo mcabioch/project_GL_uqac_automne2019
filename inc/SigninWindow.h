@@ -36,6 +36,8 @@ class SigninWindow : public QMainWindow {
 	public slots:
 		void signingin();
 		void connection();
+		void goThrough();
+		void reenableLinks();
 
 	signals:
 		

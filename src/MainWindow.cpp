@@ -24,6 +24,7 @@ _g_defaultHoursLabel(nullptr),\
 _g_toolBar(nullptr),\
 _saveAct(nullptr),\
 _genAct(nullptr),\
+_syncAct(nullptr),\
 \
 _teamTab(nullptr),\
 _teamCenter(nullptr),\
@@ -33,6 +34,7 @@ _teamTable(nullptr),\
 selectedMember(0),\
 teamMembers(),\
 selectedTeamMembers(),\
+_autoChange(false),\
 \
 _p_globals(),\
 _p_teamMembers(),\
@@ -83,14 +85,18 @@ void MainWindow::init(const MainWindow*){
 		this->showMaximized();
 	/********/
 
+	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
+			this, SLOT(g_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
+	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
+			this, SLOT(t_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
+	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
+			this, SLOT(p_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
+
 	mcd::logs(mcd::Logger::Debug, "MainWindow created");
 }
 
 void MainWindow::initWindow(){
 	_tab = new QTabWidget();
-
-	mcd::logs(mcd::Logger::Warn, "Add API connection here");
-	_api.getAll();
 
 	std::ifstream reader;
 	reader.open("res/test.profile");
@@ -108,4 +114,15 @@ void MainWindow::initWindow(){
 	initPlanningTab(_tab);
 
 	centerLayout->addWidget(_tab);
+	_api.getAll();
+}
+
+void MainWindow::closeEvent(QCloseEvent* event){
+	QMessageBox::StandardButton reply = QMessageBox::warning(this, "Confirmation", "Are you sure you want to quit ?", QMessageBox::No | QMessageBox::Yes);
+
+	if(reply == QMessageBox::Yes) {
+		event->accept();
+	} else {
+		event->ignore();
+	}
 }

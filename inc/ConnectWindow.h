@@ -40,6 +40,7 @@ class ConnectWindow : public QMainWindow {
 		void connection();
 		void signingin();
 		void goThrough();
+		void reenableLinks();
 
 	signals:
 		
