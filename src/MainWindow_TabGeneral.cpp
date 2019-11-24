@@ -191,8 +191,8 @@ Globals MainWindow::translate(){
 QTime MainWindow::getQTimeFromFloat(float time){
 	int t = static_cast<int>(time);
 	int h = t;
-	int m = static_cast<int>((t - h) * 60);
-	int s = static_cast<int>((t - h - static_cast<int>(m/60.0)) * 3600);
+	int m = static_cast<int>((time - static_cast<float>(h)) * 60);
+	int s = static_cast<int>((time - static_cast<float>(h) - static_cast<float>(m)/60.0F) * 3600);
 
 	return QTime(h, m, s);
 }

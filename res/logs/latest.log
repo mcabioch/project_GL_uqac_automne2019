@@ -1,7 +1,0 @@
-2019-11-24 02:36:33 [ WARNING ] src/Api.cpp:58 : Signin for register
-2019-11-24 02:36:33 [ WARNING ] src/SigninWindow.cpp:122 : Add API connection here
-2019-11-24 02:36:56 [ WARNING ] src/MainWindow.cpp:92 : Add API connection here
-2019-11-24 02:36:56 [ WARNING ] src/Api.cpp:72 : Get all
-2019-11-24 02:37:07 [ WARNING ] src/Api.cpp:68 : Save all
-2019-11-24 02:37:07 [ WARNING ] src/MainWindow_TabGeneral.cpp:141 : Add API connection here
-2019-11-24 02:37:10 [ WARNING ] src/Api.cpp:68 : Save all
