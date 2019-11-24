@@ -1,6 +1,6 @@
 #include "TeamMember.h"
 
-TeamMember::TeamMember(int id, double nbHours, QString firstName, QString lastName, const std::vector<QString> &daysOff) :
+TeamMember::TeamMember(const std::string& id, double nbHours, QString firstName, QString lastName, const std::vector<QString> &daysOff) :
 	_id(id),
 	_nbHours(nbHours),
 	_firstName(firstName),

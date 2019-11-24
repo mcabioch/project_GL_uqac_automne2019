@@ -21,9 +21,7 @@ class Planning {
 
 		friend std::ostream& operator<<(std::ostream& os, const Planning& p);
 
-	private:
-		
-
+		bool get()const { return true; }
 	private:
 		
 };

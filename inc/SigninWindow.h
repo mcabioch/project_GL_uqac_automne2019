@@ -1,7 +1,7 @@
 #ifndef HEADER_SIGNINWINDOW
 #define HEADER_SIGNINWINDOW
 
-#include "includes.h"
+#include "RegisterWidget.h"
 
 /*!
 * \class	SigninWindow
@@ -79,9 +79,8 @@ class SigninWindow : public QMainWindow {
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
-			QLineEdit* _username;
-			QLineEdit* _password;
-			QLineEdit* _passwordConf;
+			RegisterWidget* _registerer;
+			QLineEdit* _teamName;
 			QPushButton* _signin;
 			QCommandLinkButton* _connect;
 

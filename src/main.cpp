@@ -9,9 +9,17 @@ int main(int argc, char** argv) {
 	mcd::logger.init("res/log.conf");
 
 	Api api;
-	if(!api.connection("192.168.0.169")){
+	if(!api.connection("34.95.48.165")){
 		mcd::logs(mcd::Logger::Fatal, "Impossible to connect to the apis, check your network connection.");
 	}
+
+	mcd::arguments.add("weekdays", "Monday");
+	mcd::arguments.add("weekdays", "Tuesday");
+	mcd::arguments.add("weekdays", "Wednesday");
+	mcd::arguments.add("weekdays", "Thursday");
+	mcd::arguments.add("weekdays", "Friday");
+	mcd::arguments.add("weekdays", "Saturday");
+	mcd::arguments.add("weekdays", "Sunday");
 
 	MainWindow w(api);
 	w.hide();
@@ -24,9 +32,8 @@ int main(int argc, char** argv) {
 
 	cw.link(&sw);
 
-#if AUTH_DEBUG
-	cw.test("chef", "welcome1");
-#endif
+	//cw.testConnect("chef", "welcome1");
+	//cw.testRegister();
 
 	return app.exec();
 }

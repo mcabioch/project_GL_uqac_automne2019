@@ -4,11 +4,10 @@
 centerLayout(nullptr),\
 center(nullptr),\
 \
-_username(nullptr),\
-_password(nullptr),\
-_passwordConf(nullptr),\
+_registerer(nullptr),\
+_teamName(nullptr),\
 _signin(nullptr),\
-_connect(nullptr)\
+_connect(nullptr)
 
 SigninWindow::SigninWindow(QMainWindow* connectWindow, Api& api, QWidget* parent) :
 	QMainWindow(parent),
@@ -49,37 +48,20 @@ void SigninWindow::init(const SigninWindow*){
 		center->setLayout(centerLayout);
 	/********/
 
-	_username = new QLineEdit;
-	_password = new QLineEdit;
-	_passwordConf = new QLineEdit;
+	_registerer = new RegisterWidget();
+	_teamName = new QLineEdit;
 	_signin = new QPushButton("Create account");
 	_connect = new QCommandLinkButton("Connection");
 
-	_password->setEchoMode(QLineEdit::Password);
-	_passwordConf->setEchoMode(QLineEdit::Password);
+	_teamName->setPlaceholderText("Team Name");
 	_signin->setCursor(QCursor(Qt::PointingHandCursor));
 	_connect->setCursor(QCursor(Qt::PointingHandCursor));
 
-	auto hl_username = new QHBoxLayout;
-	auto hl_password = new QHBoxLayout;
-	auto hl_passwordConf = new QHBoxLayout;
+	auto fl_team = new QFormLayout;
 	auto hl_signin = new QHBoxLayout;
 	auto hl_connect = new QHBoxLayout;
 
-	hl_username->addItem(new QHSpacerItem);
-	hl_username->addWidget(new QLabel("Username :"));
-	hl_username->addWidget(_username);
-	hl_username->addItem(new QHSpacerItem);
-
-	hl_password->addItem(new QHSpacerItem);
-	hl_password->addWidget(new QLabel("Password :"));
-	hl_password->addWidget(_password);
-	hl_password->addItem(new QHSpacerItem);
-
-	hl_passwordConf->addItem(new QHSpacerItem);
-	hl_passwordConf->addWidget(new QLabel("Confirm password :"));
-	hl_passwordConf->addWidget(_passwordConf);
-	hl_passwordConf->addItem(new QHSpacerItem);
+	fl_team->addWidget(_teamName);
 
 	hl_signin->addItem(new QHSpacerItem);
 	hl_signin->addWidget(_signin);
@@ -90,9 +72,8 @@ void SigninWindow::init(const SigninWindow*){
 	hl_connect->addItem(new QHSpacerItem);
 
 	centerLayout->addItem(new QVSpacerItem);
-	centerLayout->addLayout(hl_username);
-	centerLayout->addLayout(hl_password);
-	centerLayout->addLayout(hl_passwordConf);
+	centerLayout->addWidget(_registerer);
+	centerLayout->addLayout(fl_team);
 	centerLayout->addLayout(hl_signin);
 	centerLayout->addLayout(hl_connect);
 	centerLayout->addItem(new QVSpacerItem);
@@ -118,22 +99,27 @@ void SigninWindow::backConnect(){
 
 void SigninWindow::signingin(){
 	if(_connectWindow != nullptr){
-		if(_password->text() == "" || _passwordConf->text() == "" || _username->text() == ""){
+		if(_registerer->_password->text() == "" || _registerer->_passwordConf->text() == "" || _registerer->_username->text() == ""
+		|| _registerer->_firstName->text() == "" || _registerer->_lastName->text() == "" || _teamName->text() == ""){
 			return;
 		}
 
 		std::string border("border-style: inset; border-radius: 3px; ");
 
-		if(_password->text() != _passwordConf->text()){
-			_passwordConf->setText("");
-			_passwordConf->setStyleSheet((border + "border: 1px solid red;").c_str());
+		if(_registerer->_password->text() != _registerer->_passwordConf->text()){
+			_registerer->_passwordConf->setText("");
+			_registerer->_passwordConf->setStyleSheet((border + "border: 1px solid red;").c_str());
 			return;
 		}
 
 		std::string grey("170");
-		_passwordConf->setStyleSheet((border + "border: 1px solid rgb(" + grey + ", " + grey + ", " + grey + ");").c_str());
+		_registerer->_passwordConf->setStyleSheet((border + "border: 1px solid rgb(" + grey + ", " + grey + ", " + grey + ");").c_str());
 
-		_api.signin();
+		_api.signin(AuthUser(_registerer->_username->text().toStdString(), _registerer->_password->text().toStdString()),
+					AuthMember(_registerer->_firstName->text().toStdString(), _registerer->_lastName->text().toStdString(),
+								_registerer->getDaysOff(), _registerer->_hoursPerWeek->value()),
+					_teamName->text().toStdString());
+		mcd::logs(mcd::Logger::Warn, "Add API connection here");
 		this->backConnect();
 	}
 }

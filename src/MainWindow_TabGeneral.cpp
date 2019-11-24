@@ -38,8 +38,8 @@ void MainWindow::initGeneralTab(QTabWidget* tabWidget){
 	_g_defaultHoursLay->addWidget(_g_defaultHoursEdit);
 	_g_defaultHoursLay->addItem(new QHSpacerItem());
 
-	for(auto& weekday : _weekdays){
-		_g_daysCheckboxes[weekday] = new QCheckBox(weekday);
+	for(auto& weekday : mcd::arguments["weekdays"]){
+		_g_daysCheckboxes[weekday] = new QCheckBox(weekday.c_str());
 		_g_checkDays->addWidget(_g_daysCheckboxes[weekday]);
 	}
 	_g_checkDays->addItem(new QHSpacerItem());
@@ -64,15 +64,15 @@ void MainWindow::initGeneralTab(QTabWidget* tabWidget){
 
 /* Toolbar */
 	const QIcon saveIcon = QIcon("./res/icons/save-icon.png");
-	QAction* saveAct = new QAction(saveIcon, tr("&Save"), this);
-	saveAct->setStatusTip(tr("Save General and Team"));
+	_saveAct = new QAction(saveIcon, tr("&Save"), this);
+	_saveAct->setStatusTip(tr("Save General and Team"));
 
 	const QIcon generateIcon = QIcon("./res/icons/gen-icon.png");
-	QAction* genAct = new QAction(generateIcon, tr("&Generate the planning"), this);
-	genAct->setStatusTip(tr("Generate the planning"));
+	_genAct = new QAction(generateIcon, tr("&Generate the planning"), this);
+	_genAct->setStatusTip(tr("Generate the planning"));
 
-	_g_toolBar->addAction(saveAct);
-	_g_toolBar->addAction(genAct);
+	_g_toolBar->addAction(_saveAct);
+	_g_toolBar->addAction(_genAct);
 
 	_g_toolBar->setMovable(false);
 	_g_toolBar->setFloatable(false);
@@ -82,8 +82,12 @@ void MainWindow::initGeneralTab(QTabWidget* tabWidget){
 
 	connect(_g_allCheckbox, SIGNAL(stateChanged(int)), this, SLOT(generalAllCheckstate(int)));
 
-	connect(saveAct, SIGNAL(triggered()), this, SLOT(generalSaveDatas()));
-	connect(genAct, SIGNAL(triggered()), this, SLOT(generalCalculate()));
+	connect(_saveAct, SIGNAL(triggered()), this, SLOT(generalSaveDatas()));
+	connect(_genAct, SIGNAL(triggered()), this, SLOT(generalCalculate()));
+
+	connect(&_api, SIGNAL(save_ended()), this, SLOT(reenableSave()));
+	connect(&_api, SIGNAL(compute_ended()), this, SLOT(reenableGen()));
+	connect(&_api, SIGNAL(save_ended()), this, SLOT(computeIfNeeded()));
 }
 
 void MainWindow::initGeneralTab(QTabWidget* tabWidget, Globals initGlob){
@@ -101,6 +105,9 @@ void MainWindow::initGeneralTab(QTabWidget* tabWidget, Globals initGlob){
 		_g_allCheckbox->setCheckState(Qt::Checked);
 	}
 /*****************************/
+
+	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
+			this, SLOT(g_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
 }
 
 void MainWindow::deleteGeneralTab(QTabWidget*/* tabWidget*/){
@@ -121,7 +128,7 @@ void MainWindow::generalAllCheckstate(int state){
 		cState = Qt::Checked;
 	}
 
-	for(auto& weekday : _weekdays){
+	for(auto& weekday : mcd::arguments["weekdays"]){
 		_g_daysCheckboxes[weekday]->setCheckState(cState);
 	}
 }
@@ -129,24 +136,38 @@ void MainWindow::generalAllCheckstate(int state){
 void MainWindow::generalSaveDatas(){
 	auto globals = translate();
 
+	_saveAct->setEnabled(false);
+	_api.save(globals, Planning());
 	mcd::logs(mcd::Logger::Warn, "Add API connection here");
+}
 
-	std::ofstream writer;
+void MainWindow::reenableSave(){
+	_saveAct->setEnabled(true);
+}
 
-	writer.open("res/test.profile");
-	writer << globals << std::endl;
-	writer << teamMembers.size() << std::endl;
-	for(auto& member : teamMembers){
-		writer << member << std::endl;
+void MainWindow::reenableGen(){
+	_genAct->setEnabled(true);
+}
+
+void MainWindow::computeIfNeeded(){
+	if(_genAct->isEnabled()){
+		return;
 	}
-	writer.close();
+
+	auto globals = translate();
+	//_planning.calculate(globals, teamMembers, _weekdays);
+
+	mcd::logs(mcd::Logger::Warn, "Add API connection here");
+	_api.compute();
 }
 
 void MainWindow::generalCalculate(){
 	auto globals = translate();
 
-	mcd::logs(mcd::Logger::Warn, "Add API connection here");
-	//_planning.calculate(globals, teamMembers, _weekdays);
+	_saveAct->setEnabled(false);
+	_genAct->setEnabled(false);
+
+	_api.save(globals, Planning());
 }
 
 Globals MainWindow::translate(){
@@ -158,9 +179,9 @@ Globals MainWindow::translate(){
 	out.startMin = static_cast<float>(min.hour()) + static_cast<float>(min.minute()) / 60.0F + static_cast<float>(min.second()) / 3600.0F;
 	out.endMax = static_cast<float>(max.hour()) + static_cast<float>(max.minute()) / 60.0F + static_cast<float>(max.second()) / 3600.0F;
 	out.nbHours = static_cast<float>(_g_defaultHoursEdit->value());
-	for(auto& weekday : _weekdays){
+	for(auto& weekday : mcd::arguments["weekdays"]){
 		if(_g_daysCheckboxes[weekday]->checkState() != Qt::Unchecked){
-			out.workedDays.push_back(weekday.toStdString());
+			out.workedDays.push_back(weekday);
 		}
 	}
 
@@ -179,4 +200,9 @@ QTime MainWindow::getQTimeFromFloat(float time){
 void MainWindow::resetGeneralTab(QTabWidget* tabWidget){
 	deleteGeneralTab(tabWidget);
 	initGeneralTab(tabWidget);
+}
+
+void MainWindow::g_setAll(const Globals& gl, const std::vector<TeamMember>&, const Planning&){
+	deleteGeneralTab(_tab);
+	initGeneralTab(_tab, gl);
 }

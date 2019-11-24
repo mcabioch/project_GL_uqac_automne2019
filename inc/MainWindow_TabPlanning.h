@@ -19,7 +19,7 @@ public:
 		
 
 public slots:
-	
+	void p_setAll(const Globals& gl, const std::vector<TeamMember>& tm, const Planning& pl);
 
 signals:
 	

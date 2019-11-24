@@ -4,7 +4,8 @@ Api::Api() :
 	_managers(),
 	_host(""),
 	_token(""),
-	_username("")
+	_username(""),
+	_teamName("")
 {
 	mcd::logs(mcd::Logger::Debug, "Api created");
 
@@ -52,18 +53,42 @@ void Api::auth(const std::string& user, const std::string& pass){
 	return;
 }
 
+void Api::signin(const AuthUser& user, const AuthMember& member, const std::string& teamName){
+	if(user.username == "" || member.firstname == "" || teamName == ""){}
+	mcd::logs(mcd::Logger::Warn, "Signin for register");
+}
+
+void Api::signin(const AuthUser& user, const AuthMember& member){
+	if(user.username == "" || member.firstname == ""){}
+	mcd::logs(mcd::Logger::Warn, "Signin from modal");
+}
+
+void Api::save(const Globals& team, const Planning& planning){
+	if(team.startMin && planning.get()){}
+	mcd::logs(mcd::Logger::Warn, "Save all");
+}
+
+void Api::getAll(){
+	mcd::logs(mcd::Logger::Warn, "Get all");
+}
+
+void Api::compute(){
+	mcd::logs(mcd::Logger::Warn, "Compute");
+}
+
 /* Slots */
 void Api::auth_end(QNetworkReply* reply){
 	if(reply == nullptr || reply->error() != QNetworkReply::NoError){
+		emit auth_error();
 		return;
 	}
 
-	/*auto headers = reply->rawHeaderPairs();
+	auto headers = reply->rawHeaderPairs();
 
 	mcd::logs(mcd::Logger::Debug, headers.size());
 	for(const auto& header : headers){
 		mcd::logs(mcd::Logger::Debug, header.first.toStdString(), ":", header.second.toStdString());
-	}*/
+	}
 
 	auto body = reply->readAll().toStdString();
 

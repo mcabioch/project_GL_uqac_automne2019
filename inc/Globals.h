@@ -3,18 +3,26 @@
 
 #include "Widgets/Qt.hpp"
 
-struct Globals {
-	Globals() :
-		startMin(0),
-		endMax(0),
-		nbHours(0),
-		workedDays()
-	{}
+class Globals {
+	public:
+		Globals() :
+			startMin(0),
+			endMax(0),
+			nbHours(0),
+			workedDays()
+		{}
 
-	float startMin;
-	float endMax;
-	float nbHours;
-	std::vector<std::string> workedDays;
+		Globals(float start, float end, float hours, const std::vector<std::string>& days) :
+			startMin(start),
+			endMax(end),
+			nbHours(hours),
+			workedDays(days)
+		{}
+
+		float startMin;
+		float endMax;
+		float nbHours;
+		std::vector<std::string> workedDays;
 };
 
 std::ostream& operator<<(std::ostream& os, const Globals& g);

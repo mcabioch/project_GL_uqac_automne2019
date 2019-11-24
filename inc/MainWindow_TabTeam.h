@@ -24,6 +24,8 @@ public slots:
 	void deleteMember();
 	void updateSelectedMember(int row, int);
 
+	void t_setAll(const Globals& gl, const std::vector<TeamMember>& tm, const Planning& pl);
+
 signals:
 	
 

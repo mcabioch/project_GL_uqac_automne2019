@@ -99,11 +99,15 @@ void ConnectWindow::init(const ConnectWindow*){
 	mcd::logs(mcd::Logger::Debug, "ConnectWindow created");
 }
 
-void ConnectWindow::test(const std::string& user, const std::string& pass){
+void ConnectWindow::testConnect(const std::string& user, const std::string& pass){
 	_username->setText(user.c_str());
 	_password->setText(pass.c_str());
 
 	_connect->click();
+}
+
+void ConnectWindow::testRegister(){
+	_signin->click();
 }
 
 void ConnectWindow::showEvent(QShowEvent* event){

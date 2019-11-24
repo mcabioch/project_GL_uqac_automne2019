@@ -33,7 +33,8 @@ class ConnectWindow : public QMainWindow {
 			inline void link(SigninWindow* wind){
 				_signinWindow = wind;
 			}
-			void test(const std::string& user, const std::string& pass);
+			void testConnect(const std::string& user, const std::string& pass);
+			void testRegister();
 
 	public slots:
 		void connection();

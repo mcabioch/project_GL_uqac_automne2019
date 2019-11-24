@@ -13,6 +13,33 @@
 
 #include "Globals.h"
 #include "Planning.h"
+#include "TeamMember.h"
+
+class AuthUser {
+	public:
+		AuthUser(const std::string& user, const std::string& pass) :
+			username(user),
+			password(pass)
+		{}
+
+		std::string username;
+		std::string password;
+};
+
+class AuthMember {
+	public:
+		AuthMember(const std::string& first, const std::string& last, const std::string& days, double hours) :
+			firstname(first),
+			lastname(last),
+			daysOff(days),
+			nbHours(hours)
+		{}
+
+		std::string firstname;
+		std::string lastname;
+		std::string daysOff;
+		double nbHours;
+};
 
 /*!
 * \class	Api
@@ -43,7 +70,14 @@ class Api : public QObject {
 			bool connection(const std::string& host);
 
 			void auth(const std::string& user, const std::string& pass);
-			void signin(){}
+
+			void signin(const AuthUser& user, const AuthMember& member, const std::string& teamName);
+			void signin(const AuthUser& user, const AuthMember& member);
+
+			void save(const Globals& team, const Planning& planning);
+			void getAll();
+
+			void compute();
 
 	public slots:
 		void auth_end(QNetworkReply* reply);
@@ -51,6 +85,21 @@ class Api : public QObject {
 	signals:
 		void auth_ended();
 		void auth_error();
+
+		void signin_ended();
+		void signin_error();
+
+		void signin_ended(const std::string& id);
+		void signin_error(const std::string& id);
+
+		void save_ended();
+		void save_error();
+
+		void getAll_ended(const Globals& globals, const std::vector<TeamMember>& teamMembers, const Planning& planning);
+		void getAll_error(const Globals& globals, const std::vector<TeamMember>& teamMembers, const Planning& planning);
+
+		void compute_ended();
+		void compute_error();
 
 	protected:
 		/* Getters of Api */
@@ -87,6 +136,7 @@ class Api : public QObject {
 		/* Local */
 			std::string _token;
 			std::string _username;
+			std::string _teamName;
 };
 
 #endif //HEADER_API

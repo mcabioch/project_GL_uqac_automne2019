@@ -1,41 +1,29 @@
 #include "AddMemberModal.h"
 
-AddMemberModal::AddMemberModal(QWidget *parent, const std::vector<QString> &weekdays, std::vector<TeamMember> &teamMembers, QTableWidget &teamTable) :
-    QDialog(parent),
+AddMemberModal::AddMemberModal(QWidget *parent, std::vector<TeamMember> &teamMembers, QTableWidget &teamTable, Api& api) :
+	QDialog(parent),
 
-	_checkAll(nullptr),
-	_firstName(nullptr),
-	_lastName(nullptr),
-	_hoursPerWeek(nullptr),
+	_register(nullptr),
 	_confirmButton(nullptr),
 
 	_daysOff(),
-	_weekdays(weekdays),
-    _teamMembers(teamMembers),
-    _teamTable(teamTable),
-
-    _t_daysCheckboxes(),
-    _workTime(0)
+	_teamMembers(teamMembers),
+	_teamTable(teamTable),
+	_api(api)
 {
-    init();
+	init();
 }
 
 AddMemberModal::AddMemberModal(const AddMemberModal& other) :
 	QDialog(other.parentWidget()),
 
-	_checkAll(nullptr),
-	_firstName(nullptr),
-	_lastName(nullptr),
-	_hoursPerWeek(nullptr),
+	_register(nullptr),
 	_confirmButton(nullptr),
 
 	_daysOff(other._daysOff),
-	_weekdays(other._weekdays),
-    _teamMembers(other._teamMembers),
-    _teamTable(other._teamTable),
-
-    _t_daysCheckboxes(other._t_daysCheckboxes),
-    _workTime(other._workTime)
+	_teamMembers(other._teamMembers),
+	_teamTable(other._teamTable),
+	_api(other._api)
 {
 	*this = other;
 }
@@ -46,96 +34,64 @@ AddMemberModal& AddMemberModal::operator=(const AddMemberModal& other){
 }
 
 void AddMemberModal::initWindow() {
-    auto mainLayout = new QGridLayout();
-    auto formLayout = new QVBoxLayout();
-    auto checkDaysOff = new QHBoxLayout();
-    auto hoursPerWeekLay = new QHBoxLayout();
+	auto mainLayout = new QGridLayout();
 
-    _checkAll = new QCheckBox("Check all");
-    _firstName = new QLineEdit();
-    _lastName = new QLineEdit();
-    _hoursPerWeek = new QDoubleSpinBox();
-    _confirmButton = new QPushButton("Add");
+	_register = new RegisterWidget;
+	_confirmButton = new QPushButton("Add");
 
-    _firstName->setPlaceholderText("First name");
-    _lastName->setPlaceholderText("Last name");
-    
-    for(auto& weekday : _weekdays){
-		_t_daysCheckboxes[weekday] = new QCheckBox(weekday);
-		checkDaysOff->addWidget(_t_daysCheckboxes[weekday]);
-	}
+	mainLayout->addWidget(_register, 0, 0);
+	mainLayout->addItem(new QVSpacerItem(), 1, 0);
+	mainLayout->addItem(new QHSpacerItem(), 0, 1);
+	mainLayout->addWidget(_confirmButton, 1, 1);
 
-    hoursPerWeekLay->addWidget(new QLabel("Number of hours per week : "));
-    hoursPerWeekLay->addWidget(_hoursPerWeek);
-    hoursPerWeekLay->addItem(new QHSpacerItem());
+	this->setLayout(mainLayout);
 
-    formLayout->addWidget(new QLabel("Days off :"));
-    formLayout->addWidget(_checkAll);
-    formLayout->addLayout(checkDaysOff);
-    formLayout->addWidget(_firstName);
-    formLayout->addWidget(_lastName);
-    formLayout->addLayout(hoursPerWeekLay);
-
-    mainLayout->addLayout(formLayout, 0, 0);
-    mainLayout->addItem(new QVSpacerItem(), 1, 0);
-    mainLayout->addItem(new QHSpacerItem(), 0, 1);
-    mainLayout->addWidget(_confirmButton, 1, 1);
-
-    this->setLayout(mainLayout);
-
-    connect(_checkAll, SIGNAL(stateChanged(int)), this, SLOT(generalAllCheckstate(int)));
-    connect(_confirmButton, SIGNAL(clicked()), this, SLOT(addNewMember()));
+	connect(_confirmButton, SIGNAL(clicked()), this, SLOT(addNewMember()));
+	connect(&_api, SIGNAL(signin_ended(const std::string&)), this, SLOT(addingNewMember(const std::string&)));
 }
 
 AddMemberModal::~AddMemberModal() {}
 
 void AddMemberModal::init(const AddMemberModal*){
 	this->setWindowTitle("New team member");
-    initWindow();
-}
-
-void AddMemberModal::generalAllCheckstate(int state) {
-    Qt::CheckState cState;
-
-	if(!state){
-		_checkAll->setText("Check all");
-		cState = Qt::Unchecked;
-	} else {
-		_checkAll->setText("Uncheck all");
-		cState = Qt::Checked;
-	}
-
-	for(auto& weekday : _weekdays){
-		_t_daysCheckboxes[weekday]->setCheckState(cState);
-	}
+	initWindow();
 }
 
 void AddMemberModal::addNewMember() {
-    for(auto& checkbox : _t_daysCheckboxes){
+	for(auto& checkbox : _register->_t_daysCheckboxes){
 		if(checkbox.second->checkState() != Qt::Unchecked) {
-            _daysOff.push_back(checkbox.first);
-        }
+			_daysOff.push_back(checkbox.first.c_str());
+		}
 	}
 
-    int memberId = static_cast<int>(_teamMembers.size())+1;
-    int pos = _teamTable.rowCount();
-    double hpw = _hoursPerWeek->value();
-    QString fn = _firstName->text();
-    QString ln = _lastName->text();
-    
-    _teamMembers.push_back(TeamMember(memberId, hpw, fn, ln, _daysOff));
-    
-    QString doff = _teamMembers.back().daysOffToQString();
-    _teamTable.insertRow(pos);
+	_api.signin(AuthUser(_register->_username->text().toStdString(), _register->_password->text().toStdString()),
+				AuthMember(_register->_firstName->text().toStdString(), _register->_lastName->text().toStdString(),
+							_register->getDaysOff(), _register->_hoursPerWeek->value()));
+	mcd::logs(mcd::Logger::Warn, "Add API connection here");
+}
 
-    QTableWidgetItem *idItem = new QTableWidgetItem(QString::number(memberId));
-    idItem->setFlags(idItem->flags() ^ Qt::ItemIsEditable);
+void AddMemberModal::addingNewMember(const std::string& id){
+	//int memberId = static_cast<int>(_teamMembers.size())+1;
+	int pos = _teamTable.rowCount();
+	double hpw = _register->_hoursPerWeek->value();
+	QString fn = _register->_firstName->text();
+	QString ln = _register->_lastName->text();
 
-    _teamTable.setItem(pos, Columns::ID, idItem);
-    _teamTable.setItem(pos, Columns::FIRSTNAME, new QTableWidgetItem(fn));
-    _teamTable.setItem(pos, Columns::LASTNAME, new QTableWidgetItem(ln));
-    _teamTable.setItem(pos, Columns::NBHOURS, new QTableWidgetItem(QString::number(hpw)));
-    _teamTable.setItem(pos, Columns::DAYSOFF, new QTableWidgetItem(doff));
+	//_teamMembers.push_back(TeamMember(memberId, hpw, fn, ln, _daysOff));
+	_teamMembers.push_back(TeamMember(id, hpw, fn, ln, _daysOff));
 
-    this->close();
+	QString doff = _teamMembers.back().daysOffToQString();
+	_teamTable.insertRow(pos);
+
+	//QTableWidgetItem *idItem = new QTableWidgetItem(QString::number(memberId));
+	QTableWidgetItem *idItem = new QTableWidgetItem(id.c_str());
+	idItem->setFlags(idItem->flags() ^ Qt::ItemIsEditable);
+
+	_teamTable.setItem(pos, Columns::ID, idItem);
+	_teamTable.setItem(pos, Columns::FIRSTNAME, new QTableWidgetItem(fn));
+	_teamTable.setItem(pos, Columns::LASTNAME, new QTableWidgetItem(ln));
+	_teamTable.setItem(pos, Columns::NBHOURS, new QTableWidgetItem(QString::number(hpw)));
+	_teamTable.setItem(pos, Columns::DAYSOFF, new QTableWidgetItem(doff));
+
+	this->close();
 }

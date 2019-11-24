@@ -4,7 +4,6 @@
 centerLayout(nullptr),\
 center(nullptr),\
 _tab(nullptr),\
-_weekdays(),\
 \
 _g_tab(nullptr),\
 _g_lay(nullptr),\
@@ -23,6 +22,8 @@ _g_defaultHoursLay(nullptr),\
 _g_defaultHoursEdit(nullptr),\
 _g_defaultHoursLabel(nullptr),\
 _g_toolBar(nullptr),\
+_saveAct(nullptr),\
+_genAct(nullptr),\
 \
 _teamTab(nullptr),\
 _teamCenter(nullptr),\
@@ -86,17 +87,10 @@ void MainWindow::init(const MainWindow*){
 }
 
 void MainWindow::initWindow(){
-	_weekdays.push_back("Monday");
-	_weekdays.push_back("Tuesday");
-	_weekdays.push_back("Wednesday");
-	_weekdays.push_back("Thursday");
-	_weekdays.push_back("Friday");
-	_weekdays.push_back("Saturday");
-	_weekdays.push_back("Sunday");
-
 	_tab = new QTabWidget();
 
 	mcd::logs(mcd::Logger::Warn, "Add API connection here");
+	_api.getAll();
 
 	std::ifstream reader;
 	reader.open("res/test.profile");

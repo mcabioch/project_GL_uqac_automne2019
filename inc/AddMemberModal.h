@@ -1,18 +1,16 @@
 #ifndef HEADER_ADDMEMBERMODAL
 #define HEADER_ADDMEMBERMODAL
 
-#include "includes.h"
-
-#include "TeamMember.h"
+#include "RegisterWidget.h"
 
 class AddMemberModal : public QDialog {
-    Q_OBJECT
+	Q_OBJECT
 
-    public :
-        AddMemberModal(QWidget *parent, const std::vector<QString> &weekdays, std::vector<TeamMember> &teamMembers, QTableWidget &teamTable);
-        virtual ~AddMemberModal();
+	public :
+		AddMemberModal(QWidget *parent, std::vector<TeamMember> &teamMembers, QTableWidget &teamTable, Api& api);
+		virtual ~AddMemberModal();
 
-        enum Columns {
+		enum Columns {
 			ID, FIRSTNAME, LASTNAME, NBHOURS, DAYSOFF
 		};
 
@@ -21,27 +19,22 @@ class AddMemberModal : public QDialog {
 		AddMemberModal& operator=(const AddMemberModal& other);
 		void init(const AddMemberModal* other = nullptr);
 
-    private :
-        QCheckBox* _checkAll;
-        QLineEdit *_firstName;
-        QLineEdit *_lastName;
+	private :
+		RegisterWidget* _register;
+		QPushButton *_confirmButton;
 
-		QDoubleSpinBox *_hoursPerWeek;
-        QPushButton *_confirmButton;
+		std::vector<QString> _daysOff;
+		std::vector<TeamMember> &_teamMembers;
+		QTableWidget &_teamTable;
+		Api& _api;
 
-        std::vector<QString> _daysOff, _weekdays;
-        std::vector<TeamMember> &_teamMembers;
-        QTableWidget &_teamTable;
-		std::map<QString, QCheckBox*> _t_daysCheckboxes;
-        int _workTime;
+		void initWindow();
 
-        void initWindow();
+	public slots:
+		void addNewMember();
+		void addingNewMember(const std::string& id);
 
-    public slots:
-	    void generalAllCheckstate(int state);
-        void addNewMember();
-
-    signals:
+	signals:
 };
 
 #endif

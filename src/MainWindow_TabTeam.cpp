@@ -19,12 +19,6 @@ void MainWindow::initTeamTab(QTabWidget* tabWidget){
 	connect(addAct, &QAction::triggered, this, &MainWindow::addMember);
 	_teamToolBar->addAction(addAct);
 
-	const QIcon editIcon = QIcon("./res/icons/edit-icon.png");
-	QAction *editAct = new QAction(editIcon, tr("&Edit Member"), _teamTab);
-	editAct->setStatusTip(tr("Edit a team member"));
-	connect(editAct, SIGNAL(triggered()), this, SLOT(editMember()));
-	_teamToolBar->addAction(editAct);
-	
 	const QIcon deleteIcon = QIcon("./res/icons/delete-icon.png");
 	QAction *deleteAct = new QAction(deleteIcon, tr("&Delete Member"), _teamTab);
 	deleteAct->setStatusTip(tr("Delete a team member"));
@@ -34,20 +28,22 @@ void MainWindow::initTeamTab(QTabWidget* tabWidget){
 	_teamTable->setColumnCount(5);
 	QStringList headers = { "Id", "First name", "Last name", "Nb of hours per week", "Days off"};
 	_teamTable->setHorizontalHeaderLabels(headers);
+	_teamTable->setColumnHidden(0, true);
 
 	initTeamTable();
 
 	_teamCenter->setLayout(_teamLay);
 	_teamLay->addWidget(_teamTable);
+
+	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
+			this, SLOT(t_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
 }
 
-bool operator==(const TeamMember& a, const int& b){ return (a.getId() == b); }
+bool operator==(const TeamMember& a, const int& b){ return (a.getId() == mcd::tos(b)); }
 
 void MainWindow::initTeamTable() {
-	mcd::logs(mcd::Logger::Warn, "Add API connection here");
-
 	for(auto &e : teamMembers) {
-		_teamTable->setItem(_teamTable->rowCount() - 1, AddMemberModal::Columns::ID, new QTableWidgetItem(QString::number(e.getId())));
+		_teamTable->setItem(_teamTable->rowCount() - 1, AddMemberModal::Columns::ID, new QTableWidgetItem(e.getId().c_str()));
 	}
 
 	connect(_teamTable, SIGNAL(cellClicked(int, int)), this, SLOT(updateSelectedMember(int, int)));
@@ -59,7 +55,7 @@ void MainWindow::updateSelectedMember(int row, int) {
 }
 
 void MainWindow::addMember() {
-	AddMemberModal newMember(this, _weekdays, teamMembers, *_teamTable);
+	AddMemberModal newMember(this, teamMembers, *_teamTable, _api);
 	newMember.setModal(true);
 	newMember.exec();
 }
@@ -123,3 +119,7 @@ void MainWindow::resetTeamTab(QTabWidget* tabWidget){
 	initTeamTab(tabWidget);
 }
 
+void MainWindow::t_setAll(const Globals&, const std::vector<TeamMember>& tm, const Planning&){
+	teamMembers = tm;
+	initTeamTable();
+}
