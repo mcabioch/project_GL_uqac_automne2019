@@ -5,19 +5,15 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.bson.types.ObjectId;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,8 +23,6 @@ public class RegisterController {
 	
 	@Autowired
 	private UserRepository userRepository;
-	
-	private BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
 	
 	public boolean verify(String username, String token) {
 		HttpPost request = new HttpPost("http://localhost:8081/verify");
@@ -46,8 +40,7 @@ public class RegisterController {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		
 		try {
-			CloseableHttpResponse response = httpClient.execute(request);
-			System.out.println(EntityUtils.toString(response.getEntity()));
+			httpClient.execute(request);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -56,10 +49,18 @@ public class RegisterController {
 	}
 
 	@PostMapping("/create")
-	public String createUser(@Valid @RequestBody User user) {
-		user.setId(ObjectId.get());
-		user.setPassword(bCrypt.encode(user.getPassword()));
+	public User createUser(@RequestBody String body) {
+		JSONObject userJson = new JSONObject(body);
+	
+		User user = new User(
+			ObjectId.get(),
+			userJson.get("username").toString(),
+			userJson.get("password").toString(),
+			userJson.get("name").toString(),
+			userJson.get("surname").toString()
+		);
+		
 		userRepository.save(user);
-		return user.getId();
+		return user;
 	}
 }

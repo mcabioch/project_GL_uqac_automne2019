@@ -18,6 +18,7 @@ public class UserController {
 	
 	@GetMapping("/users/{id}")
 	public User getUserById(@PathVariable String id) {
+		if(!ObjectId.isValid(id)) throw new UsernameNotFoundException("User not found");
 		ObjectId _id = new ObjectId(id);
 		User user = userRepository.findById(_id);
 		

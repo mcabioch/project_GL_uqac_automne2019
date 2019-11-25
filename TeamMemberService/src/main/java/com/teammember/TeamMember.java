@@ -14,14 +14,12 @@ public class TeamMember {
 	private String jourDeRepos;
 	private int nbHeures;
 
-	
 	public TeamMember(ObjectId id, ObjectId userId, ObjectId teamId, String jourDeRepos, int nbHeures) {
 		this.setId(id);
 		this.setUserId(userId);
 		this.setTeamId(teamId);
 		this.setJourDeRepos(jourDeRepos);
 		this.setNbHeures(nbHeures);
-		
 	}
 	
 	public String getId() {return id.toHexString();}

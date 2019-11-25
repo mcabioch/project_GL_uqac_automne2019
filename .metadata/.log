@@ -154,3 +154,2061 @@
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:37:31.606
 !MESSAGE executing callback sts4.classpath.VdGPFjOG SUCCESS [done]
+
+!ENTRY org.eclipse.mylyn.tasks.core 2 0 2019-11-24 15:38:41.539
+!MESSAGE Save failed for Task List
+!STACK 1
+org.eclipse.core.runtime.CoreException: Saving Task List failed
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizer.writeTaskList(TaskListExternalizer.java:74)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant$2.execute(TaskListExternalizationParticipant.java:129)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:729)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:720)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant.save(TaskListExternalizationParticipant.java:133)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.AbstractExternalizationParticipant.execute(AbstractExternalizationParticipant.java:70)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.ExternalizationManager$ExternalizationJob.run(ExternalizationManager.java:222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.FileNotFoundException: /home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.mylyn/tasks.xml.zip (Aucun fichier ou dossier de ce type)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:187)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizer.writeTaskList(TaskListExternalizer.java:59)
+	... 7 more
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2019-11-24 15:38:41.540
+!MESSAGE Saving Task List failed
+!STACK 0
+java.io.FileNotFoundException: /home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.mylyn/tasks.xml.zip (Aucun fichier ou dossier de ce type)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:187)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizer.writeTaskList(TaskListExternalizer.java:59)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant$2.execute(TaskListExternalizationParticipant.java:129)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:729)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:720)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant.save(TaskListExternalizationParticipant.java:133)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.AbstractExternalizationParticipant.execute(AbstractExternalizationParticipant.java:70)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.ExternalizationManager$ExternalizationJob.run(ExternalizationManager.java:222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:40:53.559
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VdGPFjOG
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:40:53.559
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.VdGPFjOG
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:40:53.560
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:40:53.560
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VdGPFjOG => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-11-24 15:40:53.821
+!MESSAGE Can't write workspace state
+!STACK 0
+java.io.FileNotFoundException: /home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser (Aucun fichier ou dossier de ce type)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:187)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.writeWorkspaceState(ProjectRegistryReader.java:126)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.writeWorkspaceState(ProjectRegistryManager.java:994)
+	at org.eclipse.m2e.core.internal.MavenPluginActivator$2.saving(MavenPluginActivator.java:151)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:387)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:204)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:207)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1164)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2338)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:509)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.core.resources 4 566 2019-11-24 15:40:53.828
+!MESSAGE Could not save master table to file '/home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources.bak'.
+!STACK 0
+java.io.FileNotFoundException: /home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources.bak (Aucun fichier ou dossier de ce type)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1265)
+	at org.eclipse.core.internal.resources.SaveManager.cleanMasterTable(SaveManager.java:240)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1173)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2338)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:509)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.ui.ide 4 4 2019-11-24 15:40:56.217
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2019-11-24 15:40:56.217
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 566 2019-11-24 15:40:56.217
+!MESSAGE Could not save master table to file '/home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: /home/pierre-alban/Documents/Genie Logiciel/project_GL_uqac_automne2019/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources (Aucun fichier ou dossier de ce type)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1265)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1255)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1232)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2338)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:509)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+!SESSION 2019-11-24 15:40:58.888 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 15:41:06.043
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 15:41:06.043
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52e92f6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@17034458,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 4 4 2019-11-24 15:41:09.993
+!MESSAGE Unable to create part
+!STACK 1
+org.eclipse.ui.PartInitException: Cannot determine URI for '/auth/src/main/java/com/authentication/auth/AuthController.java'.
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3210)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3221)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:340)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:998)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:963)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:408)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:331)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:1002)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1293)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:547)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:531)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:1002)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1086)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1441)
+Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/auth/src/main/java/com/authentication/auth/AuthController.java'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:1013)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1277)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4212)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:260)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1478)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2573)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2546)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1423)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3179)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2313)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3196)
+	... 125 more
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2019-11-24 15:41:09.994
+!MESSAGE Cannot determine URI for '/auth/src/main/java/com/authentication/auth/AuthController.java'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Cannot determine URI for '/auth/src/main/java/com/authentication/auth/AuthController.java'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:1013)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1277)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4212)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:260)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1478)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2573)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2546)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1423)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3179)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2313)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3196)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3221)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:340)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:998)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:963)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:408)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:331)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:1002)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1293)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:547)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:531)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:1002)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:73)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1086)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1441)
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2019-11-24 15:41:09.995
+!MESSAGE Cannot determine URI for '/auth/src/main/java/com/authentication/auth/AuthController.java'.
+
+!ENTRY org.eclipse.ui 2 2 2019-11-24 15:42:01.989
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:53.688
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:53.689
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@34e4a136[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:53.690
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:53.713
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.002
+!MESSAGE Boot LS startup time from start to initialized: 2305ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.101
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.SAlBawQxisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.143
+!MESSAGE subscribing to classpath changes: sts4.classpath.SAlBawQx isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.146
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.148
+!MESSAGE subsribers = {sts4.classpath.SAlBawQx=Send Classpath Notifications(874)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.149
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.149
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.149
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.149
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.149
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.149
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.150
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.150
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.150
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.150
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.150
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.151
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.SAlBawQx => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.184
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.185
+!MESSAGE buffering callback sts4.classpath.SAlBawQx UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.185
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.186
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.187
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.188
+!MESSAGE buffering callback sts4.classpath.SAlBawQx PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.188
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.188
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.190
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.190
+!MESSAGE buffering callback sts4.classpath.SAlBawQx TeamMemberService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.190
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.191
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.193
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.194
+!MESSAGE buffering callback sts4.classpath.SAlBawQx TeamService false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.194
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.195
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.197
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.197
+!MESSAGE buffering callback sts4.classpath.SAlBawQx auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.198
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.198
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.203
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.204
+!MESSAGE buffering callback sts4.classpath.SAlBawQx register false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.204
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.204
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.206
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.206
+!MESSAGE buffering callback sts4.classpath.SAlBawQx verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.206
+!MESSAGE executing callback sts4.classpath.SAlBawQx 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:46:56.334
+!MESSAGE executing callback sts4.classpath.SAlBawQx SUCCESS [done]
+!SESSION 2019-11-24 15:50:18.560 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 15:50:24.772
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 15:50:27.629
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 15:50:27.630
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@320770d7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4769378c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2019-11-24 15:50:40.211
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:36.639
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:36.640
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@592efd6[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:36.641
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:36.667
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.589
+!MESSAGE Boot LS startup time from start to initialized: 1941ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.628
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.yKzFjJcQisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.630
+!MESSAGE subscribing to classpath changes: sts4.classpath.yKzFjJcQ isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.632
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.634
+!MESSAGE subsribers = {sts4.classpath.yKzFjJcQ=Send Classpath Notifications(835)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.634
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.634
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.635
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.636
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.636
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.636
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.yKzFjJcQ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.644
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.645
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.646
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.646
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.648
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.648
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.648
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.649
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.651
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.651
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ TeamMemberService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.651
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.652
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.653
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.654
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ TeamService false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.654
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.655
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.656
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.657
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.657
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.657
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.659
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.660
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ register false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.660
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.661
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.662
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.663
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.663
+!MESSAGE executing callback sts4.classpath.yKzFjJcQ 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 15:54:38.753
+!MESSAGE executing callback sts4.classpath.yKzFjJcQ SUCCESS [done]
+
+!ENTRY org.eclipse.ui 4 0 2019-11-24 15:55:02.800
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController.computeInformation(AdditionalInfoController.java:541)
+	at org.eclipse.jface.text.AbstractInformationControlManager.doShowInformation(AbstractInformationControlManager.java:1101)
+	at org.eclipse.jface.text.AbstractInformationControlManager.showInformation(AbstractInformationControlManager.java:1091)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController.showInformation(AdditionalInfoController.java:530)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$1.showInformation(AdditionalInfoController.java:477)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer.lambda$1(AdditionalInfoController.java:362)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4857)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1441)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:49:00.656
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:49:00.657
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:49:00.658
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:49:00.659
+!MESSAGE buffering callback sts4.classpath.yKzFjJcQ register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:49:00.659
+!MESSAGE executing callback sts4.classpath.yKzFjJcQ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:49:00.667
+!MESSAGE executing callback sts4.classpath.yKzFjJcQ SUCCESS [done]
+!SESSION 2019-11-24 17:57:40.659 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 17:57:46.248
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 17:57:49.035
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 17:57:49.035
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d6a22dd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@67671db1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:57:56.568
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:57:56.579
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@4f1a4d61[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:57:56.580
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:57:56.689
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:57:59.910
+!MESSAGE Boot LS startup time from start to initialized: 3313ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:57:59.995
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.bAqPlVHhisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.006
+!MESSAGE subscribing to classpath changes: sts4.classpath.bAqPlVHh isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.008
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.010
+!MESSAGE subsribers = {sts4.classpath.bAqPlVHh=Send Classpath Notifications(133)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.011
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.011
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.012
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.012
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.012
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.012
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.013
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.013
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.013
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.013
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.013
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.014
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.bAqPlVHh => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.021
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.023
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.024
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.024
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.027
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.028
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh TeamMemberService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.028
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.029
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.033
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.034
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.039
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.040
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.042
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.043
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh TeamService false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.044
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.044
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.048
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.054
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.055
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.055
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.059
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.060
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.060
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.061
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.065
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.067
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.068
+!MESSAGE executing callback sts4.classpath.bAqPlVHh 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 17:58:00.613
+!MESSAGE executing callback sts4.classpath.bAqPlVHh SUCCESS [done]
+
+!ENTRY org.eclipse.ui 4 0 2019-11-24 17:59:46.385
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController.computeInformation(AdditionalInfoController.java:541)
+	at org.eclipse.jface.text.AbstractInformationControlManager.doShowInformation(AbstractInformationControlManager.java:1101)
+	at org.eclipse.jface.text.AbstractInformationControlManager.showInformation(AbstractInformationControlManager.java:1091)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController.showInformation(AdditionalInfoController.java:530)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$1.showInformation(AdditionalInfoController.java:477)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer.lambda$1(AdditionalInfoController.java:362)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4857)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1441)
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-24 18:05:45.919
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-24 18:28:19.246
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 10001 2019-11-24 18:32:19.393
+!MESSAGE Could not find class file. Make sure the file is compilable.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:42:13.653
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:42:13.653
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:42:13.655
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:42:13.655
+!MESSAGE buffering callback sts4.classpath.bAqPlVHh TeamService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:42:13.655
+!MESSAGE executing callback sts4.classpath.bAqPlVHh 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:42:13.661
+!MESSAGE executing callback sts4.classpath.bAqPlVHh SUCCESS [done]
+!SESSION 2019-11-24 18:59:38.932 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 18:59:43.606
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 18:59:46.533
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 18:59:46.533
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@432448,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4452e13c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:54.715
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:54.716
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5c4e86e7[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:54.717
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:54.819
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.779
+!MESSAGE Boot LS startup time from start to initialized: 3053ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.860
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.jXguMRAHisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.897
+!MESSAGE subscribing to classpath changes: sts4.classpath.jXguMRAH isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.899
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.901
+!MESSAGE subsribers = {sts4.classpath.jXguMRAH=Send Classpath Notifications(125)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.902
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.902
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.903
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.903
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.907
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.907
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.908
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.908
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.908
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.908
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.909
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.909
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.jXguMRAH => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.929
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.930
+!MESSAGE buffering callback sts4.classpath.jXguMRAH TeamService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.930
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.931
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.935
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.936
+!MESSAGE buffering callback sts4.classpath.jXguMRAH UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.936
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.940
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.943
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.944
+!MESSAGE buffering callback sts4.classpath.jXguMRAH auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.944
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.945
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.948
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.949
+!MESSAGE buffering callback sts4.classpath.jXguMRAH register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.949
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.950
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.952
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.953
+!MESSAGE buffering callback sts4.classpath.jXguMRAH PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.953
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.953
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.956
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.957
+!MESSAGE buffering callback sts4.classpath.jXguMRAH TeamMemberService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.957
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.957
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.960
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.961
+!MESSAGE buffering callback sts4.classpath.jXguMRAH verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:57.961
+!MESSAGE executing callback sts4.classpath.jXguMRAH 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 18:59:58.065
+!MESSAGE executing callback sts4.classpath.jXguMRAH SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2019-11-24 19:02:52.880
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:32:48.973
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:32:48.974
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:32:48.975
+!MESSAGE classpath=79 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:32:48.976
+!MESSAGE buffering callback sts4.classpath.jXguMRAH TeamMemberService false 79
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:32:48.976
+!MESSAGE executing callback sts4.classpath.jXguMRAH 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:32:48.993
+!MESSAGE executing callback sts4.classpath.jXguMRAH SUCCESS [done]
+!SESSION 2019-11-24 19:34:14.788 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 19:34:19.932
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 19:34:22.748
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 19:34:22.748
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@560be8c0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14d36bb2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:30.812
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:30.813
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@435a13ac[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:30.815
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:30.963
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.076
+!MESSAGE Boot LS startup time from start to initialized: 3198ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.156
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.AhVnkzkMisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.166
+!MESSAGE subscribing to classpath changes: sts4.classpath.AhVnkzkM isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.169
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.171
+!MESSAGE subsribers = {sts4.classpath.AhVnkzkM=Send Classpath Notifications(128)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.172
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.172
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.173
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.173
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.175
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.176
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.176
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.176
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.177
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.177
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.177
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.178
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.AhVnkzkM => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.180
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.182
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM TeamService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.183
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.183
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.185
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.186
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.186
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.186
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.189
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.189
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.189
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.190
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.191
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.192
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.192
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.192
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.194
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.195
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.196
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.196
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.199
+!MESSAGE classpath=79 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.199
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM TeamMemberService false 79
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.200
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.200
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.203
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.203
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.204
+!MESSAGE executing callback sts4.classpath.AhVnkzkM 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:34:34.401
+!MESSAGE executing callback sts4.classpath.AhVnkzkM SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-24 19:35:20.517
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-24 19:35:30.922
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:35:58.950
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:35:58.951
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:35:58.953
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:35:58.953
+!MESSAGE buffering callback sts4.classpath.AhVnkzkM TeamMemberService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:35:58.953
+!MESSAGE executing callback sts4.classpath.AhVnkzkM 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:35:58.962
+!MESSAGE executing callback sts4.classpath.AhVnkzkM SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-24 19:36:03.445
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-24 19:40:06.556
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+!SESSION 2019-11-24 19:43:10.411 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 19:43:16.894
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 19:43:20.050
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 19:43:20.050
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41289e88,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7e8783b0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:27.707
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:27.708
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@161974d1[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:27.713
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:27.770
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.555
+!MESSAGE Boot LS startup time from start to initialized: 2828ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.625
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.NBVJYWGQisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.629
+!MESSAGE subscribing to classpath changes: sts4.classpath.NBVJYWGQ isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.631
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.633
+!MESSAGE subsribers = {sts4.classpath.NBVJYWGQ=Send Classpath Notifications(134)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.633
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.633
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.634
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.634
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.634
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.634
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.635
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.635
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.635
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.635
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.635
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.636
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.NBVJYWGQ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.650
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.650
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ TeamMemberService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.651
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.651
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.653
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.653
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ TeamService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.653
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.654
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.656
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.657
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.657
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.657
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.661
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.662
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.662
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.663
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.665
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.666
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.666
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.667
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.669
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.670
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.670
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.670
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.673
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.673
+!MESSAGE buffering callback sts4.classpath.NBVJYWGQ verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:30.674
+!MESSAGE executing callback sts4.classpath.NBVJYWGQ 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:43:31.309
+!MESSAGE executing callback sts4.classpath.NBVJYWGQ SUCCESS [done]
+!SESSION 2019-11-24 19:45:24.161 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 19:45:28.662
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 19:45:31.180
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 19:45:31.180
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41289e88,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7e8783b0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:38.908
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:38.913
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@38007ead[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:38.915
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:38.999
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.717
+!MESSAGE Boot LS startup time from start to initialized: 2790ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.774
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.jpzSZseRisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.779
+!MESSAGE subscribing to classpath changes: sts4.classpath.jpzSZseR isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.782
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.785
+!MESSAGE subsribers = {sts4.classpath.jpzSZseR=Send Classpath Notifications(133)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.785
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.786
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.786
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.786
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.787
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.787
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.787
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.787
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.787
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.788
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.788
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.788
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.jpzSZseR => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.803
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.804
+!MESSAGE buffering callback sts4.classpath.jpzSZseR TeamMemberService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.804
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.805
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.807
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.807
+!MESSAGE buffering callback sts4.classpath.jpzSZseR TeamService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.808
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.808
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.810
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.811
+!MESSAGE buffering callback sts4.classpath.jpzSZseR PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.811
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.811
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.814
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.815
+!MESSAGE buffering callback sts4.classpath.jpzSZseR UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.815
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.816
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.818
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.819
+!MESSAGE buffering callback sts4.classpath.jpzSZseR auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.819
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.820
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.827
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.827
+!MESSAGE buffering callback sts4.classpath.jpzSZseR register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.828
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.828
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.830
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.831
+!MESSAGE buffering callback sts4.classpath.jpzSZseR verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:41.831
+!MESSAGE executing callback sts4.classpath.jpzSZseR 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 19:45:42.502
+!MESSAGE executing callback sts4.classpath.jpzSZseR SUCCESS [done]
+!SESSION 2019-11-24 20:03:35.234 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.4
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-11-24 20:03:39.962
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2019-11-24 20:03:42.901
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-24 20:03:42.902
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d167630,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3bc18fec,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:50.934
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:50.935
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@6b71fded[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=568)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:50.936
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:51.029
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:53.974
+!MESSAGE Boot LS startup time from start to initialized: 3006ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.053
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vrDrCRRFisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.057
+!MESSAGE subscribing to classpath changes: sts4.classpath.vrDrCRRF isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.060
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.062
+!MESSAGE subsribers = {sts4.classpath.vrDrCRRF=Send Classpath Notifications(132)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.062
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.063
+!MESSAGE project TeamMemberService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.063
+!MESSAGE project TeamService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.064
+!MESSAGE project PlanningService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.064
+!MESSAGE Preparing classpath changed notification TeamMemberService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.064
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.068
+!MESSAGE project UserService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.069
+!MESSAGE project auth ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.069
+!MESSAGE project register ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.069
+!MESSAGE project verification ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.069
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.070
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vrDrCRRF => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.070
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.071
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF TeamMemberService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.073
+!MESSAGE Preparing classpath changed notification TeamService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.073
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.076
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.077
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF TeamService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.077
+!MESSAGE Preparing classpath changed notification PlanningService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.077
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.080
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.086
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF PlanningService false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.086
+!MESSAGE Preparing classpath changed notification UserService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.086
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.094
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.095
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF UserService false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.096
+!MESSAGE Preparing classpath changed notification auth
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.096
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.099
+!MESSAGE classpath=77 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.100
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF auth false 77
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.100
+!MESSAGE Preparing classpath changed notification register
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.101
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.103
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.105
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF register false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.105
+!MESSAGE Preparing classpath changed notification verification
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.106
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.108
+!MESSAGE classpath=80 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.109
+!MESSAGE buffering callback sts4.classpath.vrDrCRRF verification false 80
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.109
+!MESSAGE executing callback sts4.classpath.vrDrCRRF 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-24 20:03:54.699
+!MESSAGE executing callback sts4.classpath.vrDrCRRF SUCCESS [done]

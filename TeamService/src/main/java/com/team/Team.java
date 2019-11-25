@@ -25,7 +25,6 @@ public class Team {
 	}
 	
 	public String getId() {return id.toHexString();}
-	//public ObjectId getObjectId() {return id;}
 	
 	public void setId(ObjectId id) { this.id = id; }
 
