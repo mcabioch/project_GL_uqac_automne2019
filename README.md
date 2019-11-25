@@ -24,3 +24,5 @@ This project is still a work in progress. Thus, only a few features are availabl
 - Choosing minimum start of the day and maximum end of the day hours
 - Saving the datas listed above
 - Creating, editing and deleting team members
+
+[![](https://codescene.io/projects/6163/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/6163/jobs/latest-successful/results)
