@@ -1,39 +1,37 @@
 #ifndef HEADER_TEAMMEMBER
 #define HEADER_TEAMMEMBER
 
-#include <string>
-#include <vector>
 #include "Widgets/Qt.hpp"
 
 class TeamMember {
     public:
-        TeamMember(int _id, double _nbHours, QString _firstName, QString _lastName, const std::vector<QString> &_daysOff);
+        TeamMember(const std::string& id, double nbHours, QString firstName, QString lastName, const std::vector<QString> &daysOff);
         ~TeamMember();
 
         friend std::ostream & operator<<(std::ostream &os, const TeamMember &tm);
         friend std::ifstream & operator>>(std::ifstream &is, TeamMember &tm);
         friend std::ofstream & operator<<(std::ofstream &os, const TeamMember &tm);
 
-        int getId()const { return id; }
-        double getNbHours()const { return nbHours; }
-        QString getFirstName()const { return firstName; }
-        QString getLastName()const { return lastName; }
-        std::vector<QString> getDaysOff()const { return daysOff; }
-
-        void setId(int _id) { id = _id; }
-        void setNbHours(double _nbHours) { nbHours = _nbHours; }
-        void setFirstName(QString _firstName) { firstName = _firstName; }
-        void setLastName(QString _lastName) { lastName = _lastName; }
-        void setDaysOff(std::vector<QString> &_daysOff) { daysOff = _daysOff; }
-        void setDaysOffFromQString(QString _daysOff);
+        inline std::string getId()const { return _id; }
+        inline double getNbHours()const { return _nbHours; }
+        inline QString getFirstName()const { return _firstName; }
+        inline QString getLastName()const { return _lastName; }
+        inline std::vector<QString> getDaysOff()const { return _daysOff; }
         QString daysOffToQString();
+
+        inline void setId(const std::string& id) { _id = id; }
+        inline void setNbHours(double nbHours) { _nbHours = nbHours; }
+        inline void setFirstName(QString firstName) { _firstName = firstName; }
+        inline void setLastName(QString lastName) { _lastName = lastName; }
+        inline void setDaysOff(std::vector<QString> &daysOff) { _daysOff = daysOff; }
+        void setDaysOffFromQString(QString daysOff);
 
 
     private:
-        int id;
-        double nbHours;
-        QString firstName, lastName;
-        std::vector<QString> daysOff;
+        std::string _id;
+        double _nbHours;
+        QString _firstName, _lastName;
+        std::vector<QString> _daysOff;
 };
 
 #endif //TEAMMEMBER

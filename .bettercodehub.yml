@@ -1,0 +1,13 @@
+component_depth: 2
+languages:
+- cpp
+exclude:
+- res/*
+- lib/*
+- doc/*
+- inc/C++/*.hpp
+- inc/Widgets/*.hpp
+- inc/Widgets/*.cpp
+include:
+- inc/*.h
+- inc/*.hpp

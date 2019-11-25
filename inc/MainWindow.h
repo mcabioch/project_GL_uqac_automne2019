@@ -1,8 +1,10 @@
 #ifndef HEADER_MAINWINDOW
 #define HEADER_MAINWINDOW
 
-#include "PAL.h"
-#include "MCD.h"
+#include "includes.h"
+
+#include "Planning.h"
+#include "AddMemberModal.h"
 
 /*!
 * \class	MainWindow
@@ -13,73 +15,32 @@ class MainWindow : public QMainWindow {
 		Q_OBJECT
 	/* Members of MainWindow */
 	public:
-		/* Internal enums of MainWindow */
-			
 		/* Constructors & Destructor of MainWindow */
 			/*! \brief	The constructor of the class */
-			MainWindow(QWidget* parent = nullptr);
+			MainWindow(Api& api, QWidget* parent = nullptr);
 			virtual ~MainWindow();
-		/* Getters of MainWindow */
-			
-		/* Setters of MainWindow */
-			
-		/* Statics of MainWindow */
-			
-		/* Operators of MainWindow */
-			
-		/* Friends of MainWindow */
-			
 		/* Others members of MainWindow */
-			
-
-	public slots:
-		
-
-	signals:
-		
-
-	protected:
-		/* Getters of MainWindow */
-			
-		/* Setters of MainWindow */
-			
-		/* Statics of MainWindow */
-			
-		/* Friends of MainWindow */
-			
-		/* Others members of MainWindow */
-			
+			void initWindow();
 
 	private:
-		
+		MainWindow(const MainWindow& other);
+		MainWindow& operator=(const MainWindow& other);
+		void init(const MainWindow* other = nullptr);
+		void closeEvent(QCloseEvent* event);
 
 	/* Atttributes of MainWindow */
-	public:
-		/* Global */
-			
-		/* Local */
-			
-
-	protected:
-		/* Global */
-			
-		/* Local */
-			
-
 	private:
-		/* Global */
-			
 		/* Local */
 			QVBoxLayout* centerLayout;
 			QWidget* center;
 
 			QTabWidget* _tab;
 
-			std::vector<QString> _weekdays;
-
 	#include "MainWindow_TabGeneral.h"
 	#include "MainWindow_TabTeam.h"
 	#include "MainWindow_TabPlanning.h"
+
+			Api& _api;
 };
 
 #endif //HEADER_MAINWINDOW

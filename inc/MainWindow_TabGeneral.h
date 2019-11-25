@@ -23,6 +23,12 @@ public slots:
 	void generalSaveDatas();
 	void generalCalculate();
 
+	void reenableSave();
+	void reenableGen();
+	void computeIfNeeded();
+
+	void g_setAll(const Globals& gl, const std::vector<TeamMember>& tm, const Planning& pl);
+
 signals:
 	
 
@@ -43,6 +49,7 @@ private:
 	void initGeneralTab(QTabWidget* tabWidget, Globals initGlob);
 	void resetGeneralTab(QTabWidget* tabWidget);
 	void deleteGeneralTab(QTabWidget* tabWidget);
+	void setValues(Globals initGlob);
 
 	Globals translate();
 	QTime getQTimeFromFloat(float time);
@@ -71,7 +78,7 @@ private:
 		QHBoxLayout* _g_checkAllLay;
 		QCheckBox* _g_allCheckbox;
 		QHBoxLayout* _g_checkDays;
-		std::map<QString, QCheckBox*> _g_daysCheckboxes;
+		std::map<std::string, QCheckBox*> _g_daysCheckboxes;
 
 		QHBoxLayout* _g_minTimeLay;
 		QTimeEdit* _g_minTimeEdit;
@@ -86,5 +93,9 @@ private:
 		QLabel* _g_defaultHoursLabel;
 
 		QToolBar* _g_toolBar;
+
+		QAction* _saveAct;
+		QAction* _genAct;
+		QAction* _syncAct;
 
 #endif //HEADER_MAINWINDOW_TAB_GENERAL

@@ -1,21 +1,19 @@
 #include "TeamMember.h"
 
-TeamMember::TeamMember(int _id, double _nbHours, QString _firstName, QString _lastName, const std::vector<QString> &_daysOff) {
-    id = _id;
-    nbHours = _nbHours;
-    firstName = _firstName;
-    lastName = _lastName;
-    daysOff = _daysOff;
-}
+TeamMember::TeamMember(const std::string& id, double nbHours, QString firstName, QString lastName, const std::vector<QString> &daysOff) :
+	_id(id),
+	_nbHours(nbHours),
+	_firstName(firstName),
+	_lastName(lastName),
+	_daysOff(daysOff)
+{}
 
-TeamMember::~TeamMember() {
-
-}
+TeamMember::~TeamMember() {}
 
 std::ostream & operator<<(std::ostream &os, const TeamMember &tm) {
-    os << "Id : " << tm.id << "\nNb hours : " << tm.nbHours << "\n" << tm.firstName.toStdString() << " " << tm.lastName.toStdString() << "\nDays off ;";
+    os << "Id : " << tm._id << "\nNb hours : " << tm._nbHours << "\n" << tm._firstName.toStdString() << " " << tm._lastName.toStdString() << "\nDays off ;";
 
-    for(auto &e : tm.daysOff) {
+    for(auto &e : tm._daysOff) {
         os << "\n\t- " << e.toStdString();
     }
 
@@ -23,9 +21,9 @@ std::ostream & operator<<(std::ostream &os, const TeamMember &tm) {
 }
 
 std::ofstream & operator<<(std::ofstream &os, const TeamMember &tm) {
-    os << tm.id << " " << tm.nbHours << " " << tm.firstName.toStdString() << " " << tm.lastName.toStdString() << " " << tm.daysOff.size();
+    os << tm._id << " " << tm._nbHours << " " << tm._firstName.toStdString() << " " << tm._lastName.toStdString() << " " << tm._daysOff.size();
 
-    for(auto &e : tm.daysOff) {
+    for(auto &e : tm._daysOff) {
         os << " " << e.toStdString();
     }
 
@@ -35,33 +33,33 @@ std::ofstream & operator<<(std::ofstream &os, const TeamMember &tm) {
 std::ifstream & operator>>(std::ifstream &is, TeamMember &tm) {
     size_t size;
     std::string first, last;
-    is >> tm.id >> tm.nbHours >> first >> last >> size;
-    tm.firstName = first.c_str();
-    tm.lastName = last.c_str();
+    is >> tm._id >> tm._nbHours >> first >> last >> size;
+    tm._firstName = first.c_str();
+    tm._lastName = last.c_str();
 
     for(size_t i = 0; i < size; ++i) {
         std::string str;
         is >> str;
-        tm.daysOff.push_back(QString(str.c_str()));
+        tm._daysOff.push_back(QString(str.c_str()));
     }
 
     return is;
 }
 
 
-void TeamMember::setDaysOffFromQString(QString _daysOff) {
-    QStringList qsl = _daysOff.split(' ');
-    daysOff.clear();
+void TeamMember::setDaysOffFromQString(QString daysOff) {
+    QStringList qsl = daysOff.split(' ');
+    _daysOff.clear();
 
     for(int i = 0; i < qsl.size(); ++i) {
-        daysOff.push_back(qsl.at(i).toLocal8Bit().constData());
+        _daysOff.push_back(qsl.at(i).toLocal8Bit().constData());
     }
 }
 
 QString TeamMember::daysOffToQString() {
     QString qs = "";
     
-    for(auto &a : daysOff) {
+    for(auto &a : _daysOff) {
         qs.append(a + " ");
     }
 

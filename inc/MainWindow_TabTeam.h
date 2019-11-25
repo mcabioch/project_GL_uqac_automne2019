@@ -22,7 +22,9 @@ public slots:
 	void addMember();
 	void editMember(QTableWidgetItem *item);
 	void deleteMember();
-	void updateSelectedMember(int row, int column);
+	void updateSelectedMember(int row, int);
+
+	void t_setAll(const Globals& gl, const std::vector<TeamMember>& tm, const Planning& pl);
 
 signals:
 	
@@ -71,5 +73,6 @@ private:
 
 		std::vector<TeamMember> teamMembers;
 		std::vector<TeamMember> selectedTeamMembers;
+		bool _autoChange;
 
 #endif //HEADER_MAINWINDOW_TAB_TEAM
