@@ -175,6 +175,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/RegisterWidget.h \
 		inc/SigninWindow.h \
 		inc/TeamMember.h \
+		inc/bcrypt/bcrypt.h \
+		inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/crypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/crypt_gensalt.h \
+		inc/bcrypt/ow-crypt.h \
+		inc/bcrypt/winbcrypt.h \
 		inc/C++/Animal.hpp \
 		inc/C++/Ant.hpp \
 		inc/C++/Args.hpp \
@@ -452,7 +459,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/AddMemberModal.h inc/Api.hpp inc/ConnectWindow.h inc/Globals.h inc/includes.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/Planning.h inc/RegisterWidget.h inc/SigninWindow.h inc/TeamMember.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/AddMemberModal.h inc/Api.hpp inc/ConnectWindow.h inc/Globals.h inc/includes.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/Planning.h inc/RegisterWidget.h inc/SigninWindow.h inc/TeamMember.h inc/bcrypt/bcrypt.h inc/bcrypt/BCrypt.hpp inc/bcrypt/crypt.h inc/bcrypt/crypt_blowfish.h inc/bcrypt/crypt_gensalt.h inc/bcrypt/ow-crypt.h inc/bcrypt/winbcrypt.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents src/AddMemberModal.cpp src/Api.cpp src/ConnectWindow.cpp src/Globals.cpp src/main.cpp src/MainWindow.cpp src/MainWindow_TabGeneral.cpp src/MainWindow_TabPlanning.cpp src/MainWindow_TabTeam.cpp src/Planning.cpp src/RegisterWidget.cpp src/SigninWindow.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
 
 
@@ -495,6 +502,10 @@ moc_AddMemberModal.cpp: inc/RegisterWidget.h \
 		inc/Widgets/Spacers.hpp \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
+		inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/winbcrypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
 		inc/Planning.h \
 		inc/TeamMember.h \
@@ -503,7 +514,11 @@ moc_AddMemberModal.cpp: inc/RegisterWidget.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/AddMemberModal.h -o moc_AddMemberModal.cpp
 
-moc_Api.cpp: inc/Globals.h \
+moc_Api.cpp: inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/winbcrypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/bcrypt.h \
+		inc/Globals.h \
 		inc/Widgets/Qt.hpp \
 		inc/Widgets/QtDefines.hpp \
 		inc/Widgets/Spacers.hpp \
@@ -522,6 +537,10 @@ moc_ConnectWindow.cpp: inc/MainWindow.h \
 		inc/Widgets/Spacers.hpp \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
+		inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/winbcrypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
 		inc/Planning.h \
 		inc/TeamMember.h \
@@ -542,6 +561,10 @@ moc_MainWindow.cpp: inc/includes.h \
 		inc/Widgets/Spacers.hpp \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
+		inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/winbcrypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
 		inc/Planning.h \
 		inc/TeamMember.h \
@@ -561,6 +584,10 @@ moc_RegisterWidget.cpp: inc/includes.h \
 		inc/Widgets/Spacers.hpp \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
+		inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/winbcrypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
 		inc/Planning.h \
 		inc/TeamMember.h \
@@ -576,6 +603,10 @@ moc_SigninWindow.cpp: inc/RegisterWidget.h \
 		inc/Widgets/Spacers.hpp \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
+		inc/bcrypt/BCrypt.hpp \
+		inc/bcrypt/winbcrypt.h \
+		inc/bcrypt/crypt_blowfish.h \
+		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
 		inc/Planning.h \
 		inc/TeamMember.h \

@@ -11,6 +11,8 @@
 
 #include <QtNetwork>
 
+#include "bcrypt/BCrypt.hpp"
+
 #include "Globals.h"
 #include "Planning.h"
 #include "TeamMember.h"
@@ -57,7 +59,7 @@ class Api : public QObject {
 			Api();
 			virtual ~Api();
 		/* Getters of Api */
-			
+			inline bool isChef()const { return _chef; }
 		/* Setters of Api */
 			
 		/* Statics of Api */
@@ -85,11 +87,17 @@ class Api : public QObject {
 
 		void auth_end(QNetworkReply* reply);
 		void register_end(QNetworkReply* reply);
-		void signin_end(QNetworkReply* reply);
 		void save_end(QNetworkReply* reply);
 		void saveMembers_end(QNetworkReply* reply);
 		void getAll_end(QNetworkReply* reply);
 		void compute_end(QNetworkReply* reply);
+
+		void register_user_end(QNetworkReply* reply);
+		void register_team_end(QNetworkReply* reply);
+		void register_teammember_end(QNetworkReply* reply);
+
+		void signin_user_end(QNetworkReply* reply);
+		void signin_teammember_end(QNetworkReply* reply);
 
 	signals:
 		void auth_ended();
@@ -107,6 +115,7 @@ class Api : public QObject {
 		void saveMembers_ended();
 		void saveMembers_error();
 
+		void getAll_ended();
 		void getAll_ended(const Globals& globals, const std::vector<TeamMember>& teamMembers, const Planning& planning);
 		void getAll_error();
 
@@ -127,6 +136,9 @@ class Api : public QObject {
 
 	private:
 		std::string createUrl(const std::string& str);
+		QJsonObject jsonParse(const std::string& str);
+		void printJsonError(const QJsonObject& json);
+		QNetworkRequest createRequest(const std::string& url, const std::string& managerName);
 
 	/* Atttributes of Api */
 	public:
@@ -140,6 +152,7 @@ class Api : public QObject {
 			
 		/* Local */
 			std::map<std::string, QNetworkAccessManager*> _managers;
+			std::map<std::string, std::string> _urls;
 			std::string _host;
 
 	private:
@@ -147,8 +160,13 @@ class Api : public QObject {
 			
 		/* Local */
 			std::string _token;
+			std::string _userid;
 			std::string _username;
-			std::string _teamName;
+			std::string _teamid;
+			std::string _teammemberid;
+
+			bool _chef;
+			bool _firstGet;
 };
 
 #endif //HEADER_API

@@ -1,12 +1,6 @@
-2019-11-24 12:45:03 [ DEBUG ] src/Api.cpp:10 : Api created
-2019-11-24 12:45:03 [ DEBUG ] src/MainWindow.cpp:95 : MainWindow created
-2019-11-24 12:45:03 [ DEBUG ] src/ConnectWindow.cpp:103 : ConnectWindow created
-2019-11-24 12:45:03 [ DEBUG ] src/RegisterWidget.cpp:96 : RegisterWidget created
-2019-11-24 12:45:03 [ DEBUG ] src/SigninWindow.cpp:88 : SigninWindow created
-2019-11-24 12:45:03 [ DEBUG ] src/Api.cpp:221 : url: http://34.95.48.165:8080/auth
-2019-11-24 12:45:04 [ WARNING ] src/Api.cpp:83 : Get all
-2019-11-24 12:45:26 [ DEBUG ] src/SigninWindow.cpp:37 : SigninWindow destroyed
-2019-11-24 12:45:26 [ DEBUG ] src/RegisterWidget.cpp:38 : RegisterWidget destroyed
-2019-11-24 12:45:26 [ DEBUG ] src/ConnectWindow.cpp:37 : ConnectWindow destroyed
-2019-11-24 12:45:26 [ DEBUG ] src/MainWindow.cpp:68 : MainWindow destroyed
-2019-11-24 12:45:26 [ DEBUG ] src/Api.cpp:16 : Api destroyed
+2019-11-24 21:47:12 [ WARNING ] src/Api.cpp:100 : Delete member 5dd840d7a8be18533dbe3d03
+2019-11-24 21:47:15 [ WARNING ] src/Api.cpp:100 : Delete member 5dd840d7a8be18533dbe3d02
+2019-11-24 21:47:17 [ WARNING ] src/Api.cpp:100 : Delete member 5dd840d7a8be18533dbe3d04
+2019-11-24 21:47:19 [ WARNING ] src/Api.cpp:100 : Delete member 5ddb3dfc6544d84b38ccaaea
+2019-11-24 21:47:21 [ WARNING ] src/Api.cpp:100 : Delete member 5ddb3ed86544d84b38ccaaeb
+2019-11-24 21:47:23 [ WARNING ] src/Api.cpp:100 : Delete member 5ddb3f116544d84b38ccaaec

@@ -99,7 +99,8 @@ void ConnectWindow::init(const ConnectWindow*){
 	connect(&_api, SIGNAL(auth_ended()), this, SLOT(reenableLinks()));
 	connect(&_api, SIGNAL(auth_error()), this, SLOT(reenableLinks()));
 
-	connect(&_api, SIGNAL(auth_ended()), this, SLOT(goThrough()));
+	connect(&_api, SIGNAL(auth_ended()), &_api, SLOT(getAll()));
+	connect(&_api, SIGNAL(getAll_ended()), this, SLOT(goThrough()));
 	mcd::logs(mcd::Logger::Debug, "ConnectWindow created");
 }
 

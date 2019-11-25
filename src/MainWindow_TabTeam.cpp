@@ -17,18 +17,23 @@ void MainWindow::initTeamTab(QTabWidget* tabWidget){
 	QAction *addAct = new QAction(addIcon, tr("&Add Member"), _teamTab);
 	addAct->setStatusTip(tr("Create a new team member"));
 	connect(addAct, &QAction::triggered, this, &MainWindow::addMember);
-	_teamToolBar->addAction(addAct);
 
 	const QIcon deleteIcon = QIcon("./res/icons/delete-icon.png");
 	QAction *deleteAct = new QAction(deleteIcon, tr("&Delete Member"), _teamTab);
 	deleteAct->setStatusTip(tr("Delete a team member"));
 	connect(deleteAct, SIGNAL(triggered()), this, SLOT(deleteMember()));
-	_teamToolBar->addAction(deleteAct);
 
 	_teamTable->setColumnCount(5);
 	QStringList headers = { "Id", "First name", "Last name", "Nb of hours per week", "Days off"};
 	_teamTable->setHorizontalHeaderLabels(headers);
 	_teamTable->setColumnHidden(0, true);
+
+	if(_api.isChef()){
+		_teamToolBar->addAction(addAct);
+		_teamToolBar->addAction(deleteAct);
+	} else {
+		_teamTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+	}
 
 	initTeamTable();
 
@@ -77,6 +82,10 @@ void MainWindow::addMember() {
 }
 
 void MainWindow::editMember(QTableWidgetItem *item) {
+	if(_autoChange){
+		return;
+	}
+
 	QTableWidgetItem *idItem = new QTableWidgetItem;
 	idItem = _teamTable->item(item->row(), AddMemberModal::Columns::ID);
 
@@ -103,9 +112,7 @@ void MainWindow::editMember(QTableWidgetItem *item) {
 			break;
 	}
 
-	if(!_autoChange){
 		_api.saveMembers(teamMembers);
-	}
 }
  
 void MainWindow::deleteMember() {
