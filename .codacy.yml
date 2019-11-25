@@ -1,6 +1,7 @@
 exclude_paths:
   - inc/C++/**
   - inc/Widgets/**
+  - inc/bcrypt/**
   - doc/**
   - lib/**
   - res/**
