@@ -291,7 +291,7 @@ void Api::signin_teammember_end(QNetworkReply* reply){
 		}
 
 		auto register_json = json.take("data").toObject().take("createTeamMember").toObject();
-		auto teammemberid = register_json.take("id").toString().toStdString();
+		//auto teammemberid = register_json.take("id").toString().toStdString();
 
 		std::string start_str = "userId: \"";
 		auto start = _urls["signin teammember"].find(start_str);
@@ -399,6 +399,7 @@ void Api::getAll_end(QNetworkReply* reply){
 void Api::compute_end(QNetworkReply* reply){
 	emit compute_ended();
 	return;
+
 	if(reply == nullptr || reply->error() != QNetworkReply::NoError){
 		emit compute_error();
 		return;
