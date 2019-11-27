@@ -1,0 +1,5 @@
+exclude_paths:
+  - '*.md'
+  - '**/*.md'
+  - '**/**/*.md'
+  - 'node_modules/**'
