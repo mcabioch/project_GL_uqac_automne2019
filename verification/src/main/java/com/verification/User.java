@@ -1,4 +1,4 @@
-package com.user;
+package com.verification;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -11,8 +11,6 @@ public class User {
 	private ObjectId id;
 	private String username;
 	private String password;
-	private String name;
-	private String surname;
 
 	
 	public User(ObjectId id, String username, String password) {
@@ -21,8 +19,8 @@ public class User {
 		this.password = password;
 	}
 	
+	
 	public String getId() {return id.toHexString();}
-	public ObjectId getObjectId() {return id;}
 	
 	public void setId(ObjectId id) { this.id = id; }
 	
@@ -34,19 +32,4 @@ public class User {
 
     public void setPassword(String password) {this.password = password;}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
 }

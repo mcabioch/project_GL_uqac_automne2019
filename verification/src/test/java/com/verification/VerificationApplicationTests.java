@@ -1,10 +1,10 @@
-package com.user;
+package com.verification;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserServiceApplicationTests {
+class VerificationApplicationTests {
 
 	@Test
 	void contextLoads() {
