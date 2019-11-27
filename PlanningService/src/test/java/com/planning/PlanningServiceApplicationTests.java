@@ -1,10 +1,10 @@
-package com.authentication.auth;
+package com.planning;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthApplicationTests {
+class PlanningServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

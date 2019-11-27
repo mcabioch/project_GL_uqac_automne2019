@@ -1,12 +1,13 @@
-package com.authentication.auth;
+package com.planning;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuthApplication {
+public class PlanningServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuthApplication.class, args);
+		SpringApplication.run(PlanningServiceApplication.class, args);
 	}
+
 }
