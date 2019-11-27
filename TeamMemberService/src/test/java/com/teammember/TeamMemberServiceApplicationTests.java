@@ -1,10 +1,10 @@
-package com.register;
+package com.teammember;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RegisterApplicationTests {
+class TeamMemberServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
