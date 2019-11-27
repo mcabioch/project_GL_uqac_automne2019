@@ -7,7 +7,7 @@ exclude:
 - TeamService/
 - UserService/
 - verification/
-exclude:
+include:
 - auth/src/
 - PlanningService/src/
 - register/src/
