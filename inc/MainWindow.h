@@ -1,9 +1,6 @@
 #ifndef HEADER_MAINWINDOW
 #define HEADER_MAINWINDOW
 
-#include "includes.h"
-
-#include "Planning.h"
 #include "AddMemberModal.h"
 
 /*!

@@ -8,7 +8,7 @@ PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "A software to generate some plannings according to specifications."
 PROJECT_LOGO           = 
 
-OUTPUT_DIRECTORY       = /home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/planning_generator/doc
+OUTPUT_DIRECTORY       = /home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019/doc
 CREATE_SUBDIRS         = YES
 ALLOW_UNICODE_NAMES    = NO
 OUTPUT_LANGUAGE        = English
@@ -70,8 +70,8 @@ LOOKUP_CACHE_SIZE      = 0
 # Build related configuration options
 #---------------------------------------------------------------------------
 
-EXTRACT_ALL            = YES
-EXTRACT_PRIVATE        = NO
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = YES
 EXTRACT_PACKAGE        = NO
 EXTRACT_STATIC         = YES
 EXTRACT_LOCAL_CLASSES  = YES
@@ -135,14 +135,14 @@ WARN_NO_PARAMDOC       = YES
 WARN_AS_ERROR          = NO
 
 WARN_FORMAT            = "$file:$line: $text"
-WARN_LOGFILE           = /home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/planning_generator/doc/output.log
+WARN_LOGFILE           = /home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019/doc/output.log
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT                  = "/home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/planning_generator/inc"\
-                         "/home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/planning_generator/doc/mainpage.md"
+INPUT                  = "/home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019/inc"\
+                         "/home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019/doc/mainpage.md"
 INPUT_ENCODING         = UTF-8
 
 FILE_PATTERNS          = 
@@ -153,14 +153,16 @@ EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = */inc/C/* \ 
                          */inc/C++/* \ 
-                         */inc/SFML/*
+                         */inc/SFML/* \ 
+                         */inc/Widgets/* \ 
+                         */inc/bcrypt/*
 EXCLUDE_SYMBOLS        = 
 
 EXAMPLE_PATH           = 
 EXAMPLE_PATTERNS       = *
 EXAMPLE_RECURSIVE      = NO
 
-IMAGE_PATH             = /home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/planning_generator/res/imgs
+IMAGE_PATH             = /home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019/res/imgs
 
 INPUT_FILTER           = 
 FILTER_PATTERNS        = 
@@ -415,20 +417,20 @@ COLLABORATION_GRAPH    = YES
 
 GROUP_GRAPHS           = YES
 
-UML_LOOK               = NO
-UML_LIMIT_NUM_FIELDS   = 10
+UML_LOOK               = YES
+UML_LIMIT_NUM_FIELDS   = 50
 
 TEMPLATE_RELATIONS     = YES
 
 INCLUDE_GRAPH          = YES
 INCLUDED_BY_GRAPH      = YES
 CALL_GRAPH             = YES
-CALLER_GRAPH           = NO
+CALLER_GRAPH           = YES
 
 GRAPHICAL_HIERARCHY    = YES
 DIRECTORY_GRAPH        = YES
 DOT_IMAGE_FORMAT       = png
-INTERACTIVE_SVG        = NO
+INTERACTIVE_SVG        = YES
 
 DOT_PATH               = 
 DOTFILE_DIRS           = 

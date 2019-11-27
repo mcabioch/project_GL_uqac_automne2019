@@ -40,7 +40,12 @@ _p_globals(),\
 _p_teamMembers(),\
 _planningTab(nullptr),\
 _planningLay(nullptr),\
-_planning()
+_planning(),\
+_planTab(nullptr),\
+_planCenter(nullptr),\
+_planLay(nullptr),\
+_planTable(nullptr),\
+_planItems()
 
 MainWindow::MainWindow(Api& api, QWidget* parent) :
 	QMainWindow(parent),

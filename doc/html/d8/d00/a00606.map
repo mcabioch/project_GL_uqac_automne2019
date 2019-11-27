@@ -1,0 +1,13 @@
+<map id="ConnectWindow" name="ConnectWindow">
+<area shape="rect" id="node12" href="$d4/d2a/a00632.php" title="The main window of the software. " alt="" coords="476,1747,609,2044"/>
+<area shape="rect" id="node16" href="$db/db5/a00616.php" title="The main window of the software. " alt="" coords="740,1395,919,2396"/>
+<area shape="rect" id="node3" href="$d6/d75/a00604.php" title="A class to talk with the remote apis. " alt="" coords="374,815,570,1303"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="727,300,807,377"/>
+<area shape="rect" id="node18" href="$db/ddc/a00636.php" title="{TeamMember\n|&#45; _nbHours\l&#45; _firstName\l&#45; _lastName\l|+ TeamMember()\l+ ~TeamMember()\l+ getId()\l+ getNbHours()\l+ getFirstName()\l+ getLastName()\l+ getDaysOff()\l+ daysOffToQString()\l+ setId()\l+ setNbHours()\l+ setFirstName()\l+ setLastName()\l+ setDaysOff()\l+ setDaysOffFromQString()\l}" alt="" coords="1098,455,1281,752"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="703,145,830,237"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="311,300,433,377"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="1002,153,1118,230"/>
+<area shape="rect" id="node13" href="$d1/d51/a00628.php" title="The main window of the software. " alt="" coords="594,917,761,1200"/>
+<area shape="rect" id="node21" href="$d3/dd6/a00624.php" title="{Planning\n||+ Planning()\l+ ~Planning()\l+ get()\l}" alt="" coords="1307,1005,1407,1112"/>
+<area shape="rect" id="node22" href="$d0/d8d/a00612.php" title="{Globals\n|+ startMin\l+ endMax\l+ nbHours\l|+ Globals()\l+ Globals()\l}" alt="" coords="985,998,1071,1119"/>
+</map>

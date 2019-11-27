@@ -40,6 +40,7 @@ private:
 	void initPlanningTab(QTabWidget* tabWidget);
 	void resetPlanningTab(QTabWidget* tabWidget);
 	void deletePlanningTab(QTabWidget* tabWidget);
+	void initPlanningTable();
 
 /* Atttributes of MainWindow */
 public:
@@ -59,9 +60,15 @@ private:
 	/* Global */
 		
 	/* Local */
-		QWidget* _planningTab;
+		QMainWindow* _planningTab;
 		QVBoxLayout* _planningLay;
 
 		Planning _planning;
+
+		QMainWindow* _planTab;
+		QWidget* _planCenter;
+		QVBoxLayout* _planLay;
+		QTableWidget* _planTable;
+		std::vector<QTableWidgetItem*> _planItems;
 
 #endif //HEADER_MAINWINDOW_TAB_PLANNING

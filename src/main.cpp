@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
 
 	cw.link(&sw);
 
-	//cw.testConnect("chef", "welcome1");
+	cw.testConnect("chef", "welcome1");
 	//cw.testRegister();
 
 	return app.exec();

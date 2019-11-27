@@ -1,0 +1,16 @@
+*[class ~= "tab"] {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+h1 ~ h2 {
+	margin-left: 40px;
+}
+
+h1 ~ h2 ~ p {
+	margin-left: 80px;
+}
+
+h1 ~ h2 ~ ul {
+	margin-left: 40px;
+}

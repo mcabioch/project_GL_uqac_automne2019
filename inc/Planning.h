@@ -17,13 +17,14 @@ class Pause {
 class Planning {
 	public:
 		Planning();
+		Planning(const std::vector<std::vector<std::pair<double,double>>>& creneau);
 		~Planning(){}
 
 		friend std::ostream& operator<<(std::ostream& os, const Planning& p);
 
-		bool get()const { return true; }
+		std::vector<std::pair<double,double>> getDay(size_t day)const;
 	private:
-		
+		std::vector<std::vector<std::pair<double,double>>> _creneau;
 };
 
 #endif //HEADER_PLANNING

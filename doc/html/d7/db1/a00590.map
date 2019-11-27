@@ -1,0 +1,9 @@
+<map id="AddMemberModal" name="AddMemberModal">
+<area shape="rect" id="node3" href="$d1/d51/a00628.php" title="The main window of the software. " alt="" coords="151,917,317,1200"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="659,300,739,377"/>
+<area shape="rect" id="node11" href="$d6/d75/a00604.php" title="A class to talk with the remote apis. " alt="" coords="481,815,677,1303"/>
+<area shape="rect" id="node18" href="$db/ddc/a00636.php" title="{TeamMember\n|&#45; _nbHours\l&#45; _firstName\l&#45; _lastName\l|+ TeamMember()\l+ ~TeamMember()\l+ getId()\l+ getNbHours()\l+ getFirstName()\l+ getLastName()\l+ getDaysOff()\l+ daysOffToQString()\l+ setId()\l+ setNbHours()\l+ setFirstName()\l+ setLastName()\l+ setDaysOff()\l+ setDaysOffFromQString()\l}" alt="" coords="957,455,1140,752"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="636,145,763,237"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="214,300,337,377"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="861,153,977,230"/>
+</map>

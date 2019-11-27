@@ -84,7 +84,7 @@ void Api::signin(const AuthUser& user, const AuthMember& member){
 }
 
 void Api::save(const Globals& team, const Planning& planning){
-	if(team.startMin && planning.get()){}
+	if(team.startMin && planning.getDay(0).size()){}
 	mcd::logs(mcd::Logger::Warn, "Save all");
 	save_end(nullptr);
 }
@@ -391,7 +391,19 @@ void Api::getAll_end(QNetworkReply* reply){
 				members.push_back(tm);
 			}
 
-			emit getAll_ended(globals, members, Planning());
+			emit getAll_ended(globals, members, Planning({{{std::make_pair(8.0, 12.0)},
+														   {std::make_pair(14.0, 16.0)}},
+														   {{std::make_pair(8.0, 12.0)},
+														   {std::make_pair(14.0, 16.0)}},
+														   {{std::make_pair(8.0, 12.0)},
+														   {std::make_pair(14.0, 16.0)}},
+														   {{std::make_pair(8.0, 12.0)},
+														   {std::make_pair(14.0, 16.0)}},
+														   {{std::make_pair(8.0, 12.0)},
+														   {std::make_pair(14.0, 16.0)}},
+														   {{std::make_pair(8.0, 12.0)},
+														   {std::make_pair(14.0, 16.0)}},
+														   {}}));
 		}
 	}
 }

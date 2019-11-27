@@ -497,16 +497,16 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_AddMemberModal.cpp moc_Api.cpp moc_ConnectWindow.cpp moc_MainWindow.cpp moc_RegisterWidget.cpp moc_SigninWindow.cpp
 moc_AddMemberModal.cpp: inc/RegisterWidget.h \
 		inc/includes.h \
-		inc/Widgets/Qt.hpp \
-		inc/Widgets/QtDefines.hpp \
-		inc/Widgets/Spacers.hpp \
-		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
 		inc/bcrypt/BCrypt.hpp \
 		inc/bcrypt/winbcrypt.h \
 		inc/bcrypt/crypt_blowfish.h \
 		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
 		inc/AddMemberModal.h \
@@ -531,21 +531,21 @@ moc_Api.cpp: inc/bcrypt/BCrypt.hpp \
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Api.hpp -o moc_Api.cpp
 
 moc_ConnectWindow.cpp: inc/MainWindow.h \
+		inc/AddMemberModal.h \
+		inc/RegisterWidget.h \
 		inc/includes.h \
-		inc/Widgets/Qt.hpp \
-		inc/Widgets/QtDefines.hpp \
-		inc/Widgets/Spacers.hpp \
-		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
 		inc/bcrypt/BCrypt.hpp \
 		inc/bcrypt/winbcrypt.h \
 		inc/bcrypt/crypt_blowfish.h \
 		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
-		inc/AddMemberModal.h \
-		inc/RegisterWidget.h \
 		inc/MainWindow_TabGeneral.h \
 		inc/MainWindow_TabTeam.h \
 		inc/MainWindow_TabPlanning.h \
@@ -555,21 +555,21 @@ moc_ConnectWindow.cpp: inc/MainWindow.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/ConnectWindow.h -o moc_ConnectWindow.cpp
 
-moc_MainWindow.cpp: inc/includes.h \
-		inc/Widgets/Qt.hpp \
-		inc/Widgets/QtDefines.hpp \
-		inc/Widgets/Spacers.hpp \
-		inc/Widgets/QtFunctions.hpp \
+moc_MainWindow.cpp: inc/AddMemberModal.h \
+		inc/RegisterWidget.h \
+		inc/includes.h \
 		inc/Api.hpp \
 		inc/bcrypt/BCrypt.hpp \
 		inc/bcrypt/winbcrypt.h \
 		inc/bcrypt/crypt_blowfish.h \
 		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
-		inc/AddMemberModal.h \
-		inc/RegisterWidget.h \
 		inc/MainWindow_TabGeneral.h \
 		inc/MainWindow_TabTeam.h \
 		inc/MainWindow_TabPlanning.h \
@@ -579,16 +579,16 @@ moc_MainWindow.cpp: inc/includes.h \
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/MainWindow.h -o moc_MainWindow.cpp
 
 moc_RegisterWidget.cpp: inc/includes.h \
-		inc/Widgets/Qt.hpp \
-		inc/Widgets/QtDefines.hpp \
-		inc/Widgets/Spacers.hpp \
-		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
 		inc/bcrypt/BCrypt.hpp \
 		inc/bcrypt/winbcrypt.h \
 		inc/bcrypt/crypt_blowfish.h \
 		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
 		inc/RegisterWidget.h \
@@ -598,16 +598,16 @@ moc_RegisterWidget.cpp: inc/includes.h \
 
 moc_SigninWindow.cpp: inc/RegisterWidget.h \
 		inc/includes.h \
-		inc/Widgets/Qt.hpp \
-		inc/Widgets/QtDefines.hpp \
-		inc/Widgets/Spacers.hpp \
-		inc/Widgets/QtFunctions.hpp \
 		inc/Api.hpp \
 		inc/bcrypt/BCrypt.hpp \
 		inc/bcrypt/winbcrypt.h \
 		inc/bcrypt/crypt_blowfish.h \
 		inc/bcrypt/bcrypt.h \
 		inc/Globals.h \
+		inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
 		inc/SigninWindow.h \

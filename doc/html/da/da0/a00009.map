@@ -1,0 +1,14 @@
+<map id="ConnectWindow.h" name="ConnectWindow.h">
+<area shape="rect" id="node2" href="$d4/d51/a00017.php" title="MainWindow.h" alt="" coords="407,80,515,107"/>
+<area shape="rect" id="node16" href="$d4/d8c/a00035.php" title="SigninWindow.h" alt="" coords="638,80,754,107"/>
+<area shape="rect" id="node3" href="$d7/d46/a00002.php" title="AddMemberModal.h" alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node13" href="$db/db2/a00020.php" title="MainWindow_TabGeneral.h" alt="" coords="169,155,351,181"/>
+<area shape="rect" id="node14" href="$d6/d5b/a00026.php" title="MainWindow_TabTeam.h" alt="" coords="376,155,547,181"/>
+<area shape="rect" id="node15" href="$d3/d52/a00023.php" title="MainWindow_TabPlanning.h" alt="" coords="571,155,757,181"/>
+<area shape="rect" id="node4" href="$dc/d87/a00032.php" title="RegisterWidget.h" alt="" coords="373,229,496,256"/>
+<area shape="rect" id="node5" href="$d2/de7/a00014.php" title="includes.h" alt="" coords="394,304,475,331"/>
+<area shape="rect" id="node6" href="$dd/dad/a00005.php" title="Api.hpp" alt="" coords="401,379,468,405"/>
+<area shape="rect" id="node9" href="$da/d45/a00011.php" title="Globals.h" alt="" coords="396,453,473,480"/>
+<area shape="rect" id="node11" href="$d5/d16/a00029.php" title="Planning.h" alt="" coords="497,453,580,480"/>
+<area shape="rect" id="node12" href="$d8/d41/a00038.php" title="TeamMember.h" alt="" coords="605,453,718,480"/>
+</map>
