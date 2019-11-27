@@ -1,1 +1,4 @@
 component_depth: 10
+exclude:
+- '*/.mvn/*'
+- 'mvnw*'
