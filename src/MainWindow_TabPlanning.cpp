@@ -64,13 +64,11 @@ void MainWindow::initPlanningTable() {
 			}
 
 			auto item = _planTable->item(j, static_cast<int>(i));
-			//if(item != nullptr){
-				if(found){
-					item->setBackground(Qt::green);
-				} else {
-					item->setBackground(Qt::red);
-				}
-			//}
+			if(found){
+				item->setBackground(Qt::green);
+			} else {
+				item->setBackground(Qt::red);
+			}
 		}
 	}
 
