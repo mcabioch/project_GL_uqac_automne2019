@@ -1,4 +1,17 @@
 component_depth: 10
 exclude:
-- .mvn/*
-- mvnw
+- auth/
+- PlanningService/
+- register/
+- TeamMemberService/
+- TeamService/
+- UserService/
+- verification/
+exclude:
+- auth/src/
+- PlanningService/src/
+- register/src/
+- TeamMemberService/src/
+- TeamService/src/
+- UserService/src/
+- verification/src/
