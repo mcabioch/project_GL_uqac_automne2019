@@ -1,0 +1,263 @@
+Fri Nov 29 16:13:24 2019: build-wrapper, version 6.4 (linux-x86)
+Fri Nov 29 16:13:24 2019: System name: Linux Nodename: mathias Release: 4.15.0-70-generic Version: #79-Ubuntu SMP Tue Nov 12 10:36:11 UTC 2019 Machine: x86_64
+Fri Nov 29 16:13:24 2019: socket path: /tmp/build-wrapper-socket.gEnXim
+Fri Nov 29 16:13:24 2019: dynamic library found: /home/mathias/Bureau/Mes_Documents/Logiciels/build-wrapper-linux-x86/libinterceptor-i686.so
+Fri Nov 29 16:13:24 2019: dynamic library found: /home/mathias/Bureau/Mes_Documents/Logiciels/build-wrapper-linux-x86/libinterceptor-x86_64.so
+Fri Nov 29 16:13:24 2019: command executed as: <build-wrapper-linux-x86-64>
+Fri Nov 29 16:13:24 2019: command line received: <make qtClean all>
+Fri Nov 29 16:13:24 2019: env 0: <CLUTTER_IM_MODULE=xim>
+Fri Nov 29 16:13:24 2019: env 1: <ALIAS_DIR=/home/mathias/.aliases>
+Fri Nov 29 16:13:24 2019: env 2: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:>
+Fri Nov 29 16:13:24 2019: env 3: <LESSCLOSE=/usr/bin/lesspipe %s %s>
+Fri Nov 29 16:13:24 2019: env 4: <XDG_MENU_PREFIX=gnome->
+Fri Nov 29 16:13:24 2019: env 5: <LANG=fr_FR.UTF-8>
+Fri Nov 29 16:13:24 2019: env 6: <MANAGERPID=3524>
+Fri Nov 29 16:13:24 2019: env 7: <DISPLAY=:0>
+Fri Nov 29 16:13:24 2019: env 8: <INVOCATION_ID=1a7fa5e0c6e24b8085291cc81162d18c>
+Fri Nov 29 16:13:24 2019: env 9: <UNITY_DEFAULT_PROFILE=unity>
+Fri Nov 29 16:13:24 2019: env 10: <COMPIZ_CONFIG_PROFILE=ubuntu>
+Fri Nov 29 16:13:24 2019: env 11: <GTK2_MODULES=overlay-scrollbar>
+Fri Nov 29 16:13:24 2019: env 12: <GTK_CSD=0>
+Fri Nov 29 16:13:24 2019: env 13: <COLORTERM=truecolor>
+Fri Nov 29 16:13:24 2019: env 14: <ZEITGEIST_DATA_PATH=/home/mathias/.local/share/zeitgeist>
+Fri Nov 29 16:13:24 2019: env 15: <USERNAME=mathias>
+Fri Nov 29 16:13:24 2019: env 16: <SSH_AUTH_SOCK=/run/user/1000/keyring/ssh>
+Fri Nov 29 16:13:24 2019: env 17: <MANDATORY_PATH=/usr/share/gconf/unity.mandatory.path>
+Fri Nov 29 16:13:24 2019: env 18: <MALMO_XSD_PATH=/home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Intelligence_Artificielle/Projet/Malmo/Schemas>
+Fri Nov 29 16:13:24 2019: env 19: <USER=mathias>
+Fri Nov 29 16:13:24 2019: env 20: <DESKTOP_SESSION=unity>
+Fri Nov 29 16:13:24 2019: env 21: <QT4_IM_MODULE=xim>
+Fri Nov 29 16:13:24 2019: env 22: <PT7HOME=/opt/pt>
+Fri Nov 29 16:13:24 2019: env 23: <TEXTDOMAINDIR=/usr/share/locale/>
+Fri Nov 29 16:13:24 2019: env 24: <CAML_LD_LIBRARY_PATH=/home/mathias/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs>
+Fri Nov 29 16:13:24 2019: env 25: <QT_DEVICE_PIXEL_RATIO=auto>
+Fri Nov 29 16:13:24 2019: env 26: <GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/e190bc0b_0aa1_46ff_a0fe_7e1b6094ab80>
+Fri Nov 29 16:13:24 2019: env 27: <DEFAULTS_PATH=/usr/share/gconf/unity.default.path>
+Fri Nov 29 16:13:24 2019: env 28: <QT_QPA_PLATFORMTHEME=appmenu-qt5>
+Fri Nov 29 16:13:24 2019: env 29: <PWD=/home/mathias/Bureau/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019>
+Fri Nov 29 16:13:24 2019: env 30: <MANPAGER=most>
+Fri Nov 29 16:13:24 2019: env 31: <HOME=/home/mathias>
+Fri Nov 29 16:13:24 2019: env 32: <JOURNAL_STREAM=9:43176>
+Fri Nov 29 16:13:24 2019: env 33: <TEXTDOMAIN=im-config>
+Fri Nov 29 16:13:24 2019: env 34: <QT_ACCESSIBILITY=1>
+Fri Nov 29 16:13:24 2019: env 35: <XDG_SESSION_TYPE=x11>
+Fri Nov 29 16:13:24 2019: env 36: <XDG_DATA_DIRS=/usr/share/unity:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop:/var/lib/snapd/desktop>
+Fri Nov 29 16:13:24 2019: env 37: <XDG_SESSION_DESKTOP=unity>
+Fri Nov 29 16:13:24 2019: env 38: <DBUS_STARTER_ADDRESS=unix:path=/run/user/1000/bus,guid=02297f9a2878062d677cd6415de1382d>
+Fri Nov 29 16:13:24 2019: env 39: <SSH_AGENT_LAUNCHER=gnome-keyring>
+Fri Nov 29 16:13:24 2019: env 40: <GTK_MODULES=gail:atk-bridge:unity-gtk-module>
+Fri Nov 29 16:13:24 2019: env 41: <WINDOWPATH=2>
+Fri Nov 29 16:13:24 2019: env 42: <GNOME_SESSION_XDG_SESSION_PATH=>
+Fri Nov 29 16:13:24 2019: env 43: <TERM=xterm-256color>
+Fri Nov 29 16:13:24 2019: env 44: <VTE_VERSION=5202>
+Fri Nov 29 16:13:24 2019: env 45: <SHELL=/bin/bash>
+Fri Nov 29 16:13:24 2019: env 46: <QT_IM_MODULE=ibus>
+Fri Nov 29 16:13:24 2019: env 47: <XMODIFIERS=@im=ibus>
+Fri Nov 29 16:13:24 2019: env 48: <IM_CONFIG_PHASE=2>
+Fri Nov 29 16:13:24 2019: env 49: <DBUS_STARTER_BUS_TYPE=session>
+Fri Nov 29 16:13:24 2019: env 50: <XDG_CURRENT_DESKTOP=Unity:Unity7:ubuntu>
+Fri Nov 29 16:13:24 2019: env 51: <GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1>
+Fri Nov 29 16:13:24 2019: env 52: <PERL5LIB=/home/mathias/.opam/system/lib/perl5:>
+Fri Nov 29 16:13:24 2019: env 53: <GNOME_TERMINAL_SERVICE=:1.125>
+Fri Nov 29 16:13:24 2019: env 54: <UNITY_HAS_3D_SUPPORT=true>
+Fri Nov 29 16:13:24 2019: env 55: <SHLVL=2>
+Fri Nov 29 16:13:24 2019: env 56: <MANPATH=:/home/mathias/.opam/system/man>
+Fri Nov 29 16:13:24 2019: env 57: <INSIDE_NAUTILUS_PYTHON=>
+Fri Nov 29 16:13:24 2019: env 58: <GDMSESSION=unity>
+Fri Nov 29 16:13:24 2019: env 59: <GNOME_DESKTOP_SESSION_ID=this-is-deprecated>
+Fri Nov 29 16:13:24 2019: env 60: <LOGNAME=mathias>
+Fri Nov 29 16:13:24 2019: env 61: <DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus,guid=02297f9a2878062d677cd6415de1382d>
+Fri Nov 29 16:13:24 2019: env 62: <XDG_RUNTIME_DIR=/run/user/1000>
+Fri Nov 29 16:13:24 2019: env 63: <XAUTHORITY=/run/user/1000/gdm/Xauthority>
+Fri Nov 29 16:13:24 2019: env 64: <OCAML_TOPLEVEL_PATH=/home/mathias/.opam/system/lib/toplevel>
+Fri Nov 29 16:13:24 2019: env 65: <XDG_CONFIG_DIRS=/etc/xdg/xdg-unity:/etc/xdg>
+Fri Nov 29 16:13:24 2019: env 66: <PATH=/home/mathias/.opam/system/bin:/home/mathias/Bureau/Mes_Documents/Programmation/system:/home/mathias/Bureau/Mes_Documents/Programmation/functions:/home/mathias/Bureau/Mes_Documents/Logiciels/sonar-scanner-4.0.0.1744-linux/bin/:/home/mathias/Bureau/Mes_Documents/Logiciels/build-wrapper-linux-x86:/home/mathias/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin>
+Fri Nov 29 16:13:24 2019: env 67: <LD_PRELOAD=libgtk3-nocsd.so.0>
+Fri Nov 29 16:13:24 2019: env 68: <SESSION_MANAGER=local/mathias:@/tmp/.ICE-unix/4029,unix/mathias:/tmp/.ICE-unix/4029>
+Fri Nov 29 16:13:24 2019: env 69: <LESSOPEN=| /usr/bin/lesspipe %s>
+Fri Nov 29 16:13:24 2019: env 70: <GTK_IM_MODULE=ibus>
+Fri Nov 29 16:13:24 2019: env 71: <BASH_FUNC_nmapon%%=() {  sudo nmap -r -O -A -v --traceroute --reason --osscan-guess --badsum "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 72: <BASH_FUNC_wping6%%=() {  ping6 -I wlp3s0 $@
+}>
+Fri Nov 29 16:13:24 2019: env 73: <BASH_FUNC_Mysql%%=() {  mysql -u mathias -p "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 74: <BASH_FUNC_saveVitrine%%=() {  BLUE="\033[1;36m";
+ NC="\033[0m";
+ folder="matcd-vitrine.xyz"
+}>
+Fri Nov 29 16:13:24 2019: env 75: <BASH_FUNC_downdate%%=() {  update -s "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 76: <BASH_FUNC_node%%=() {  nodejs "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 77: <BASH_FUNC_cpdrop%%=() {  echo "Copie des fichiers dropbox...";
+ cp -an /home/mathias/Dropbox/* /home/mathias/Bureau/Mes_Documents/Local_Dropbox/
+}>
+Fri Nov 29 16:13:24 2019: env 78: <BASH_FUNC_bddRepresentation%%=() {  cd ~;
+ java -jar Bureau/Mes_Documents/Programmation/BDD/AnalyseSI-0.80.jar "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 79: <BASH_FUNC_packettracer7%%=() {  /opt/pt/bin/PacketTracer7 "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 80: <BASH_FUNC_Make%%=() {  make -f Makefile "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 81: <BASH_FUNC_capisen%%=() {  ssh -X webdev@vps350630.ovh.net
+}>
+Fri Nov 29 16:13:24 2019: env 82: <BASH_FUNC_febvre%%=() {  ssh -X mathias@54.37.224.163
+}>
+Fri Nov 29 16:13:24 2019: env 83: <BASH_FUNC_mcdpack-doc%%=() {  evince /home/mathias/Bureau/Mes_Documents/Programmation/Latex/documentation/doc.pdf
+}>
+Fri Nov 29 16:13:24 2019: env 84: <BASH_FUNC_git-all%%=() {  git-poule;
+ if [ "$@" = "" ]; then
+ git-coq "Mise à jour";
+ else
+ git-coq "$@";
+ fi
+}>
+Fri Nov 29 16:13:24 2019: env 85: <BASH_FUNC_cleanApport%%=() {  sudo rm -v /var/crash/*
+}>
+Fri Nov 29 16:13:24 2019: env 86: <BASH_FUNC_pushBases%%=() {  pushC++Base;
+ pushSFMLBase;
+ pushWebBase;
+ pushWebSites
+}>
+Fri Nov 29 16:13:24 2019: env 87: <BASH_FUNC_vm_ia_t1%%=() {  ssh -X mathias@34.95.28.172
+}>
+Fri Nov 29 16:13:24 2019: env 88: <BASH_FUNC_git-pull%%=() {  echo "Pull...";
+ git pull "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 89: <BASH_FUNC_pushWebSite%%=() {  echo "Pushing Site $1 ...";
+ cd ~/Bureau/Web/VitrineSites/$1;
+ git-coq "Mise à jour sur raspberry"
+}>
+Fri Nov 29 16:13:24 2019: env 90: <BASH_FUNC_trash%%=() {  mv -vi "$@" $HOME/.ownTrash/
+}>
+Fri Nov 29 16:13:24 2019: env 91: <BASH_FUNC_aptdown%%=() {  /home/mathias/Bureau/Mes_Documents/Programmation/functions/aptup -s "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 92: <BASH_FUNC_minecraft%%=() {  java -jar /home/mathias/.minecraft/launcher.jar
+}>
+Fri Nov 29 16:13:24 2019: env 93: <BASH_FUNC_usb_list%%=() {  lsblk | egrep --color=auto "(sd|NAME)"
+}>
+Fri Nov 29 16:13:24 2019: env 94: <BASH_FUNC_cleanComputer%%=() {  clear;
+ emptyTrash;
+ cpdrop;
+ sudo service apache2 restart "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 95: <BASH_FUNC_vscode%%=() {  code $@
+}>
+Fri Nov 29 16:13:24 2019: env 96: <BASH_FUNC_pushSFMLBase%%=() {  echo "Pushing SFML...";
+ cd ~/Bureau/Algo/SFMLWidgetsTests/SFML;
+ git-coq "Mise à jour sur raspberry"
+}>
+Fri Nov 29 16:13:24 2019: env 97: <BASH_FUNC_Gedit%%=() {  sudo gedit "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 98: <BASH_FUNC_ionicModuleAdd%%=() {  addIonicModule "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 99: <BASH_FUNC_Nano%%=() {  sudo nano "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 100: <BASH_FUNC_emptyTrash%%=() {  sudo echo "Vidage de la corbeille...";
+ sudo rm -rf $HOME/.local/share/Trash/files/*;
+ sudo rm -ri $HOME/.ownTrash/*
+}>
+Fri Nov 29 16:13:24 2019: env 101: <BASH_FUNC_phpIni%%=() {  Gedit /etc/php/7.0/apache2/php.ini "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 102: <BASH_FUNC_theharvester%%=() {  python /home/mathias/theharvester/theHarvester.py "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 103: <BASH_FUNC_aliases%%=() {  Gedit $ALIAS_DIR/.bash_aliases*;
+ aliasesReload
+}>
+Fri Nov 29 16:13:24 2019: env 104: <BASH_FUNC_sshVitrine%%=() {  ssh u228010324@153.92.6.64 -p 65002 "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 105: <BASH_FUNC_raspberryTest%%=() {  ping $RASP_ROOT "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 106: <BASH_FUNC_libcurl%%=() {  libcurl3
+}>
+Fri Nov 29 16:13:24 2019: env 107: <BASH_FUNC_minecrack%%=() {  java -jar ~/Bureau/Mes_Documents/Jeux/AZ_Minecraft_Launcher_Offline.jar "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 108: <BASH_FUNC_phpError%%=() {  tail -n 10 -f /var/log/apache2/error.log "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 109: <BASH_FUNC_raspberry4local%%=() {  ssh -X ubuntu@raspberry.local
+}>
+Fri Nov 29 16:13:24 2019: env 110: <BASH_FUNC_aliasesReload%%=() {  source ~/.bashrc
+}>
+Fri Nov 29 16:13:24 2019: env 111: <BASH_FUNC_android%%=() {  ~/Bureau/Android/android-studio/bin/studio.sh
+}>
+Fri Nov 29 16:13:24 2019: env 112: <BASH_FUNC_cpdropin%%=() {  cpdrop;
+ echo "Copie des fichiers dans dropbox...";
+ cp -an /home/mathias/Bureau/Mes_Documents/Local_Dropbox/* /home/mathias/Dropbox/
+}>
+Fri Nov 29 16:13:24 2019: env 113: <BASH_FUNC_git-first%%=() {  git-coq "Mise en place";
+ git-pull
+}>
+Fri Nov 29 16:13:24 2019: env 114: <BASH_FUNC_doc-mcdpack%%=() {  mcdpack-doc
+}>
+Fri Nov 29 16:13:24 2019: env 115: <BASH_FUNC_git-poule%%=() {  git-pull "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 116: <BASH_FUNC_unity3d%%=() {  ~/Bureau/Mes_Documents/Logiciels/Unity/2019.2.11f1/Editor/Unity
+}>
+Fri Nov 29 16:13:24 2019: env 117: <BASH_FUNC_colorized%%=() {  echo -e "\033[$1m\c";
+ echo -e "$2\c";
+ echo -e "\033[0m"
+}>
+Fri Nov 29 16:13:24 2019: env 118: <BASH_FUNC_pushWebSites%%=() {  echo "Pushing Sites...";
+ pushWebSite Accueil;
+ pushWebSite api;
+ pushWebSite cv;
+ pushWebSite gitmcd;
+ pushWebSite raspMonitor
+}>
+Fri Nov 29 16:13:24 2019: env 119: <BASH_FUNC_packettracer%%=() {  packettracer7 "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 120: <BASH_FUNC_raspberry%%=() {  ssh -X $RASP_USER@$RASP_ROOT -p $RASP_PORT "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 121: <BASH_FUNC_git-coq%%=() {  git-add .;
+ git-commit -m "$@";
+ git-push
+}>
+Fri Nov 29 16:13:24 2019: env 122: <BASH_FUNC_sikuli%%=() {  ~/Bureau/Algo/Sikuli/runsikulix &
+}>
+Fri Nov 29 16:13:24 2019: env 123: <BASH_FUNC_pushC++Base%%=() {  echo "Pushing C++...";
+ cd ~/Bureau/Algo/C++Tests/C++;
+ git-coq "Mise à jour sur raspberry"
+}>
+Fri Nov 29 16:13:24 2019: env 124: <BASH_FUNC_eping6%%=() {  ping6 -I enp4s0 $@
+}>
+Fri Nov 29 16:13:24 2019: env 125: <BASH_FUNC_pushWebBase%%=() {  echo "Pushing Web...";
+ cd ~/Bureau/Web/Bases;
+ git-coq "Mise à jour sur raspberry"
+}>
+Fri Nov 29 16:13:24 2019: env 126: <BASH_FUNC_pulseheberg%%=() {  ssh root@185.216.25.90
+}>
+Fri Nov 29 16:13:24 2019: env 127: <BASH_FUNC_git-push%%=() {  echo "Push...";
+ git push "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 128: <BASH_FUNC_openDir%%=() {  nautilus ./ "$@" &
+}>
+Fri Nov 29 16:13:24 2019: env 129: <BASH_FUNC_gitTest%%=() {  cd ~/Bureau/Git;
+ rm -rf "$@" "$@".git "$@"2;
+ echo "$@" | ./gitCreateProject;
+ cd "$@";
+ ./configure;
+ cd ../;
+ cd "$@"2;
+ ./configure;
+ cd ../
+}>
+Fri Nov 29 16:13:24 2019: env 130: <BASH_FUNC_ownfcrackzip%%=() {  fcrackzip -v -c aA1 -l 2-16 "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 131: <BASH_FUNC_usb_test%%=() {  sudo f3probe --destructive --time-ops /dev/sd$@
+}>
+Fri Nov 29 16:13:24 2019: env 132: <BASH_FUNC_git-add%%=() {  echo "Adding all...";
+ git add "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 133: <BASH_FUNC_git-commit%%=() {  echo "Committing...";
+ git commit "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 134: <BASH_FUNC_pingEvil%%=() {  ping -p 53616c6520676f73736520 -s 4096 "$@"
+}>
+Fri Nov 29 16:13:24 2019: env 135: <BASH_FUNC_vm_gl_t1%%=() {  ssh -X mathias@34.95.48.165
+}>
+Fri Nov 29 16:13:24 2019: env 136: <_=/home/mathias/Bureau/Mes_Documents/Logiciels/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Fri Nov 29 16:13:24 2019: executing: <make qtClean all>
+Fri Nov 29 16:13:24 2019: initializing json file
+Fri Nov 29 16:14:37 2019: finalizing json file
+Fri Nov 29 16:14:37 2019: returned with code: 0
