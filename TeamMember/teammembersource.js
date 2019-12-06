@@ -3,7 +3,7 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 class TeamMemberAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = 'http://34.95.48.165:8084/';
+    this.baseURL = 'http://localhost:8084/';
   }
 
   async getAllTeamMembers() {

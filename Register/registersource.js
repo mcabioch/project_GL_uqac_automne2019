@@ -3,7 +3,7 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 class RegisterAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = 'http://34.95.48.165:8082/';
+    this.baseURL = 'http://localhost:8082/';
   }
 
   async register(username, password, name, surname) {

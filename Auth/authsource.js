@@ -3,7 +3,7 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 class AuthAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = 'http://34.95.48.165:8080/';
+    this.baseURL = 'http://localhost:8080/';
   }
 
   async authenticate(token) {
