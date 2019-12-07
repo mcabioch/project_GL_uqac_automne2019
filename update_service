@@ -28,6 +28,7 @@ function run(){
 
 		while ! [ "$scr" = "" ]
 		then
+			echo "Waiting for ${SCREEN_NAME}..."
 			screen -S $scr -X stuff "^C"
 			screen -S $scr -X stuff "exit\n"
 			scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
