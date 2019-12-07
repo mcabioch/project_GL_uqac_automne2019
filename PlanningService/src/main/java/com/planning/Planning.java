@@ -1,5 +1,7 @@
 package com.planning;
 
+import java.util.Map;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,19 +11,15 @@ public class Planning {
 	
 	@Id
 	private ObjectId id;
-	private ObjectId user_id;
-	private ObjectId team_id;
-	private String jour_de_repos;
-	private int nb_heures;
+	private ObjectId userId;
+	private Map<String, String> creneau;
+	private String date;
 
-	
-	public Planning(ObjectId id, ObjectId user_id, ObjectId team_id, String jour_de_repos, int nb_heures) {
+	public Planning(ObjectId id, ObjectId userId, Map<String, String> creneau, String date) {
 		this.setId(id);
-		this.setUser_id(user_id);
-		this.setTeam_id(team_id);
-		this.setJour_de_repos(jour_de_repos);
-		this.setNb_heures(nb_heures);
-		
+		this.setUserId(userId);
+		this.setCreneau(creneau);
+		this.setDate(date);
 	}
 	
 	public String getId() {return id.toHexString();}
@@ -29,35 +27,27 @@ public class Planning {
 	
 	public void setId(ObjectId id) { this.id = id; }
 	
-	public ObjectId getUser_id() {
-		return user_id;
+	public String getUserId() {
+		return userId.toHexString();
 	}
 
-	public void setUser_id(ObjectId user_id) {
-		this.user_id = user_id;
+	public void setUserId(ObjectId user_id) {
+		this.userId = user_id;
 	}
 
-	public ObjectId getTeam_id() {
-		return team_id;
+	public Map<String, String> getCreneau() {
+		return creneau;
 	}
 
-	public void setTeam_id(ObjectId team_id) {
-		this.team_id = team_id;
+	public void setCreneau(Map<String, String> creneau) {
+		this.creneau = creneau;
 	}
 
-	public String getJour_de_repos() {
-		return jour_de_repos;
+	public String getDate() {
+		return date;
 	}
 
-	public void setJour_de_repos(String jour_de_repos) {
-		this.jour_de_repos = jour_de_repos;
-	}
-
-	public int getNb_heures() {
-		return nb_heures;
-	}
-
-	public void setNb_heures(int nb_heures) {
-		this.nb_heures = nb_heures;
+	public void setDate(String date) {
+		this.date = date;
 	}
 }

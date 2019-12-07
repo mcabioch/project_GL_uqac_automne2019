@@ -1,13 +1,14 @@
 package com.planning;
 
 
-import javax.validation.Valid;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,32 +21,31 @@ public class PlanningController {
 	@Autowired
 	private PlanningRepository planningRepository;
 	
-	@GetMapping("/planning/{id}")
-	public Planning getPlanningById(@PathVariable String id) {		
-		if(!ObjectId.isValid(id)) return null;
+	@GetMapping("/planning/{userId}/{stringDate}")
+	public ResponseEntity<Object> getPlanningByUserIdByDate(@PathVariable String userId, @PathVariable String stringDate) {		
+		if(!ObjectId.isValid(userId)) return new ResponseEntity<>("Invalid user id", HttpStatus.BAD_REQUEST);
 		
-		ObjectId _id = new ObjectId(id);
-		Planning teamMember = planningRepository.findById(_id);
+		//Test if date is valid
+		try {
+			new SimpleDateFormat("yyyy-MM-dd").parse(stringDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return new ResponseEntity<>("Invalid date", HttpStatus.BAD_REQUEST);
+		}
+		
+		ObjectId _id = new ObjectId(userId);
+		List<Planning> plannings = planningRepository.findByUserIdAndDate(_id, stringDate);
 
-		if(teamMember == null) return null;
+		if(plannings == null) return new ResponseEntity<>("Planning not found", HttpStatus.NOT_FOUND);
 		
-		return teamMember;
+		return new ResponseEntity<>(plannings, HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
-	private String createPlanning(@Valid @RequestBody Planning planning) {
+	private ResponseEntity<String> createPlanning(@RequestBody Planning planning) {
 		planning.setId(ObjectId.get());
 		planningRepository.save(planning);
 		
-		return planning.getId();
-	}
-	
-	@DeleteMapping("/planning/{id}/delete")
-	private ResponseEntity<String> deletePlanning(@PathVariable String id) {
-		Planning tm = getPlanningById(id);
-		
-		if(tm == null) return new ResponseEntity<>("Planning not found", HttpStatus.NOT_FOUND);
-		
-		return new ResponseEntity<>("Deleted " + planningRepository.deletePlanningById(tm.getObjectId()) + " items", HttpStatus.OK);
+		return new ResponseEntity<>(planning.getId(), HttpStatus.OK);
 	}
 }
