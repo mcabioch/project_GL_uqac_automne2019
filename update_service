@@ -15,7 +15,7 @@ function run(){
 	fi
 
 	screen -dmS ${SCREEN_NAME}
-#	screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
+	screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
 
 	exit 0
 }
