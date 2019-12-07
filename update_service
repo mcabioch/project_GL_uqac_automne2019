@@ -2,6 +2,21 @@
 
 PROG_DIR=$PWD/`dirname $0`
 SCREEN_NAME=graphql
+PORTs="4000"
+
+function enablePort() {
+	if [ "`sudo iptables --list | grep $1`" = "" ]
+	then
+		sudo iptables -A INPUT -p tcp --dport $1 -j ACCEPT
+	fi
+}
+
+function enablePorts() {
+	for port in `echo -e $PORTs`
+	do
+		enablePort $port
+	done
+}
 
 function run(){
 	echo "Starting..."
@@ -17,6 +32,8 @@ function run(){
 	screen -dmS ${SCREEN_NAME}
 	screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
 
+	enablePorts
+
 	exit 0
 }
 
@@ -27,7 +44,6 @@ while [ -n "$1" ]; do
 			;;
 		*)
 			echo "Option $1 not recognized"
-			$0 --help
 			exit 1 ;;
 	esac
 
