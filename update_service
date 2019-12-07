@@ -21,7 +21,7 @@ function enablePorts() {
 function run(){
 	echo "Starting..."
 
-	ls -l
+	ls -l | grep "^d" | tr -s ' ' | cut -d ' ' -f 9
 
 	enablePorts
 
