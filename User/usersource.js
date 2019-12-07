@@ -13,6 +13,17 @@ class UserAPI extends RESTDataSource {
   async getUser(id) {
     return this.get(`users/${id}`);
   }
+
+  async edit(id, username, password, name, surname) {
+    return this.patch(`user/${id}/edit`,
+      {
+        "username" : username,
+        "password" : password,
+        "name" : name,
+        "surname" : surname
+      }
+    );
+  }
 };
 
 module.exports.UserAPI = UserAPI;

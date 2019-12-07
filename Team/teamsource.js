@@ -11,13 +11,15 @@ class TeamAPI extends RESTDataSource {
   }
 
   async create(defaultHeures, nonTravail, creneauDebut, creneauFin, chefId) {
-    return this.post('create', {
+    return this.post('create', 
+      {
         "defaultHeures": defaultHeures,
         "nonTravail": nonTravail,
         "creneauDebut": creneauDebut,
         "creneauFin": creneauFin,
         "chefId": chefId
-    });
+      }
+    );
   }
 };
 

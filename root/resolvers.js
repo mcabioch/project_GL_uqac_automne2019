@@ -14,7 +14,8 @@ const resolvers = merge({
         register: (root, { username, pass, name, surname }, { dataSources }) => dataSources.registerAPI.register(username, pass, name, surname),
         planning: (root, {userId, date}, {dataSources}) => dataSources.planningAPI.getPlanningByUserIdAndDate(userId, date),
         createTeamMember: (root, { teamId, userId, jourDeRepos, nbHeures }, { dataSources }) => dataSources.teamMemberAPI.create(teamId, userId, jourDeRepos, nbHeures),
-        createTeam: (root, { defaultHeures, nonTravail, creneauDebut, creneauFin, chefId }, { dataSources }) => dataSources.teamAPI.create(defaultHeures, nonTravail, creneauDebut, creneauFin, chefId)
+        createTeam: (root, { defaultHeures, nonTravail, creneauDebut, creneauFin, chefId }, { dataSources }) => dataSources.teamAPI.create(defaultHeures, nonTravail, creneauDebut, creneauFin, chefId),
+        editUser: (root, { id, username, password, name, surname }, { dataSources }) => dataSources.userAPI.edit(id, username, password, name, surname)
     }
 }, Auth.resolver, Team.resolver, TeamMember.resolver, Planning.resolver)
 
