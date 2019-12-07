@@ -2,7 +2,7 @@
 
 PROG_DIR=$PWD/`dirname $0`
 
-scr=`screen -list | grep "graphql" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 1`
+scr=`screen -list | grep "graphql" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' '`
 
 echo "$scr"
 
