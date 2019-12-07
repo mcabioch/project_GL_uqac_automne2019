@@ -13,7 +13,7 @@ then
 	screen -S $scr -X stuff "exit\n"
 fi
 
-screen -dS ${SCREEN_NAME}
+screen -dmS ${SCREEN_NAME}
 screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
 
 exit 0
