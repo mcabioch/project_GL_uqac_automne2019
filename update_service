@@ -3,17 +3,36 @@
 PROG_DIR=$PWD/`dirname $0`
 SCREEN_NAME=graphql
 
+function run(){
+	scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
+
+	if ! [ "$scr" = "" ]
+	then
+		screen -S $scr -X stuff "^C"
+		screen -S $scr -X stuff "exit\n"
+	fi
+
+	screen -dmS ${SCREEN_NAME}
+	screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
+
+	exit 0
+}
+
+while [ -n "$1" ]; do
+	case "$1" in
+		-r)
+			run
+			;;
+		*)
+			echo "Option $1 not recognized"
+			$0 --help
+			exit 1 ;;
+	esac
+
+	shift
+done
+
 git pull
-
-scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
-
-if ! [ "$scr" = "" ]
-then
-	screen -S $scr -X stuff "^C"
-	screen -S $scr -X stuff "exit\n"
-fi
-
-screen -dmS ${SCREEN_NAME}
-screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
+./`basename $0` -r
 
 exit 0
