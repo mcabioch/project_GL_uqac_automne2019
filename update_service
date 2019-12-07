@@ -26,10 +26,11 @@ function run(){
 		SCREEN_NAME=$service
 		scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
 
-		if ! [ "$scr" = "" ]
+		while ! [ "$scr" = "" ]
 		then
 			screen -S $scr -X stuff "^C"
 			screen -S $scr -X stuff "exit\n"
+			scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
 		fi
 
 		screen -dmS ${SCREEN_NAME}
