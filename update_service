@@ -18,24 +18,33 @@ function enablePorts() {
 	done
 }
 
+function getScreen(){
+	echo "`screen -list | grep "$1" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`"
+}
+
 function run(){
 	echo "Starting..."
 
 	for service in `ls -l | grep "^d" | tr -s ' ' | cut -d ' ' -f 9`
 	do
 		SCREEN_NAME=$service
-		scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
+		scr=`getScreen "${SCREEN_NAME}"`
 
-		while ! [ "$scr" = "" ]
+		while ! [ "`getScreen "${SCREEN_NAME}"`" = "" ]
 		do
 			echo -e "Waiting for ${SCREEN_NAME}...\r\c"
 			screen -S $scr -X stuff "^C"
 			screen -S $scr -X stuff "exit\n"
-			scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
 		done
 		echo ""
 
 		screen -dmS ${SCREEN_NAME}
+
+		while ! [ "`getScreen "${SCREEN_NAME}"`" = "" ]
+		do
+			echo -e "\c"
+		done
+
 		screen -S ${SCREEN_NAME} -X stuff "cd ${SCREEN_NAME}\n"
 		screen -S ${SCREEN_NAME} -X stuff "mvn spring-boot:run\n"
 	done
