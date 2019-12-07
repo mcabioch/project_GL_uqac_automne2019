@@ -36,9 +36,9 @@ function run(){
 		echo ""
 
 		screen -dmS ${SCREEN_NAME}
-		scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
 
-		while ! [ "$scr" = "" ]
+		scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
+		while [ "$scr" = "" ]
 		do
 			scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
 		done
