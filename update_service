@@ -33,6 +33,7 @@ function run(){
 		fi
 
 		screen -dmS ${SCREEN_NAME}
+		screen -S ${SCREEN_NAME} -X stuff "cd ${SCREEN_NAME}\n"
 		screen -S ${SCREEN_NAME} -X stuff "mvn spring-boot:run\n"
 	done
 
