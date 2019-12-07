@@ -28,11 +28,12 @@ function run(){
 
 		while ! [ "$scr" = "" ]
 		do
-			echo "Waiting for ${SCREEN_NAME}..."
+			echo -e "Waiting for ${SCREEN_NAME}...\r\c"
 			screen -S $scr -X stuff "^C"
 			screen -S $scr -X stuff "exit\n"
 			scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
 		done
+		echo ""
 
 		screen -dmS ${SCREEN_NAME}
 		screen -S ${SCREEN_NAME} -X stuff "cd ${SCREEN_NAME}\n"
