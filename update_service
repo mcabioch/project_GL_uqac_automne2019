@@ -4,6 +4,6 @@ PROG_DIR=$PWD/`dirname $0`
 
 scr=`screen -list | grep "graphql"`
 
-echo "scr"
+echo "$scr"
 
 exit 0
