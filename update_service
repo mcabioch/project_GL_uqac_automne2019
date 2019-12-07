@@ -21,7 +21,20 @@ function enablePorts() {
 function run(){
 	echo "Starting..."
 
-	ls -l | grep "^d" | tr -s ' ' | cut -d ' ' -f 9
+	for service in `ls -l | grep "^d" | tr -s ' ' | cut -d ' ' -f 9`
+	do
+		SCREEN_NAME=$service
+		scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
+
+		if ! [ "$scr" = "" ]
+		then
+			screen -S $scr -X stuff "^C"
+			screen -S $scr -X stuff "exit\n"
+		fi
+
+		screen -dmS ${SCREEN_NAME}
+		screen -S ${SCREEN_NAME} -X stuff "mvn spring-boot:run\n"
+	done
 
 	enablePorts
 
