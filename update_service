@@ -1,0 +1,47 @@
+#!/bin/bash
+
+PROG_DIR=$PWD/`dirname $0`
+
+PORTs="8080\n8081\n8082\n8083\n8084\n8085\n8086"
+
+function enablePort() {
+	if [ "`sudo iptables --list | grep $1`" = "" ]
+	then
+		sudo iptables -A INPUT -p tcp --dport $1 -j ACCEPT
+	fi
+}
+
+function enablePorts() {
+	for port in `echo -e $PORTs`
+	do
+		enablePort $port
+	done
+}
+
+function run(){
+	echo "Starting..."
+
+	ls | grep "^d"
+
+	enablePorts
+
+	exit 0
+}
+
+while [ -n "$1" ]; do
+	case "$1" in
+		-r)
+			run
+			;;
+		*)
+			echo "Option $1 not recognized"
+			exit 1 ;;
+	esac
+
+	shift
+done
+
+git pull
+./`basename $0` -r
+
+exit 0
