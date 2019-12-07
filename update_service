@@ -1,10 +1,18 @@
 #!/bin/bash
 
 PROG_DIR=$PWD/`dirname $0`
+SCREEN_NAME=graphql
 
-scr=`screen -list | grep "graphql" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
+git pull
 
-screen -S $scr -X stuff "^C"
-screen -S $scr -X stuff "exit"
+scr=`screen -list | grep "${SCREEN_NAME}" | tr -s '\t' | sed "s/\t/ /g" | tr -s ' ' | cut -d ' ' -f 2`
+
+if ! [ "$scr" = "" ]
+then
+	screen -S $scr -X stuff "^C"
+	screen -S $scr -X stuff "exit\n"
+fi
+
+screen -S ${SCREEN_NAME} -X stuff "node server.js\n"
 
 exit 0
