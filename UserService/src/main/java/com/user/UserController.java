@@ -3,6 +3,7 @@ package com.user;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,16 +41,28 @@ public class UserController {
 	}
 	
 	@PatchMapping("/user/{id}/edit")
-	public ResponseEntity<Object> editUserById(@RequestBody User u, @PathVariable String id) {		
-		if(!(getUserById(id).getStatusCode() == HttpStatus.OK)) {
-			return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+	public ResponseEntity<Object> editUserById(@RequestBody String body, @PathVariable String id) {
+		JSONObject userJson = new JSONObject(body);
+		
+		if(!ObjectId.isValid(id)) {
+			return new ResponseEntity<>("Invalid userId", HttpStatus.BAD_REQUEST);
 		}
 		
-		u.setId(new ObjectId(id));
-		
-		userRepository.save(u);
-		
-		return new ResponseEntity<>(u, HttpStatus.OK);
+		if(!(getUserById(id).getStatusCode() == HttpStatus.OK)) {
+			return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+		} else {
+			User dbUser = (User) getUserById(id).getBody();
+			
+			if(userJson.has("name")) dbUser.setName(userJson.getString("name"));
+			if(userJson.has("surname")) dbUser.setSurname(userJson.getString("surname"));
+
+			
+			userRepository.save(dbUser);
+			
+			dbUser = (User) getUserById(id).getBody();
+			
+			return new ResponseEntity<>(dbUser, HttpStatus.OK);
+		}
 	}
 	
 	// Delete a user
