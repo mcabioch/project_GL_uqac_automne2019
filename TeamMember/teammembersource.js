@@ -11,11 +11,19 @@ class TeamMemberAPI extends RESTDataSource {
   }
 
   async getTeamMemberByUserId(id) {
-    return this.get(`/teamMember/user/${id}`);
+    return this.get(`teamMember/user/${id}`);
   }
 
   async getTeamMembersByTeamId(teamId) {
       return this.get(`teamMember/team/${teamId}`);
+  }
+
+  async edit(userId, nbHeures, nonTravail) {
+    return this.patch(`teamMember/${userId}/edit`,
+      {
+        "nbHeures" : nbHeures,
+        "nonTravail" : nonTravail
+      });
   }
 
   async create(teamId, userId, jourDeRepos, nbHeures) {

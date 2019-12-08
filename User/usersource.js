@@ -14,11 +14,9 @@ class UserAPI extends RESTDataSource {
     return this.get(`users/${id}`);
   }
 
-  async edit(id, username, password, name, surname) {
+  async edit(id, name, surname) {
     return this.patch(`user/${id}/edit`,
       {
-        "username" : username,
-        "password" : password,
         "name" : name,
         "surname" : surname
       }
