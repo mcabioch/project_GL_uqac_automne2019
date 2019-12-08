@@ -13,26 +13,29 @@ void MainWindow::initPlanningTab(QTabWidget* tabWidget){
 	_planCenter->setLayout(_planLay);
 
 	_planTable->setColumnCount(7);
+	_planTable->setProperty("class", "planning");
 	QStringList headers/* = {"Hours"}*/;
 	for(auto& day : mcd::arguments["weekdays"]){
-		QStringList tmp(day.c_str());
+		QStringList tmp(day.substr(0, 3).c_str());
 		headers += tmp;
 	}
 	_planTable->setHorizontalHeaderLabels(headers);
 	_planLay->addWidget(_planTable);
 
-	for(size_t i = 0; i < 24; ++i){
+	for(size_t i = 0; i < _nbHours; ++i){
 		int pos = _planTable->rowCount();
 		_planTable->insertRow(pos);
 	}
 
 	for(size_t i = 0; i < mcd::arguments["weekdays"].size(); ++i){
-		for(int j = 0; j < 24; ++j){
+		for(int j = 0; j < _nbHours; ++j){
 			auto item = new QTableWidgetItem;
 			_planItems.push_back(item);
 			_planTable->setItem(j, static_cast<int>(i), item);
 		}
 	}
+
+	
 }
 
 void MainWindow::deletePlanningTab(QTabWidget*/* tabWidget*/){
@@ -47,9 +50,16 @@ void MainWindow::resetPlanningTab(QTabWidget* tabWidget){
 void MainWindow::initPlanningTable() {
 	_autoChange = true;
 
+	_planTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+	_planTable->setAttribute(Qt::WA_TranslucentBackground);
+	_planTable->setShowGrid(false);
+	_planTable->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+	_planTable->verticalHeader()->setDefaultSectionSize(15);
+	_planTable->setItemDelegate(new MarginDelegate(6, _planTable));
+
 	for(size_t i = 0; i < mcd::arguments["weekdays"].size(); ++i){
 		auto day = _planning.getDay(i);
-		for(int j = 0; j < 24; ++j){
+		for(int j = 0; j < _nbHours; ++j){
 			bool found = false;
 			for(const auto &e : day) {
 				if(e.first <= static_cast<double>(j) && e.second >= static_cast<double>(j)){
@@ -65,17 +75,14 @@ void MainWindow::initPlanningTable() {
 
 			auto item = _planTable->item(j, static_cast<int>(i));
 			if(found){
-				item->setBackground(Qt::green);
+				item->setBackground(QColor("#A68AC9AA"));
 			} else {
-				item->setBackground(Qt::red);
+				item->setBackground(Qt::transparent);
 			}
 		}
 	}
 
 	_autoChange = false;
-
-	/*connect(_teamTable, SIGNAL(cellClicked(int, int)), this, SLOT(updateSelectedMember(int, int)));
-	connect(_teamTable, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(editMember(QTableWidgetItem*)));*/
 }
 
 void MainWindow::p_setAll(const Globals&, const std::vector<TeamMember>&, const Planning& pl){

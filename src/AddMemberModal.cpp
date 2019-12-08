@@ -34,16 +34,46 @@ AddMemberModal& AddMemberModal::operator=(const AddMemberModal& other){
 }
 
 void AddMemberModal::initWindow() {
-	auto mainLayout = new QGridLayout();
+	auto mainLayout = new QVBoxLayout();
+	auto mainWidget = new QWidget();
+	auto lay = new QVBoxLayout();
+	auto inlay = new QHBoxLayout();
+
+	auto vl_left = new QVBoxLayout();
+	auto vl_right = new QVBoxLayout();
+
+	int iconSize = 18;
 
 	_register = new RegisterWidget;
 	_confirmButton = new QPushButton("Add");
 
-	mainLayout->addWidget(_register, 0, 0);
-	mainLayout->addItem(new QVSpacerItem(), 1, 0);
-	mainLayout->addItem(new QHSpacerItem(), 0, 1);
-	mainLayout->addWidget(_confirmButton, 1, 1);
+	_confirmButton->setProperty("class", "main-button");
 
+	vl_left->addWidget(new IconedFormContainer(new QIcon("res/imgs/user_icon.png"), iconSize, _register->_firstName));
+	vl_left->addWidget(new IconedFormContainer(new QIcon("res/imgs/user_icon.png"), iconSize, _register->_lastName));
+	vl_left->addWidget(new IconedFormContainer(new QIcon("res/imgs/user_icon.png"), iconSize, _register->_username));
+	vl_left->addWidget(new IconedFormContainer(new QIcon("res/imgs/pass_icon.png"), iconSize, _register->_password));
+	vl_left->addWidget(new IconedFormContainer(new QIcon("res/imgs/pass_icon.png"), iconSize, _register->_passwordConf));
+
+	vl_right->addWidget(new IconedFormContainer(new QIcon("res/imgs/clock_icon.png"), iconSize, _register->_hoursPerWeek, "Hours/week "));
+	vl_right->addWidget(new IconedFormContainer(new QIcon("res/imgs/dayoff_icon.png"), iconSize, _register->_checkAll, "Days off "));
+	for(auto weekday : mcd::arguments["weekdays"]){
+		vl_right->addWidget(_register->_t_daysCheckboxes[weekday]);
+	}
+
+	inlay->addItem(new QHSpacerItem());
+	inlay->addLayout(vl_left);
+	inlay->addItem(new QHSpacerItem());
+	inlay->addLayout(vl_right);
+	inlay->addItem(new QHSpacerItem());
+
+	lay->addItem(new QVSpacerItem());
+	lay->addLayout(inlay);
+	lay->addWidget(_confirmButton);
+	lay->addItem(new QVSpacerItem());
+
+	mainWidget->setLayout(lay);
+	mainLayout->addWidget(mainWidget);
 	this->setLayout(mainLayout);
 
 	connect(_confirmButton, SIGNAL(clicked()), this, SLOT(addNewMember()));

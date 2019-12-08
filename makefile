@@ -315,7 +315,9 @@ remove: clean
 	$(RM) $(RMFLAGS) $(DOXYLN)
 	$(RM) $(RMFLAGS) $(HTMLLN)
 
-PHONY += install remake lib libs
+PHONY += install remake lib libs run
+
+run: qtRun
 
 install: clean
 	make all

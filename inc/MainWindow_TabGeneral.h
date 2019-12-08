@@ -72,25 +72,13 @@ private:
 		
 	/* Local */
 		QWidget* _g_tab;
-		QVBoxLayout* _g_lay;
+		QHBoxLayout* _g_lay;
 
-		QVBoxLayout* _g_daysChoice;
-		QHBoxLayout* _g_checkAllLay;
 		QCheckBox* _g_allCheckbox;
-		QHBoxLayout* _g_checkDays;
 		std::map<std::string, QCheckBox*> _g_daysCheckboxes;
-
-		QHBoxLayout* _g_minTimeLay;
 		QTimeEdit* _g_minTimeEdit;
-		QLabel* _g_minTimeLabel;
-
-		QHBoxLayout* _g_maxTimeLay;
 		QTimeEdit* _g_maxTimeEdit;
-		QLabel* _g_maxTimeLabel;
-
-		QHBoxLayout* _g_defaultHoursLay;
 		QDoubleSpinBox* _g_defaultHoursEdit;
-		QLabel* _g_defaultHoursLabel;
 
 		QToolBar* _g_toolBar;
 

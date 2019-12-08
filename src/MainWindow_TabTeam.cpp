@@ -27,6 +27,7 @@ void MainWindow::initTeamTab(QTabWidget* tabWidget){
 	QStringList headers = { "Id", "First name", "Last name", "Nb of hours per week", "Days off"};
 	_teamTable->setHorizontalHeaderLabels(headers);
 	_teamTable->setColumnHidden(0, true);
+	_teamTable->setProperty("class", "team");
 
 	if(_api.isChef()){
 		_teamToolBar->addAction(addAct);
@@ -48,6 +49,18 @@ void MainWindow::initTeamTable() {
 
 	_teamTable->clearContents();
 	_teamTable->setRowCount(0);
+	_teamTable->verticalHeader()->setVisible(false);
+	_teamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+	_teamTable->setAttribute(Qt::WA_TranslucentBackground);
+	_teamTable->setShowGrid(false);
+
+	QPalette p(_teamTable->palette());
+	quint8 r=170, g=170, b=170, a=85;
+	p.setColor(QPalette::Base, QColor(QRgba64::fromRgba(r, g, b, a)));
+	p.setColor(QPalette::Window, QColor(QRgba64::fromRgba(r, g, b, a)));
+
+	_teamTable->setPalette(p);
+	_teamTable->setAutoFillBackground(true);
 
 	for(auto &e : teamMembers) {
 		int pos = _teamTable->rowCount();
@@ -76,7 +89,11 @@ void MainWindow::updateSelectedMember(int row, int) {
 
 void MainWindow::addMember() {
 	AddMemberModal newMember(this, teamMembers, *_teamTable, _api);
+
 	newMember.setModal(true);
+	newMember.resize(560, 315);
+	newMember.setStyleSheet(QString((cssReader("res/style.css")+cssReader("res/main.css")).c_str()));
+
 	newMember.exec();
 	initTeamTable();
 }
@@ -116,7 +133,15 @@ void MainWindow::editMember(QTableWidgetItem *item) {
 }
  
 void MainWindow::deleteMember() {
-	QMessageBox::StandardButton reply = QMessageBox::warning(this, "Confirmation", "Are you sure you want to delete this member ?", QMessageBox::No | QMessageBox::Yes);
+	QMessageBox warn;
+
+	warn.setText("Are you sure you want to delete this member ?");
+	warn.setIconPixmap(QIcon("res/imgs/care_icon.png").pixmap(64, 64));
+	warn.setWindowTitle("Confirmation");
+	warn.setStandardButtons(QMessageBox::Yes|QMessageBox::No);
+	warn.setStyleSheet(QString((cssReader("res/style.css")+cssReader("res/main.css")).c_str()));
+
+	int reply = warn.exec();
 
 	if(reply == QMessageBox::Yes) {
 		_api.deleteMember(teamMembers[selectedMember].getId());

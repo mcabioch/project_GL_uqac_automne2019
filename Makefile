@@ -54,11 +54,13 @@ SOURCES       = src/AddMemberModal.cpp \
 		src/Api.cpp \
 		src/ConnectWindow.cpp \
 		src/Globals.cpp \
+		src/IconedFormContainer.cpp \
 		src/main.cpp \
 		src/MainWindow.cpp \
 		src/MainWindow_TabGeneral.cpp \
 		src/MainWindow_TabPlanning.cpp \
 		src/MainWindow_TabTeam.cpp \
+		src/MarginDelegate.cpp \
 		src/Planning.cpp \
 		src/RegisterWidget.cpp \
 		src/SigninWindow.cpp \
@@ -66,18 +68,22 @@ SOURCES       = src/AddMemberModal.cpp \
 		inc/Widgets/QtFunctions.cpp moc_AddMemberModal.cpp \
 		moc_Api.cpp \
 		moc_ConnectWindow.cpp \
+		moc_IconedFormContainer.cpp \
 		moc_MainWindow.cpp \
+		moc_MarginDelegate.cpp \
 		moc_RegisterWidget.cpp \
 		moc_SigninWindow.cpp
 OBJECTS       = AddMemberModal.o \
 		Api.o \
 		ConnectWindow.o \
 		Globals.o \
+		IconedFormContainer.o \
 		main.o \
 		MainWindow.o \
 		MainWindow_TabGeneral.o \
 		MainWindow_TabPlanning.o \
 		MainWindow_TabTeam.o \
+		MarginDelegate.o \
 		Planning.o \
 		RegisterWidget.o \
 		SigninWindow.o \
@@ -86,7 +92,9 @@ OBJECTS       = AddMemberModal.o \
 		moc_AddMemberModal.o \
 		moc_Api.o \
 		moc_ConnectWindow.o \
+		moc_IconedFormContainer.o \
 		moc_MainWindow.o \
+		moc_MarginDelegate.o \
 		moc_RegisterWidget.o \
 		moc_SigninWindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -166,11 +174,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/Api.hpp \
 		inc/ConnectWindow.h \
 		inc/Globals.h \
+		inc/IconedFormContainer.hpp \
 		inc/includes.h \
 		inc/MainWindow.h \
 		inc/MainWindow_TabGeneral.h \
 		inc/MainWindow_TabPlanning.h \
 		inc/MainWindow_TabTeam.h \
+		inc/MarginDelegate.hpp \
 		inc/Planning.h \
 		inc/RegisterWidget.h \
 		inc/SigninWindow.h \
@@ -266,11 +276,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Api.cpp \
 		src/ConnectWindow.cpp \
 		src/Globals.cpp \
+		src/IconedFormContainer.cpp \
 		src/main.cpp \
 		src/MainWindow.cpp \
 		src/MainWindow_TabGeneral.cpp \
 		src/MainWindow_TabPlanning.cpp \
 		src/MainWindow_TabTeam.cpp \
+		src/MarginDelegate.cpp \
 		src/Planning.cpp \
 		src/RegisterWidget.cpp \
 		src/SigninWindow.cpp \
@@ -459,8 +471,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/AddMemberModal.h inc/Api.hpp inc/ConnectWindow.h inc/Globals.h inc/includes.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/Planning.h inc/RegisterWidget.h inc/SigninWindow.h inc/TeamMember.h inc/bcrypt/bcrypt.h inc/bcrypt/BCrypt.hpp inc/bcrypt/crypt.h inc/bcrypt/crypt_blowfish.h inc/bcrypt/crypt_gensalt.h inc/bcrypt/ow-crypt.h inc/bcrypt/winbcrypt.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/AddMemberModal.cpp src/Api.cpp src/ConnectWindow.cpp src/Globals.cpp src/main.cpp src/MainWindow.cpp src/MainWindow_TabGeneral.cpp src/MainWindow_TabPlanning.cpp src/MainWindow_TabTeam.cpp src/Planning.cpp src/RegisterWidget.cpp src/SigninWindow.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/AddMemberModal.h inc/Api.hpp inc/ConnectWindow.h inc/Globals.h inc/IconedFormContainer.hpp inc/includes.h inc/MainWindow.h inc/MainWindow_TabGeneral.h inc/MainWindow_TabPlanning.h inc/MainWindow_TabTeam.h inc/MarginDelegate.hpp inc/Planning.h inc/RegisterWidget.h inc/SigninWindow.h inc/TeamMember.h inc/bcrypt/bcrypt.h inc/bcrypt/BCrypt.hpp inc/bcrypt/crypt.h inc/bcrypt/crypt_blowfish.h inc/bcrypt/crypt_gensalt.h inc/bcrypt/ow-crypt.h inc/bcrypt/winbcrypt.h inc/C++/Animal.hpp inc/C++/Ant.hpp inc/C++/Args.hpp inc/C++/array.hpp inc/C++/arraysIncludes.hpp inc/C++/Assert.hpp inc/C++/AssertionException.hpp inc/C++/Big.hpp inc/C++/Big_Comparison.hpp inc/C++/Big_Constructor.hpp inc/C++/Big_Maths.hpp inc/C++/Big_Operator.hpp inc/C++/Binary.hpp inc/C++/C++.hpp inc/C++/C++Entities.hpp inc/C++/check.hpp inc/C++/Clock.hpp inc/C++/collides.hpp inc/C++/console.hpp inc/C++/ConsoleTable.hpp inc/C++/Contraption.hpp inc/C++/convert.hpp inc/C++/cryptage.hpp inc/C++/Date.hpp inc/C++/DateTime.hpp inc/C++/defines.hpp inc/C++/Entities.hpp inc/C++/Entity.hpp inc/C++/errors.hpp inc/C++/files.hpp inc/C++/Fraction.hpp inc/C++/Hostile.hpp inc/C++/Identifier.hpp inc/C++/includes.hpp inc/C++/IOConfig.hpp inc/C++/Logger.hpp inc/C++/lowIncludes.hpp inc/C++/macro.hpp inc/C++/Map.hpp inc/C++/maths.hpp inc/C++/Matrix.hpp inc/C++/Matrix_constructs.hpp inc/C++/Matrix_core.hpp inc/C++/Matrix_functions.hpp inc/C++/Matrix_maths.hpp inc/C++/Mushroom.hpp inc/C++/NotCopyable.hpp inc/C++/NotInstantiable.hpp inc/C++/Object.hpp inc/C++/OsDetection.hpp inc/C++/Path.hpp inc/C++/Pathfinding.hpp inc/C++/PathfindingAlgorithms.hpp inc/C++/PathfindingDijkstra.hpp inc/C++/PathfindingException.hpp inc/C++/PathfindingProblem.hpp inc/C++/Plant.hpp inc/C++/Player.hpp inc/C++/PlayerAbstraction.hpp inc/C++/pointers.hpp inc/C++/PureVirtual.hpp inc/C++/Referenced.hpp inc/C++/RNG.hpp inc/C++/sorting.hpp inc/C++/Stone.hpp inc/C++/string.hpp inc/C++/strptime.h inc/C++/system.hpp inc/C++/Threadable.hpp inc/C++/Time.hpp inc/C++/timeFunctions.hpp inc/C++/Timer.hpp inc/C++/Tree.hpp inc/C++/types.hpp inc/C++/UsefullDefines.hpp inc/C++/vector.hpp inc/C++/Vegetal.hpp inc/Widgets/Qt.hpp inc/Widgets/QtDefines.hpp inc/Widgets/QtFunctions.hpp inc/Widgets/Spacers.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/AddMemberModal.cpp src/Api.cpp src/ConnectWindow.cpp src/Globals.cpp src/IconedFormContainer.cpp src/main.cpp src/MainWindow.cpp src/MainWindow_TabGeneral.cpp src/MainWindow_TabPlanning.cpp src/MainWindow_TabTeam.cpp src/MarginDelegate.cpp src/Planning.cpp src/RegisterWidget.cpp src/SigninWindow.cpp src/TeamMember.cpp inc/Widgets/QtFunctions.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -492,9 +504,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_AddMemberModal.cpp moc_Api.cpp moc_ConnectWindow.cpp moc_MainWindow.cpp moc_RegisterWidget.cpp moc_SigninWindow.cpp
+compiler_moc_header_make_all: moc_AddMemberModal.cpp moc_Api.cpp moc_ConnectWindow.cpp moc_IconedFormContainer.cpp moc_MainWindow.cpp moc_MarginDelegate.cpp moc_RegisterWidget.cpp moc_SigninWindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_AddMemberModal.cpp moc_Api.cpp moc_ConnectWindow.cpp moc_MainWindow.cpp moc_RegisterWidget.cpp moc_SigninWindow.cpp
+	-$(DEL_FILE) moc_AddMemberModal.cpp moc_Api.cpp moc_ConnectWindow.cpp moc_IconedFormContainer.cpp moc_MainWindow.cpp moc_MarginDelegate.cpp moc_RegisterWidget.cpp moc_SigninWindow.cpp
 moc_AddMemberModal.cpp: inc/RegisterWidget.h \
 		inc/includes.h \
 		inc/Api.hpp \
@@ -509,6 +521,8 @@ moc_AddMemberModal.cpp: inc/RegisterWidget.h \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
+		inc/IconedFormContainer.hpp \
+		inc/MarginDelegate.hpp \
 		inc/AddMemberModal.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -546,6 +560,8 @@ moc_ConnectWindow.cpp: inc/MainWindow.h \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
+		inc/IconedFormContainer.hpp \
+		inc/MarginDelegate.hpp \
 		inc/MainWindow_TabGeneral.h \
 		inc/MainWindow_TabTeam.h \
 		inc/MainWindow_TabPlanning.h \
@@ -554,6 +570,15 @@ moc_ConnectWindow.cpp: inc/MainWindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/ConnectWindow.h -o moc_ConnectWindow.cpp
+
+moc_IconedFormContainer.cpp: inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
+		inc/IconedFormContainer.hpp \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/IconedFormContainer.hpp -o moc_IconedFormContainer.cpp
 
 moc_MainWindow.cpp: inc/AddMemberModal.h \
 		inc/RegisterWidget.h \
@@ -570,6 +595,8 @@ moc_MainWindow.cpp: inc/AddMemberModal.h \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
+		inc/IconedFormContainer.hpp \
+		inc/MarginDelegate.hpp \
 		inc/MainWindow_TabGeneral.h \
 		inc/MainWindow_TabTeam.h \
 		inc/MainWindow_TabPlanning.h \
@@ -577,6 +604,15 @@ moc_MainWindow.cpp: inc/AddMemberModal.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/MainWindow.h -o moc_MainWindow.cpp
+
+moc_MarginDelegate.cpp: inc/Widgets/Qt.hpp \
+		inc/Widgets/QtDefines.hpp \
+		inc/Widgets/Spacers.hpp \
+		inc/Widgets/QtFunctions.hpp \
+		inc/MarginDelegate.hpp \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/home/mathias/Bureau/ISEN/UQAC/Cours2019-2020/Cours/T1_Genie_logiciel/Projet/project_GL_uqac_automne2019 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include inc/MarginDelegate.hpp -o moc_MarginDelegate.cpp
 
 moc_RegisterWidget.cpp: inc/includes.h \
 		inc/Api.hpp \
@@ -591,6 +627,8 @@ moc_RegisterWidget.cpp: inc/includes.h \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
+		inc/IconedFormContainer.hpp \
+		inc/MarginDelegate.hpp \
 		inc/RegisterWidget.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -610,6 +648,8 @@ moc_SigninWindow.cpp: inc/RegisterWidget.h \
 		inc/Widgets/QtFunctions.hpp \
 		inc/Planning.h \
 		inc/TeamMember.h \
+		inc/IconedFormContainer.hpp \
+		inc/MarginDelegate.hpp \
 		inc/SigninWindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -641,6 +681,9 @@ ConnectWindow.o: src/ConnectWindow.cpp
 Globals.o: src/Globals.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Globals.o src/Globals.cpp
 
+IconedFormContainer.o: src/IconedFormContainer.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o IconedFormContainer.o src/IconedFormContainer.cpp
+
 main.o: src/main.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o src/main.cpp
 
@@ -655,6 +698,9 @@ MainWindow_TabPlanning.o: src/MainWindow_TabPlanning.cpp
 
 MainWindow_TabTeam.o: src/MainWindow_TabTeam.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow_TabTeam.o src/MainWindow_TabTeam.cpp
+
+MarginDelegate.o: src/MarginDelegate.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MarginDelegate.o src/MarginDelegate.cpp
 
 Planning.o: src/Planning.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Planning.o src/Planning.cpp
@@ -680,8 +726,14 @@ moc_Api.o: moc_Api.cpp
 moc_ConnectWindow.o: moc_ConnectWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ConnectWindow.o moc_ConnectWindow.cpp
 
+moc_IconedFormContainer.o: moc_IconedFormContainer.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_IconedFormContainer.o moc_IconedFormContainer.cpp
+
 moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp
+
+moc_MarginDelegate.o: moc_MarginDelegate.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MarginDelegate.o moc_MarginDelegate.cpp
 
 moc_RegisterWidget.o: moc_RegisterWidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_RegisterWidget.o moc_RegisterWidget.cpp

@@ -47,21 +47,25 @@ void SigninWindow::init(const SigninWindow*){
 
 		center->setLayout(centerLayout);
 	/********/
+	this->setStyleSheet(QString((cssReader("res/style.css")+cssReader("res/signin.css")).c_str()));
 
 	_registerer = new RegisterWidget();
-	_teamName = new QLineEdit;
+	_teamName = new QLineEdit();
 	_signin = new QPushButton("Create account");
-	_connect = new QCommandLinkButton("Connection");
+	_connect = new QPushButton("Connection");
+
+	_signin->setProperty("class", "main-button");
+	_connect->setProperty("class", "second-button");
 
 	_teamName->setPlaceholderText("Team Name");
 	_signin->setCursor(QCursor(Qt::PointingHandCursor));
 	_connect->setCursor(QCursor(Qt::PointingHandCursor));
 
-	auto fl_team = new QFormLayout;
 	auto hl_signin = new QHBoxLayout;
 	auto hl_connect = new QHBoxLayout;
-
-	fl_team->addWidget(_teamName);
+	auto hl_form = new QHBoxLayout;
+	auto vl_formLeft = new QVBoxLayout;
+	auto vl_formRight = new QVBoxLayout;
 
 	hl_signin->addItem(new QHSpacerItem);
 	hl_signin->addWidget(_signin);
@@ -71,9 +75,27 @@ void SigninWindow::init(const SigninWindow*){
 	hl_connect->addWidget(_connect);
 	hl_connect->addItem(new QHSpacerItem);
 
+	int icon_size = 18;
+	vl_formLeft->addWidget(new IconedFormContainer(new QIcon("res/imgs/user_icon.png"), icon_size, _registerer->_firstName));
+	vl_formLeft->addWidget(new IconedFormContainer(new QIcon("res/imgs/user_icon.png"), icon_size, _registerer->_lastName));
+	vl_formLeft->addWidget(new IconedFormContainer(new QIcon("res/imgs/user_icon.png"), icon_size, _registerer->_username));
+	vl_formLeft->addWidget(new IconedFormContainer(new QIcon("res/imgs/pass_icon.png"), icon_size, _registerer->_password));
+	vl_formLeft->addWidget(new IconedFormContainer(new QIcon("res/imgs/pass_icon.png"), icon_size, _registerer->_passwordConf));
+	vl_formLeft->addWidget(new IconedFormContainer(new QIcon("res/imgs/users_icon.png"), icon_size+4, _teamName));
+
+	vl_formRight->addWidget(new IconedFormContainer(new QIcon("res/imgs/clock_icon.png"), icon_size, _registerer->_hoursPerWeek, "Hours/week "));
+	vl_formRight->addWidget(new IconedFormContainer(new QIcon("res/imgs/dayoff_icon.png"), icon_size, _registerer->_checkAll, "Days off "));
+	for(auto& day : mcd::arguments["weekdays"]){
+		vl_formRight->addWidget(_registerer->_t_daysCheckboxes[day]);
+	}
+
+	hl_form->addItem(new QHSpacerItem);
+	hl_form->addLayout(vl_formLeft);
+	hl_form->addLayout(vl_formRight);
+	hl_form->addItem(new QHSpacerItem);
+
 	centerLayout->addItem(new QVSpacerItem);
-	centerLayout->addWidget(_registerer);
-	centerLayout->addLayout(fl_team);
+	centerLayout->addLayout(hl_form);
 	centerLayout->addLayout(hl_signin);
 	centerLayout->addLayout(hl_connect);
 	centerLayout->addItem(new QVSpacerItem);
@@ -89,8 +111,8 @@ void SigninWindow::init(const SigninWindow*){
 }
 
 void SigninWindow::showEvent(QShowEvent* event){
-	size_t w = 640;
-	size_t h = 480;
+	size_t w = 720;
+	size_t h = 405;
 	this->resize(static_cast<int>(w), static_cast<int>(h));
 	this->move(static_cast<int>(getDesktopWidth()/2 - w/2), static_cast<int>(getDesktopHeight()/2 - h/2));
 

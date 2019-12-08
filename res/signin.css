@@ -1,0 +1,7 @@
+SigninWindow {
+	border-image: url(res/imgs/auth_back.png) 0 0 0 0 stretch stretch;
+}
+
+IconedFormContainer QLineEdit {
+	width: 8em;
+}
