@@ -28,7 +28,7 @@ void MainWindow::initPlanningTab(QTabWidget* tabWidget){
 	}
 
 	for(size_t i = 0; i < mcd::arguments["weekdays"].size(); ++i){
-		for(int j = 0; j < _nbHours; ++j){
+		for(int j = 0; j < static_cast<int>(_nbHours); ++j){
 			auto item = new QTableWidgetItem;
 			_planItems.push_back(item);
 			_planTable->setItem(j, static_cast<int>(i), item);
@@ -59,7 +59,7 @@ void MainWindow::initPlanningTable() {
 
 	for(size_t i = 0; i < mcd::arguments["weekdays"].size(); ++i){
 		auto day = _planning.getDay(i);
-		for(int j = 0; j < _nbHours; ++j){
+		for(int j = 0; j < static_cast<int>(_nbHours); ++j){
 			bool found = false;
 			for(const auto &e : day) {
 				if(e.first <= static_cast<double>(j) && e.second >= static_cast<double>(j)){

@@ -1,14 +1,30 @@
-2019-12-08 10:31:21 [ DEBUG ] src/Api.cpp:15 : Api created
-2019-12-08 10:31:21 [ DEBUG ] src/MainWindow.cpp:95 : MainWindow created
-2019-12-08 10:31:22 [ DEBUG ] src/ConnectWindow.cpp:108 : ConnectWindow created
-2019-12-08 10:31:23 [ DEBUG ] src/RegisterWidget.cpp:96 : RegisterWidget created
-2019-12-08 10:31:23 [ DEBUG ] src/SigninWindow.cpp:110 : SigninWindow created
-2019-12-08 10:31:23 [ DEBUG ] src/Api.cpp:438 : url: http://34.95.48.165:4000/graphql?query={auth(header:"Y2hlZjp3ZWxjb21lMQ=="){userId, token, teamId}}
-2019-12-08 10:31:24 [ DEBUG ] src/Api.cpp:127 : {"data":{"auth":{"userId":"5dd840d7a8be18533dbe3d04","token":"31d5d2ee0c3aaa36db0e693041f7b14414bc1f50d13fdc2791300a5f73bc917b","teamId":"5dd840d3a8be18533dbe3cfe"}}}
+2019-12-08 16:30:37 [ DEBUG ] src/Api.cpp:15 : Api created
+2019-12-08 16:30:37 [ DEBUG ] src/MainWindow.cpp:95 : MainWindow created
+2019-12-08 16:30:38 [ DEBUG ] src/ConnectWindow.cpp:108 : ConnectWindow created
+2019-12-08 16:30:39 [ DEBUG ] src/RegisterWidget.cpp:96 : RegisterWidget created
+2019-12-08 16:30:39 [ DEBUG ] src/SigninWindow.cpp:110 : SigninWindow created
+2019-12-08 16:30:39 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={auth(header:"Y2hlZjp3ZWxjb21lMQ=="){userId, token, teamId}}
+2019-12-08 16:30:40 [ DEBUG ] src/Api.cpp:140 : {"data":{"auth":{"userId":"5dd840d7a8be18533dbe3d04","token":"31d5d2ee0c3aaa36db0e693041f7b14414bc1f50d13fdc2791300a5f73bc917b","teamId":"5dd840d3a8be18533dbe3cfe"}}}
 
-2019-12-08 10:31:24 [ DEBUG ] src/Api.cpp:438 : url: http://34.95.48.165:4000/graphql?query={team(id:"5dd840d3a8be18533dbe3cfe"){chef{user{id}},defaultHeures,nonTravail,creneau{debut,fin},teamMembers{user{id,name,surname},nbHeures,jourDeRepos}}}
-2019-12-08 10:31:24 [ DEBUG ] src/Api.cpp:346 : {"data":{"team":{"chef":{"user":{"id":"5dd840d7a8be18533dbe3d04"}},"defaultHeures":"35","nonTravail":"Sunday","creneau":{"debut":"08:00","fin":"21:00"},"teamMembers":[{"user":{"id":"5dd840d7a8be18533dbe3d03","name":"Patrick","surname":"Truelle"},"nbHeures":0,"jourDeRepos":"Saturday"},{"user":{"id":"5dd840d7a8be18533dbe3d02","name":"Pascal","surname":"Obistro"},"nbHeures":0,"jourDeRepos":"Monday"},{"user":{"id":"5dd840d7a8be18533dbe3d04","name":"Florent","surname":"Panini"},"nbHeures":40,"jourDeRepos":"Wednesday"},{"user":{"id":"5deafee16544d84b38ccaaef","name":"a","surname":"zaezazz"},"nbHeures":0,"jourDeRepos":""}]}}}
+2019-12-08 16:30:40 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={team(id:"5dd840d3a8be18533dbe3cfe"){chef{user{id}},defaultHeures,nonTravail,creneau{debut,fin},teamMembers{user{id,name,surname},nbHeures,jourDeRepos}}}
+2019-12-08 16:30:40 [ DEBUG ] src/Api.cpp:359 : {"data":{"team":{"chef":{"user":{"id":"5dd840d7a8be18533dbe3d04"}},"defaultHeures":"35","nonTravail":"Sunday","creneau":{"debut":"08:00","fin":"21:00"},"teamMembers":[{"user":{"id":"5dd840d7a8be18533dbe3d03","name":"Patrick","surname":"Truelle"},"nbHeures":0,"jourDeRepos":"Saturday"},{"user":{"id":"5dd840d7a8be18533dbe3d04","name":"Florent","surname":"Panini"},"nbHeures":40,"jourDeRepos":"Wednesday"},{"user":{"id":"5deafee16544d84b38ccaaef","name":"a","surname":"zaezazzs"},"nbHeures":0,"jourDeRepos":""},{"user":{"id":"5dd840d7a8be18533dbe3d02","name":"Pascal","surname":"Obistrosss"},"nbHeures":0,"jourDeRepos":"Monday Tuesday "}]}}}
 
-2019-12-08 10:31:24 [ DEBUG ] src/Api.cpp:438 : url: http://34.95.48.165:4000/graphql?query={team(id:"5dd840d3a8be18533dbe3cfe"){chef{user{id}},defaultHeures,nonTravail,creneau{debut,fin},teamMembers{user{id,name,surname},nbHeures,jourDeRepos}}}
-2019-12-08 10:31:24 [ DEBUG ] src/Api.cpp:346 : {"data":{"team":{"chef":{"user":{"id":"5dd840d7a8be18533dbe3d04"}},"defaultHeures":"35","nonTravail":"Sunday","creneau":{"debut":"08:00","fin":"21:00"},"teamMembers":[{"user":{"id":"5dd840d7a8be18533dbe3d03","name":"Patrick","surname":"Truelle"},"nbHeures":0,"jourDeRepos":"Saturday"},{"user":{"id":"5dd840d7a8be18533dbe3d02","name":"Pascal","surname":"Obistro"},"nbHeures":0,"jourDeRepos":"Monday"},{"user":{"id":"5dd840d7a8be18533dbe3d04","name":"Florent","surname":"Panini"},"nbHeures":40,"jourDeRepos":"Wednesday"},{"user":{"id":"5deafee16544d84b38ccaaef","name":"a","surname":"zaezazz"},"nbHeures":0,"jourDeRepos":""}]}}}
+2019-12-08 16:30:40 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={team(id:"5dd840d3a8be18533dbe3cfe"){chef{user{id}},defaultHeures,nonTravail,creneau{debut,fin},teamMembers{user{id,name,surname},nbHeures,jourDeRepos}}}
+2019-12-08 16:30:40 [ DEBUG ] src/Api.cpp:359 : {"data":{"team":{"chef":{"user":{"id":"5dd840d7a8be18533dbe3d04"}},"defaultHeures":"35","nonTravail":"Sunday","creneau":{"debut":"08:00","fin":"21:00"},"teamMembers":[{"user":{"id":"5dd840d7a8be18533dbe3d03","name":"Patrick","surname":"Truelle"},"nbHeures":0,"jourDeRepos":"Saturday"},{"user":{"id":"5dd840d7a8be18533dbe3d04","name":"Florent","surname":"Panini"},"nbHeures":40,"jourDeRepos":"Wednesday"},{"user":{"id":"5deafee16544d84b38ccaaef","name":"a","surname":"zaezazzs"},"nbHeures":0,"jourDeRepos":""},{"user":{"id":"5dd840d7a8be18533dbe3d02","name":"Pascal","surname":"Obistrosss"},"nbHeures":0,"jourDeRepos":"Monday Tuesday "}]}}}
 
+2019-12-08 16:30:45 [ WARNING ] src/Api.cpp:93 : Saving member : 5dd840d7a8be18533dbe3d02
+2019-12-08 16:30:45 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={editUser(		id: "5dd840d7a8be18533dbe3d02", 		name: "Pascal", 		surname: "Obistro", 		nbHeures: 0, 		nonTravail: "Monday Tuesday "	){		name, 		surname	}}
+2019-12-08 16:30:45 [ WARNING ] src/Api.cpp:93 : Saving member : 5dd840d7a8be18533dbe3d02
+2019-12-08 16:30:45 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={editUser(		id: "5dd840d7a8be18533dbe3d02", 		name: "Pascal", 		surname: "Obistro", 		nbHeures: 0, 		nonTravail: "Monday Tuesday "	){		name, 		surname	}}
+2019-12-08 16:30:47 [ WARNING ] src/Api.cpp:93 : Saving member : 5deafee16544d84b38ccaaef
+2019-12-08 16:30:47 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={editUser(		id: "5deafee16544d84b38ccaaef", 		name: "a", 		surname: "zaezazz", 		nbHeures: 0, 		nonTravail: ""	){		name, 		surname	}}
+2019-12-08 16:30:47 [ WARNING ] src/Api.cpp:93 : Saving member : 5deafee16544d84b38ccaaef
+2019-12-08 16:30:47 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={editUser(		id: "5deafee16544d84b38ccaaef", 		name: "a", 		surname: "zaezazz", 		nbHeures: 0, 		nonTravail: ""	){		name, 		surname	}}
+2019-12-08 16:30:51 [ WARNING ] src/Api.cpp:113 : Delete member 5deafee16544d84b38ccaaef
+2019-12-08 16:30:55 [ DEBUG ] src/Api.cpp:451 : url: http://34.95.48.165:4000/graphql?query={team(id:"5dd840d3a8be18533dbe3cfe"){chef{user{id}},defaultHeures,nonTravail,creneau{debut,fin},teamMembers{user{id,name,surname},nbHeures,jourDeRepos}}}
+2019-12-08 16:30:55 [ DEBUG ] src/Api.cpp:359 : {"data":{"team":{"chef":{"user":{"id":"5dd840d7a8be18533dbe3d04"}},"defaultHeures":"35","nonTravail":"Sunday","creneau":{"debut":"08:00","fin":"21:00"},"teamMembers":[{"user":{"id":"5dd840d7a8be18533dbe3d03","name":"Patrick","surname":"Truelle"},"nbHeures":0,"jourDeRepos":"Saturday"},{"user":{"id":"5dd840d7a8be18533dbe3d04","name":"Florent","surname":"Panini"},"nbHeures":40,"jourDeRepos":"Wednesday"},{"user":{"id":"5deafee16544d84b38ccaaef","name":"a","surname":"zaezazz"},"nbHeures":0,"jourDeRepos":""},{"user":{"id":"5dd840d7a8be18533dbe3d02","name":"Pascal","surname":"Obistro"},"nbHeures":0,"jourDeRepos":"Monday Tuesday "}]}}}
+
+2019-12-08 16:30:59 [ DEBUG ] src/SigninWindow.cpp:37 : SigninWindow destroyed
+2019-12-08 16:30:59 [ DEBUG ] src/ConnectWindow.cpp:37 : ConnectWindow destroyed
+2019-12-08 16:30:59 [ DEBUG ] src/MainWindow.cpp:65 : MainWindow destroyed
+2019-12-08 16:30:59 [ DEBUG ] src/Api.cpp:26 : Api destroyed

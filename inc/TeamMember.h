@@ -17,7 +17,7 @@ class TeamMember {
         inline QString getFirstName()const { return _firstName; }
         inline QString getLastName()const { return _lastName; }
         inline std::vector<QString> getDaysOff()const { return _daysOff; }
-        QString daysOffToQString();
+        QString daysOffToQString()const;
 
         inline void setId(const std::string& id) { _id = id; }
         inline void setNbHours(double nbHours) { _nbHours = nbHours; }

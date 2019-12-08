@@ -144,7 +144,7 @@ void MainWindow::generalSaveDatas(){
 	auto globals = translate();
 
 	_saveAct->setEnabled(false);
-	_api.save(globals, Planning());
+	_api.save(globals, _planning);
 }
 
 void MainWindow::reenableSave(){
@@ -169,7 +169,7 @@ void MainWindow::generalCalculate(){
 	_saveAct->setEnabled(false);
 	_genAct->setEnabled(false);
 
-	_api.save(globals, Planning());
+	_api.save(globals, _planning);
 }
 
 Globals MainWindow::translate(){

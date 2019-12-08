@@ -1,4 +1,4 @@
-DEBUG = no
+DEBUG = yes
 
 #
 #	Softwares
@@ -97,7 +97,7 @@ CXXWARNINGS += -Wwrite-strings -Wredundant-decls -Wdouble-promotion -Winit-self 
 CCXXFLAGS = -I$(INCDIR) $(CCXXWARNINGS)
 
 ifeq ($(DEBUG), yes)
-	CCXXFLAGS += -g -ggdb -Og -Werror -DDEBUG
+	CCXXFLAGS += -g -ggdb -Og -Werror -DDEBUG -fvar-tracking -fvar-tracking-assignments
 else
 	CCXXFLAGS += -O2 -s
 endif

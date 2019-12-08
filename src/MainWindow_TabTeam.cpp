@@ -106,9 +106,8 @@ void MainWindow::editMember(QTableWidgetItem *item) {
 	QTableWidgetItem *idItem = new QTableWidgetItem;
 	idItem = _teamTable->item(item->row(), AddMemberModal::Columns::ID);
 
-	int memberId = idItem->text().toInt();
-	auto member = std::find(teamMembers.begin(), teamMembers.end(), memberId);
-
+	std::string memberId = idItem->text().toStdString();
+	auto member = std::find_if(teamMembers.begin(), teamMembers.end(), [memberId](const TeamMember& t){ return t.getId() == memberId; });
 	switch(item->column()) {
 		case AddMemberModal::Columns::FIRSTNAME :
 			member->setFirstName(item->text());
@@ -129,7 +128,7 @@ void MainWindow::editMember(QTableWidgetItem *item) {
 			break;
 	}
 
-		_api.saveMembers(teamMembers);
+	_api.saveMember(*member);
 }
  
 void MainWindow::deleteMember() {
