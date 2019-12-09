@@ -3,63 +3,53 @@
 void MainWindow::initGeneralTab(QTabWidget* tabWidget){
 /* New */
 	_g_tab = new QWidget();
-	_g_lay = new QVBoxLayout();
+	_g_lay = new QHBoxLayout();
+	auto vl_left = new QVBoxLayout();
+	auto vl_right = new QVBoxLayout();
 
-	_g_daysChoice = new QVBoxLayout();
-	_g_checkAllLay = new QHBoxLayout();
 	_g_allCheckbox = new QCheckBox("Check all");
-	_g_checkDays = new QHBoxLayout();
-
-	_g_minTimeLay = new QHBoxLayout();
 	_g_minTimeEdit = new QTimeEdit();
-	_g_minTimeLabel = new QLabel("Minimum hour to start : ");
-
-	_g_maxTimeLay = new QHBoxLayout();
 	_g_maxTimeEdit = new QTimeEdit();
-	_g_maxTimeLabel = new QLabel("Maximum hour to stop : ");
-
-	_g_defaultHoursLay = new QHBoxLayout();
 	_g_defaultHoursEdit = new QDoubleSpinBox();
-	_g_defaultHoursLabel = new QLabel("Default hours per week : ");
 
 	_g_toolBar = new QToolBar();
+
+	auto rightDefaultHours = new IconedFormContainer(new QIcon(""), 0, _g_defaultHoursEdit, "Default hours per week : ");
+	auto rightMinHours = new IconedFormContainer(new QIcon(""), 0, _g_minTimeEdit, "Minimum hour to start : ");
+	auto rightMaxHours = new IconedFormContainer(new QIcon(""), 0, _g_maxTimeEdit, "Maximum hour to stop : ");
 /*******/
 
+/* Styles */
+	_g_tab->setAttribute(Qt::WA_TranslucentBackground);
+
+	rightDefaultHours->setProperty("class", "right");
+	rightMinHours->setProperty("class", "right");
+	rightMaxHours->setProperty("class", "right");
+/**********/
+
 /* Add */
-	_g_minTimeLay->addWidget(_g_minTimeLabel);
-	_g_minTimeLay->addWidget(_g_minTimeEdit);
-	_g_minTimeLay->addItem(new QHSpacerItem());
-
-	_g_maxTimeLay->addWidget(_g_maxTimeLabel);
-	_g_maxTimeLay->addWidget(_g_maxTimeEdit);
-	_g_maxTimeLay->addItem(new QHSpacerItem());
-
-	_g_defaultHoursLay->addWidget(_g_defaultHoursLabel);
-	_g_defaultHoursLay->addWidget(_g_defaultHoursEdit);
-	_g_defaultHoursLay->addItem(new QHSpacerItem());
-
+	vl_left->addWidget(new IconedFormContainer(new QIcon("res/imgs/work_icon.png"), 18, _g_allCheckbox, "Working days "));
 	for(auto& weekday : mcd::arguments["weekdays"]){
 		_g_daysCheckboxes[weekday] = new QCheckBox(weekday.c_str());
-		_g_checkDays->addWidget(_g_daysCheckboxes[weekday]);
+		vl_left->addWidget(_g_daysCheckboxes[weekday]);
 	}
-	_g_checkDays->addItem(new QHSpacerItem());
 
-	_g_checkAllLay->addWidget(_g_allCheckbox);
+	vl_right->addItem(new QVSpacerItem());
+	vl_right->addWidget(rightDefaultHours, 0, Qt::AlignRight);
+	vl_right->addWidget(rightMinHours, 0, Qt::AlignRight);
+	vl_right->addWidget(rightMaxHours, 0, Qt::AlignRight);
+	vl_right->addItem(new QVSpacerItem());
 
-	_g_daysChoice->addLayout(_g_checkAllLay);
-	_g_daysChoice->addLayout(_g_checkDays);
+	_g_lay->addItem(new QHSpacerItem());
+	_g_lay->addLayout(vl_left);
+	_g_lay->addLayout(vl_right);
+	_g_lay->addItem(new QHSpacerItem());
 
-	_g_lay->addLayout(_g_daysChoice);
-	_g_lay->addLayout(_g_defaultHoursLay);
-	_g_lay->addLayout(_g_minTimeLay);
-	_g_lay->addLayout(_g_maxTimeLay);
-
-	_g_lay->addItem(new QVSpacerItem());
 	_g_tab->setLayout(_g_lay);
 
 	tabWidget->addTab(_g_tab, "General");
 
-	this->addToolBar(_g_toolBar);
+	this->addToolBar(Qt::LeftToolBarArea, _g_toolBar);
 /*******/
 
 /* Toolbar */
@@ -154,7 +144,7 @@ void MainWindow::generalSaveDatas(){
 	auto globals = translate();
 
 	_saveAct->setEnabled(false);
-	_api.save(globals, Planning());
+	_api.save(globals, _planning);
 }
 
 void MainWindow::reenableSave(){
@@ -179,7 +169,7 @@ void MainWindow::generalCalculate(){
 	_saveAct->setEnabled(false);
 	_genAct->setEnabled(false);
 
-	_api.save(globals, Planning());
+	_api.save(globals, _planning);
 }
 
 Globals MainWindow::translate(){

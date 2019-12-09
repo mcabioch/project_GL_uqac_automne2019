@@ -56,7 +56,7 @@ void TeamMember::setDaysOffFromQString(QString daysOff) {
     }
 }
 
-QString TeamMember::daysOffToQString() {
+QString TeamMember::daysOffToQString()const {
     QString qs = "";
     
     for(auto &a : _daysOff) {

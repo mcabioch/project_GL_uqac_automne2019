@@ -77,7 +77,7 @@ class Api : public QObject {
 			void signin(const AuthUser& user, const AuthMember& member);
 
 			void save(const Globals& team, const Planning& planning);
-			void saveMembers(const std::vector<TeamMember>& team);
+			void saveMember(const TeamMember& member);
 			void deleteMember(const std::string& id);
 
 			void compute();

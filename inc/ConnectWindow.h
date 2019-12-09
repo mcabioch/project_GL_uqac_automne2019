@@ -87,7 +87,7 @@ class ConnectWindow : public QMainWindow {
 			QLineEdit* _username;
 			QLineEdit* _password;
 			QPushButton* _connect;
-			QCommandLinkButton* _signin;
+			QPushButton* m_signin;
 
 			MainWindow& _mainWindow;
 			Api& _api;

@@ -1,0 +1,79 @@
+* {
+	font-family: 'Raleway Light', sans-serif;
+	color: white;
+}
+
+IconedLineEdit {
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px ridge white;
+	border-width: 0px 0px 2px 0px;
+	color: white;
+}
+
+IconedFormContainer {
+	border: 2px solid white;
+	border-width: 0px 0px 2px 0px;
+}
+
+IconedFormContainer QLineEdit {
+	background-color: rgba(255, 255, 255, 0);
+	border: 0px ridge white;
+	color: white;
+}
+
+QDoubleSpinBox, QTimeEdit {
+	background-color: rgba(255, 255, 255, 0);
+	border: 1px solid white;
+}
+
+QDoubleSpinBox::up-arrow, QTimeEdit::up-arrow, QDoubleSpinBox::down-arrow, QTimeEdit::down-arrow {
+	width: 9px;
+	height: 9px;
+}
+
+QDoubleSpinBox::up-arrow, QTimeEdit::up-arrow {
+	image: url(res/imgs/up_arrow_icon.png);
+}
+
+QDoubleSpinBox::down-arrow, QTimeEdit::down-arrow {
+	image: url(res/imgs/down_arrow_icon.png);
+}
+
+QPushButton.main-button {
+	border: 2px solid white;
+	padding: 0.5em 4em;
+	background-color: rgba(123, 123, 123, 0.5);
+}
+
+QPushButton.second-button {
+	border: 0px solid white;
+	background-color: rgba(123, 123, 123, 0);
+}
+
+QPushButton.main-button, QPushButton.second-button {
+	color: white;
+	font-family: 'Raleway SemiBold', sans-serif;
+	margin-top: 1em;
+}
+
+QCheckBox {
+	margin-left: 1em;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+QCheckBox::indicator:checked, QCheckBox::indicator:unchecked {
+	width: 18px;
+	height: 18px;
+}
+
+QCheckBox::indicator:checked {
+	image: url(res/imgs/checked_icon.png);
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(res/imgs/unchecked_icon.png);
+}
+
+IconedFormContainer QCheckBox {
+	margin-left: 0em;
+}

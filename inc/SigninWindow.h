@@ -84,7 +84,7 @@ class SigninWindow : public QMainWindow {
 			RegisterWidget* _registerer;
 			QLineEdit* _teamName;
 			QPushButton* _signin;
-			QCommandLinkButton* _connect;
+			QPushButton* _connect;
 
 			QMainWindow* _connectWindow;
 			Api& _api;

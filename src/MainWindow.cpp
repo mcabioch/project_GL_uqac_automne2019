@@ -7,20 +7,11 @@ _tab(nullptr),\
 \
 _g_tab(nullptr),\
 _g_lay(nullptr),\
-_g_daysChoice(nullptr),\
-_g_checkAllLay(nullptr),\
 _g_allCheckbox(nullptr),\
-_g_checkDays(nullptr),\
 _g_daysCheckboxes(),\
-_g_minTimeLay(nullptr),\
 _g_minTimeEdit(nullptr),\
-_g_minTimeLabel(nullptr),\
-_g_maxTimeLay(nullptr),\
 _g_maxTimeEdit(nullptr),\
-_g_maxTimeLabel(nullptr),\
-_g_defaultHoursLay(nullptr),\
 _g_defaultHoursEdit(nullptr),\
-_g_defaultHoursLabel(nullptr),\
 _g_toolBar(nullptr),\
 _saveAct(nullptr),\
 _genAct(nullptr),\
@@ -45,7 +36,8 @@ _planTab(nullptr),\
 _planCenter(nullptr),\
 _planLay(nullptr),\
 _planTable(nullptr),\
-_planItems()
+_planItems(),\
+_nbHours(23)
 
 MainWindow::MainWindow(Api& api, QWidget* parent) :
 	QMainWindow(parent),
@@ -86,9 +78,12 @@ void MainWindow::init(const MainWindow*){
 		this->setCentralWidget(center);
 
 		center->setLayout(centerLayout);
-
-		this->showMaximized();
 	/********/
+	this->setStyleSheet(QString((cssReader("res/style.css")+cssReader("res/main.css")).c_str()));
+	size_t w = 880;
+	size_t h = 495;
+	this->resize(static_cast<int>(w), static_cast<int>(h));
+	this->move(static_cast<int>(getDesktopWidth()/2 - w/2), static_cast<int>(getDesktopHeight()/2 - h/2));
 
 	connect(&_api, SIGNAL(getAll_ended(const Globals&, const std::vector<TeamMember>&, const Planning&)),
 			this, SLOT(g_setAll(const Globals&, const std::vector<TeamMember>&, const Planning&)));
@@ -102,6 +97,7 @@ void MainWindow::init(const MainWindow*){
 
 void MainWindow::initWindow(){
 	_tab = new QTabWidget();
+	_tab->setAttribute(Qt::WA_TranslucentBackground);
 
 	std::ifstream reader;
 	reader.open("res/test.profile");
@@ -123,7 +119,15 @@ void MainWindow::initWindow(){
 }
 
 void MainWindow::closeEvent(QCloseEvent* event){
-	QMessageBox::StandardButton reply = QMessageBox::warning(this, "Confirmation", "Are you sure you want to quit ?", QMessageBox::No | QMessageBox::Yes);
+	QMessageBox warn;
+
+	warn.setText("Are you sure you want to quit ?");
+	warn.setIconPixmap(QIcon("res/imgs/care_icon.png").pixmap(64, 64));
+	warn.setWindowTitle("Confirmation");
+	warn.setStandardButtons(QMessageBox::Yes|QMessageBox::No);
+	warn.setStyleSheet(QString((cssReader("res/style.css")+cssReader("res/main.css")).c_str()));
+
+	int reply = warn.exec();
 
 	if(reply == QMessageBox::Yes) {
 		event->accept();
