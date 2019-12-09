@@ -750,4 +750,4 @@ uninstall:  FORCE
 FORCE:
 
 
-CXXFLAGS +=  -Iinc -W -Wconversion -Wall -Wextra -pedantic -g -ggdb -Og -Werror -DDEBUG -fvar-tracking -fvar-tracking-assignments -std=c++14  -Wcast-qual -Wcast-align -Wpointer-arith -Woverloaded-virtual -Wctor-dtor-privacy -Wdelete-non-virtual-dtor -Wshadow -Weffc++ -Wwrite-strings -Wredundant-decls -Wdouble-promotion -Winit-self -Wswitch-default -Wundef -Wlogical-op -Wold-style-cast
+CXXFLAGS +=  -Iinc -W -Wconversion -Wall -Wextra -pedantic -O2 -s -std=c++14  -Wcast-qual -Wcast-align -Wpointer-arith -Woverloaded-virtual -Wctor-dtor-privacy -Wdelete-non-virtual-dtor -Wshadow -Weffc++ -Wwrite-strings -Wredundant-decls -Wdouble-promotion -Winit-self -Wswitch-default -Wundef -Wlogical-op -Wold-style-cast
