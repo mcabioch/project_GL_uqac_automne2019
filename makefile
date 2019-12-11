@@ -315,12 +315,14 @@ remove: clean
 	$(RM) $(RMFLAGS) $(DOXYLN)
 	$(RM) $(RMFLAGS) $(HTMLLN)
 
-PHONY += install remake lib libs
+PHONY += install remake lib libs run
 
 install: clean
 	make all
 
 remake: mrproper install
+
+run: qtRun
 
 PHONY += qtRun qtClean qt qtInstall qtRemove createQt libqt qtRemake install_dependencies
 
