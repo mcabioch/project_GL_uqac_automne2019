@@ -1,0 +1,132 @@
+MainWindow {
+	border-image: url(res/imgs/auth_back.png) 0 0 0 0 stretch stretch;
+}
+
+QToolBar, QTabBar, QTabWidget, QTabWidget::pane, QTabBar::tab {
+	background: transparent;
+	border: 0px;
+}
+
+QTabBar::tab {
+	padding: 0 15px;
+	padding-bottom: 10px;
+
+	margin: 1.5em 95px;
+
+	border: 2px ridge white;
+	border-width: 0 0 2px 0;
+}
+
+QTabBar::tab:selected {
+	font-family: 'Raleway SemiBold', sans-serif;
+	border-width: 0 0 3px 0;
+}
+
+QTabBar::tab:first {
+	margin-left: 1em;
+}
+
+QTabBar::tab:last {
+	margin-right: 0;
+}
+
+QToolBar * {
+	background: transparent;
+	border: 0;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+QToolBar QToolButton {
+	margin: 1em 1em 0 1.5em;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* General */
+MainWindow IconedFormContainer.right {
+	border: 0;
+}
+
+/* Team */
+.team QHeaderView {
+	background: transparent;
+}
+.team QHeaderView::section {
+	background-color: rgba(170, 170, 170, 0.3);
+	border-style: none;
+}
+.team QHeaderView::section:horizontal {
+	border: 0px solid white;
+	border-bottom-width: 1px;
+}
+
+.team::item {
+	background: transparent;
+}
+.team QLineEdit {
+	color: black;
+}
+
+.team {
+	margin-right: 5em;
+}
+
+/* Planning */
+.planning, .planning * {
+	background-color: transparent;
+}
+
+.planning QHeaderView, .planning QHeaderView::section, .planning QTableCornerButton::section {
+	background-color: transparent;
+	border-style: none;
+	border: 0px solid white;
+}
+
+.planning QTableCornerButton::section {
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+}
+.planning QHeaderView::section:horizontal {
+	border-bottom-width: 1px;
+}
+.planning QHeaderView::section:vertical {
+	border-right-width: 1px;
+}
+
+/* QMessageBox */
+QMessageBox {
+	background: url(res/imgs/auth_back.png);
+}
+
+QMessageBox, QMessageBox * {
+	font-family: 'Raleway SemiBold', sans-serif;
+}
+
+QMessageBox > QLabel {
+	font-size: 16px;
+	margin: 2em 1em 1em 0;
+}
+
+QMessageBox QPushButton {
+	border: 1px solid white;
+	font-size: 12px;
+	padding: 0.3em 2em;
+	background-color: rgba(123, 123, 123, 0.5);
+}
+
+/* Add member modal */
+AddMemberModal {
+	border-image: url(res/imgs/auth_back.png) 0 0 0 0 stretch stretch;
+}
+
+AddMemberModal .QWidget {
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+AddMemberModal .QWidget QPushButton {
+	margin: 2em 5em;
+}
+
+AddMemberModal .QWidget QLineEdit {
+	min-width: 150px;
+}

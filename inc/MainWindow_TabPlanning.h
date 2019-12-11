@@ -70,5 +70,6 @@ private:
 		QVBoxLayout* _planLay;
 		QTableWidget* _planTable;
 		std::vector<QTableWidgetItem*> _planItems;
+		size_t _nbHours;
 
 #endif //HEADER_MAINWINDOW_TAB_PLANNING

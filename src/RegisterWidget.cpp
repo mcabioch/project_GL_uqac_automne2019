@@ -45,14 +45,14 @@ void RegisterWidget::init(const RegisterWidget*){
 	auto checkDaysOff = new QHBoxLayout();
 	auto hoursPerWeekLay = new QHBoxLayout();
 
-	_checkAll = new QCheckBox("Check all");
+	_checkAll = new QCheckBox("Check all  ");
 	_firstName = new QLineEdit();
 	_lastName = new QLineEdit();
 	_hoursPerWeek = new QDoubleSpinBox();
 
-	_username = new QLineEdit;
-	_password = new QLineEdit;
-	_passwordConf = new QLineEdit;
+	_username = new QLineEdit();
+	_password = new QLineEdit();
+	_passwordConf = new QLineEdit();
 
 	for(auto& weekday : mcd::arguments["weekdays"]){
 		_t_daysCheckboxes[weekday] = new QCheckBox(weekday.c_str());

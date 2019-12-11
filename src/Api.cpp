@@ -89,10 +89,22 @@ void Api::save(const Globals& team, const Planning& planning){
 	save_end(nullptr);
 }
 
-void Api::saveMembers(const std::vector<TeamMember>& team){
-	if(team.size()){}
-	mcd::logs(mcd::Logger::Warn, "Save members");
-	saveMembers_end(nullptr);
+void Api::saveMember(const TeamMember& member){
+	auto req = createRequest(":4000/graphql?query={editUser(\
+		id: \"" + member.getId() + "\", \
+		name: \"" + member.getFirstName().toStdString() + "\", \
+		surname: \"" + member.getLastName().toStdString() + "\", \
+		nbHeures: " + mcd::tos(member.getNbHours()) + ", \
+		nonTravail: \"" + member.daysOffToQString().toStdString() + "\"\
+	){\
+		name, \
+		surname\
+	}}",
+							 "saveMember");
+
+	connect(_managers["saveMember"], SIGNAL(finished(QNetworkReply*)), this, SLOT(saveMembers_end(QNetworkReply*)));
+
+	_managers["saveMember"]->get(req);
 }
 
 void Api::deleteMember(const std::string& id){

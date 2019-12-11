@@ -97,7 +97,7 @@ CXXWARNINGS += -Wwrite-strings -Wredundant-decls -Wdouble-promotion -Winit-self 
 CCXXFLAGS = -I$(INCDIR) $(CCXXWARNINGS)
 
 ifeq ($(DEBUG), yes)
-	CCXXFLAGS += -g -ggdb -Og -Werror -DDEBUG
+	CCXXFLAGS += -g -ggdb -Og -Werror -DDEBUG -fvar-tracking -fvar-tracking-assignments
 else
 	CCXXFLAGS += -O2 -s
 endif
@@ -316,6 +316,11 @@ remove: clean
 	$(RM) $(RMFLAGS) $(HTMLLN)
 
 PHONY += install remake lib libs run
+<<<<<<< HEAD
+=======
+
+run: qtRun
+>>>>>>> 04e2d6150831ebcff03b533a74f0fc640511dc97
 
 install: clean
 	make all
